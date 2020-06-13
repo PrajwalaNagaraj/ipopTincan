@@ -8,3 +8,6 @@ Steps to run the script :
 chmod +x prereq.sh
 
 ./prereq.sh
+
+link to track the commit changes : https://docs.google.com/document/d/1dG2nnWlnqFii3wJWktiwfPsXPGTeIxheyq9Z1aoEIwo/edit?usp=sharing
+
