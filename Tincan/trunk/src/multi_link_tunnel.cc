@@ -51,7 +51,7 @@ MultiLinkTunnel::CreateVlink(
     vl = peer_network_->GetVlinkById(vlink_desc->uid);
     vl->PeerCandidates(peer_desc->cas);
     vl->StartConnections();
-    LOG(LS_INFO) << "Added remote CAS to vlink w/ peer " << peer_desc->uid;
+    RTC_LOG(LS_INFO) << "Added remote CAS to vlink w/ peer " << peer_desc->uid;
   }
   else
   {
@@ -59,7 +59,7 @@ MultiLinkTunnel::CreateVlink(
     if(local_fingerprint_->ToString() < peer_desc->fingerprint)
       ir = cricket::ICEROLE_CONTROLLING;
     string roles[] = { "CONTROLLING", "CONTROLLED" };
-    LOG(LS_INFO) << "Creating " << roles[ir] << " vlink w/ peer " << peer_desc->uid;
+    RTC_LOG(LS_INFO) << "Creating " << roles[ir] << " vlink w/ peer " << peer_desc->uid;
     vl = BasicTunnel::CreateVlink(move(vlink_desc), move(peer_desc), ir);
     peer_network_->Add(vl);
   }
@@ -251,7 +251,7 @@ MultiLinkTunnel::VlinkReadComplete(
   }
   else
   {
-    LOG(LS_ERROR) << "Unknown frame type received!";
+    RTC_LOG(LS_ERROR) << "Unknown frame type received!";
     frame->Dump("Invalid header");
   }
 }
@@ -336,7 +336,7 @@ MultiLinkTunnel::TapWriteComplete(
   if(frame->IsGood())
     frame->Dump("TAP Write Completed");
   else
-    LOG(LS_WARNING) << "Tap Write FAILED completion";
+    RTC_LOG(LS_WARNING) << "Tap Write FAILED completion";
   delete frame;
 }
 

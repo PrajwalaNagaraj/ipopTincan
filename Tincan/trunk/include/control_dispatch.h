@@ -37,8 +37,8 @@ namespace tincan
 {
 using rtc::FileRotatingLogSink;
 using rtc::LogMessage;
-using rtc::Filesystem;
-using rtc::Pathname;
+//using rtc::Filesystem;
+//using rtc::Pathname;
 class ControlDispatch
 {
 public:
@@ -80,12 +80,12 @@ private:
   private:
     virtual void Deliver(
       TincanControl &) {
-      LOG(LS_INFO) << msg_ << endl;
+      RTC_LOG(LS_INFO) << msg_ << endl;
     }
     virtual void Deliver(
       unique_ptr<TincanControl>)
     {
-      LOG(LS_INFO) << msg_ << endl;
+      RTC_LOG(LS_INFO) << msg_ << endl;
     }
     string msg_;
   };

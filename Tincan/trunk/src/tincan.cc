@@ -219,11 +219,11 @@ Tincan::RemoveTunnel(
     {
       (*tnl)->Shutdown();
       tunnels_.erase(tnl);
-      LOG(LS_INFO) << "RemoveTunnel: Instance erased from collection " << tnl_id;
+      RTC_LOG(LS_INFO) << "RemoveTunnel: Instance erased from collection " << tnl_id;
       return;
     }
   }
-  LOG(LS_WARNING) << "RemoveTunnel: No such virtual network exists " << tnl_id;
+  RTC_LOG(LS_WARNING) << "RemoveTunnel: No such virtual network exists " << tnl_id;
 }
 
 void
@@ -269,7 +269,7 @@ Tincan::OnLocalCasUpdated(
   if(lcas.empty())
   {
     lcas = "No local candidates available on this vlink";
-    LOG(LS_WARNING) << lcas;
+    RTC_LOG(LS_WARNING) << lcas;
   }
   bool to_deliver = false;
   unique_ptr<TincanControl> ctrl;

@@ -1,4 +1,4 @@
-cscope 15 $HOME/Prajwala-webrtc/workspace/ipop-project/Tincan/trunk/include               0000111009
+cscope 15 $HOME/Prajwala-webrtc/private_branch/ipopTincan/Tincan/trunk/include               0000110792
 	@async_io.h
 
 23 #iâdeà
@@ -12,7 +12,7 @@ TINCAN_ASYNCIO_H_
 	)
 
 25 
-	~"web¹c/¹c_ba£/loggšg.h
+	~"¹c_ba£/loggšg.h
 "
 
 26 #ià
@@ -478,7 +478,7 @@ BASIC_TUNNEL_H_
 "
 
 26 
-	~"web¹c/¹c_ba£/ÃtwÜk.h
+	~"¹c_ba£/ÃtwÜk.h
 "
 
 27 #ifdeà
@@ -498,19 +498,19 @@ max
 
 
 33 
-	~"web¹c/¹c_ba£/s¦_id’t™y.h
+	~"¹c_ba£/s¦_id’t™y.h
 "
 
 34 
-	~"web¹c/¹c_ba£/th»ad.h
+	~"¹c_ba£/th»ad.h
 "
 
 35 
-	~"web¹c/¹c_ba£/thœd_·¹y/sig¦Ù/sig¦Ù.h
+	~"¹c_ba£/thœd_·¹y/sig¦Ù/sig¦Ù.h
 "
 
 36 
-	~"web¹c/¹c_ba£/jsÚ.h
+	~"¹c_ba£/¡ršgs/jsÚ.h
 "
 
 37 
@@ -1200,11 +1200,11 @@ TINCAN_CONTROL_DISPATCH_H_
 "
 
 26 
-	~"web¹c/¹c_ba£/loggšg.h
+	~"¹c_ba£/loggšg.h
 "
 
 27 
-	~"web¹c/¹c_ba£/log_sšks.h
+	~"¹c_ba£/log_sšks.h
 "
 
 28 
@@ -1259,22 +1259,6 @@ usšg
 	g¹c
 ::
 LogMes§ge
-;
-
-40 
-usšg
- 
-	g¹c
-::
-Fžesy¡em
-;
-
-41 
-usšg
- 
-	g¹c
-::
-P©hÇme
 ;
 
 42 þas 
@@ -1524,7 +1508,7 @@ TšÿnCÚŒÞ
  &) {
 
 83 
-LOG
+RTC_LOG
 (
 LS_INFO
 è<< 
@@ -1546,7 +1530,7 @@ TšÿnCÚŒÞ
 >)
 
 88 
-LOG
+RTC_LOG
 (
 LS_INFO
 è<< 
@@ -1578,31 +1562,31 @@ TINCAN_CONTROL_LISTENER_H_
 "
 
 26 
-	~"web¹c/¹c_ba£/async_udp_sock‘.h
+	~"¹c_ba£/async_udp_sock‘.h
 "
 
 27 
-	~"web¹c/¹c_ba£/async_·ck‘_sock‘.h
+	~"¹c_ba£/async_·ck‘_sock‘.h
 "
 
 28 
-	~"web¹c/¹c_ba£/loggšg.h
+	~"¹c_ba£/loggšg.h
 "
 
 29 
-	~"web¹c/¹c_ba£/thœd_·¹y/sig¦Ù/sig¦Ù.h
+	~"¹c_ba£/thœd_·¹y/sig¦Ù/sig¦Ù.h
 "
 
 30 
-	~"web¹c/¹c_ba£/sock‘_add»ss.h
+	~"¹c_ba£/sock‘_add»ss.h
 "
 
 31 
-	~"web¹c/¹c_ba£/th»ad.h
+	~"¹c_ba£/th»ad.h
 "
 
 32 
-	~"web¹c/p2p/ba£/basic_·ck‘_sock‘_çùÜy.h
+	~"p2p/ba£/basic_·ck‘_sock‘_çùÜy.h
 "
 
 33 
@@ -2286,15 +2270,15 @@ _IPOP_LINUX
 "
 
 31 
-	~"web¹c/¹c_ba£/loggšg.h
+	~"¹c_ba£/loggšg.h
 "
 
 32 
-	~"web¹c/¹c_ba£/th»ad.h
+	~"¹c_ba£/th»ad.h
 "
 
 33 
-	~"web¹c/¹c_ba£/sig¦Ù.h
+	~"¹c_ba£/thœd_·¹y/sig¦Ù/sig¦Ù.h
 "
 
 35 
@@ -4664,7 +4648,7 @@ TINCAN_TAPDEV_INF_H_
 "
 
 28 
-	~"web¹c/¹c_ba£/th»ad.h
+	~"¹c_ba£/th»ad.h
 "
 
 30 
@@ -4888,7 +4872,7 @@ TINCAN_TINCAN_H_
 "
 
 26 
-	~"web¹c/¹c_ba£/ev’t.h
+	~"¹c_ba£/ev’t.h
 "
 
 27 
@@ -6534,11 +6518,11 @@ TINCAN_TINCAN_CONTROL_H_
 "
 
 26 
-	~"web¹c/¹c_ba£/jsÚ.h
+	~"¹c_ba£/¡ršgs/jsÚ.h
 "
 
 27 
-	~"web¹c/¹c_ba£/sock‘_add»ss.h
+	~"¹c_ba£/sock‘_add»ss.h
 "
 
 29 
@@ -7490,39 +7474,39 @@ TINCAN_VIRTUAL_LINK_H_
 "
 
 26 
-	~"web¹c/¹c_ba£/async_·ck‘_sock‘.h
+	~"¹c_ba£/async_·ck‘_sock‘.h
 "
 
 27 
-	~"web¹c/¹c_ba£/jsÚ.h
+	~"¹c_ba£/¡ršgs/jsÚ.h
 "
 
 28 
-	~"web¹c/¹c_ba£/ÃtwÜk.h
+	~"¹c_ba£/ÃtwÜk.h
 "
 
 29 
-	~"web¹c/¹c_ba£/s¦_fšg”´št.h
+	~"¹c_ba£/s¦_fšg”´št.h
 "
 
 30 
-	~"web¹c/¹c_ba£/th»ad.h
+	~"¹c_ba£/th»ad.h
 "
 
 31 
-	~"web¹c/p2p/ba£/basic_·ck‘_sock‘_çùÜy.h
+	~"p2p/ba£/basic_·ck‘_sock‘_çùÜy.h
 "
 
 32 
-	~"web¹c/p2p/ba£/dŽs_Œª¥Üt.h
+	~"p2p/ba£/dŽs_Œª¥Üt.h
 "
 
 33 
-	~"web¹c/p2p/ba£/dŽs_Œª¥Üt_çùÜy.h
+	~"p2p/ba£/dŽs_Œª¥Üt_çùÜy.h
 "
 
 34 
-	~"web¹c/p2p/ba£/dŽs_Œª¥Üt_š‹º®.h
+	~"p2p/ba£/dŽs_Œª¥Üt_š‹º®.h
 "
 
 35 
@@ -7530,15 +7514,15 @@ TINCAN_VIRTUAL_LINK_H_
 "
 
 36 
-	~"web¹c/p2p/ba£/·ck‘_Œª¥Üt_š‹º®.h
+	~"p2p/ba£/·ck‘_Œª¥Üt_š‹º®.h
 "
 
 37 
-	~"web¹c/p2p/ba£/p2p_Œª¥Üt_chªÃl.h
+	~"p2p/ba£/p2p_Œª¥Üt_chªÃl.h
 "
 
 38 
-	~"web¹c/p2p/þ›Á/basic_pÜt_®loÿtÜ.h
+	~"p2p/þ›Á/basic_pÜt_®loÿtÜ.h
 "
 
 39 
@@ -8196,11 +8180,11 @@ _IPOP_WIN
 "
 
 28 
-	~"web¹c/¹c_ba£/loggšg.h
+	~"¹c_ba£/loggšg.h
 "
 
 29 
-	~"web¹c/¹c_ba£/sig¦Ù.h
+	~"¹c_ba£/thœd_·¹y/sig¦Ù/sig¦Ù.h
 "
 
 30 

@@ -169,12 +169,12 @@ void VirtualLink::OnWriteableState(
 {
   if(transport->writable())
   {
-    LOG(LS_INFO) << "Connection established to: " << peer_desc_->uid;
+    RTC_LOG(LS_INFO) << "Connection established to: " << peer_desc_->uid;
     SignalLinkUp(vlink_desc_->uid);
   }
   else
   {
-    LOG(LS_INFO) << "Link NOT writeable: " << peer_desc_->uid;
+    RTC_LOG(LS_INFO) << "Link NOT writeable: " << peer_desc_->uid;
     SignalLinkDown(vlink_desc_->uid);
   }
 }
@@ -198,7 +198,7 @@ void VirtualLink::Transmit(TapFrame & frame)
   int status = channel_->SendPacket((const char*)frame.BufferToTransfer(),
     frame.BytesToTransfer(), packet_options_, 0);
   if(status < 0)
-    LOG(LS_INFO) << "Vlink send failed";
+    RTC_LOG(LS_INFO) << "Vlink send failed";
 }
 
 string VirtualLink::Candidates()
@@ -325,7 +325,7 @@ VirtualLink::SetupICE(
   }
   else
   {
-    LOG(LS_WARNING) << "Invalid ICE role specified: " << (uint32_t)ice_role_;
+    RTC_LOG(LS_WARNING) << "Invalid ICE role specified: " << (uint32_t)ice_role_;
     throw TCEXCEPT("Invalid ICE role specified");
   }
 }
@@ -335,7 +335,7 @@ VirtualLink::SetupTURN(
   const vector<TurnDescriptor> turn_descs)
 {
   if(turn_descs.empty()) {
-    LOG(LS_INFO) << "No TURN Server address provided";
+    RTC_LOG(LS_INFO) << "No TURN Server address provided";
     return;
   }
 
@@ -343,7 +343,7 @@ VirtualLink::SetupTURN(
   {
     if (turn_desc.username.empty() || turn_desc.password.empty())
     {
-      LOG(LS_WARNING) << "TURN credentials were not provided for hostname " << turn_desc.server_hostname;
+      RTC_LOG(LS_WARNING) << "TURN credentials were not provided for hostname " << turn_desc.server_hostname;
       continue;
     }
 
@@ -351,7 +351,7 @@ VirtualLink::SetupTURN(
     rtc::split(turn_desc.server_hostname, ':', &addr_port);
     if(addr_port.size() != 2)
     {
-      LOG(LS_INFO) << "Invalid TURN Server address provided. Address must contain a port number separated by a \":\".";
+      RTC_LOG(LS_INFO) << "Invalid TURN Server address provided. Address must contain a port number separated by a \":\".";
       continue;
     }
     cricket::RelayServerConfig relay_config_udp(addr_port[0], stoi(addr_port[1]),

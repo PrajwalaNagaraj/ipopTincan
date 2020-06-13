@@ -65,17 +65,17 @@ ControlDispatch::operator () (TincanControl & control)
     // todo: A controller response to something sent earlier
       break;
     default:
-      LOG(LS_WARNING) << "Unrecognized control type received and discarded.";
+      RTC_LOG(LS_WARNING) << "Unrecognized control type received and discarded.";
       break;
     }
   }
   catch(out_of_range & e) {
-    LOG(LS_WARNING) << "An invalid IPOP control operation was received and "
+    RTC_LOG(LS_WARNING) << "An invalid IPOP control operation was received and "
       "discarded: " << control.StyledString() << "Exception=" << e.what();
   }
   catch(exception & e)
   {
-    LOG(LS_WARNING) << e.what();
+    RTC_LOG(LS_WARNING) << e.what();
   }
 }
 void
@@ -138,7 +138,7 @@ ControlDispatch::ConfigureLogging(
     LogMessage::LogToDebug(LS_WARNING);
     LogMessage::SetLogToStderr(true);
     msg = "The configure logging operation failed. Using Console/WARNING";
-    LOG(LS_WARNING) << msg;
+    RTC_LOG(LS_WARNING) << msg;
     status = false;
   }
   control.SetResponse(msg, status);
@@ -160,7 +160,7 @@ ControlDispatch::CreateLink(
   } catch(exception & e)
   {
     msg = "CreateLink failed.";
-    LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
       control.StyledString();
   }
   if(!status)
@@ -192,7 +192,7 @@ void ControlDispatch::CreateIpopControllerRespLink(
   {
     //if this fails we can't indicate this to the controller so log with
     //high severity
-    LOG(LS_ERROR) << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_ERROR) << e.what() << ". Control Data=\n" <<
       control.StyledString();
   }
 }
@@ -211,7 +211,7 @@ ControlDispatch::CreateTunnel(
   } catch(exception & e)
   {
     string er_msg = "The CreateTunnel operation failed.";
-    LOG(LS_ERROR) << er_msg << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_ERROR) << er_msg << e.what() << ". Control Data=\n" <<
       control.StyledString();
     (*resp)["Message"] = er_msg;
     (*resp)["Success"] = false;
@@ -250,7 +250,7 @@ ControlDispatch::GetLogLevel(
   else
   {
     string msg = "An invalid log level was specified =  ";
-    LOG(LS_WARNING) << msg << log_level << ". Defaulting to WARNING";
+    RTC_LOG(LS_WARNING) << msg << log_level << ". Defaulting to WARNING";
   }
   return lv;
 }
@@ -270,7 +270,7 @@ ControlDispatch::InjectFrame(
     status = true;
   } catch(exception & e)
   {
-    LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
       control.StyledString();
   }
   control.SetResponse(msg, status);
@@ -293,7 +293,7 @@ ControlDispatch::QueryCandidateAddressSet(
   } catch(exception & e)
   {
     resp = "The QueryCandidateAddressSet operation failed. ";
-    LOG(LS_WARNING) << resp << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_WARNING) << resp << e.what() << ". Control Data=\n" <<
       control.StyledString();
   }
   control.SetResponse(resp, status);
@@ -315,7 +315,7 @@ ControlDispatch::QueryLinkStats(
   } catch(exception & e)
   {
     string er_msg = "The QueryLinkStats operation failed. ";
-    LOG(LS_WARNING) << er_msg << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_WARNING) << er_msg << e.what() << ". Control Data=\n" <<
       control.StyledString();
     (*resp)["Message"] = er_msg;
     (*resp)["Success"] = false;
@@ -341,7 +341,7 @@ ControlDispatch::QueryTunnelInfo(
   {
     resp = "The QueryTunnelInfo operation failed. ";
     resp.append(e.what());
-    LOG(LS_WARNING) << resp << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_WARNING) << resp << e.what() << ". Control Data=\n" <<
       control.StyledString();
   }
   control.SetResponse(resp, status);
@@ -364,7 +364,7 @@ ControlDispatch::RemoveLink(
   } catch(exception & e)
   {
     msg = "The RemoveLink operation failed.";
-    LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
       control.StyledString();
   }
   control.SetResponse(msg, status);
@@ -387,7 +387,7 @@ ControlDispatch::RemoveTunnel(
   } catch(exception & e)
   {
     msg = "failed.";
-    LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
       control.StyledString();
   }
   control.SetResponse(msg, status);
@@ -407,7 +407,7 @@ ControlDispatch::SendIcc(
   } catch(exception & e)
   {
     msg = "The ICC operation failed.";
-    LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
       control.StyledString();
     control.SetResponse(msg, false);
     ctrl_link_->Deliver(control);
@@ -429,7 +429,7 @@ ControlDispatch::UpdateRouteTable(
     msg = "The Add Routes opertation completed successfully.";
   } catch(exception & e)
   {
-    LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
+    RTC_LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
       control.StyledString();
   }
   control.SetResponse(msg, status);

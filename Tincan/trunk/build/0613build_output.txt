@@ -1,0 +1,791 @@
+if [ ! -d ../out/release/x86_64/obj ]; then  mkdir -p ../out/release/x86_64/obj; fi
+g++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0 -O3 -std=c++14 -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/tincan_main.cc -o ../out/release/x86_64/obj/tincan_main.o
+In file included from ../../external/include/webrtc/base/logging.h:18:0,
+                 from ../../external/include/webrtc/base/containers/checked_iterators.h:13,
+                 from ../../external/include/webrtc/base/containers/span.h:17,
+                 from ../../external/include/webrtc/base/files/file_util.h:26,
+                 from ../include/control_dispatch.h:28,
+                 from ../include/control_listener.h:34,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckEQImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:179:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(EQ, ==)
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckNEImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:180:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(NE, !=)
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckLEImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:181:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(LE, <=)
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckLTImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:182:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(LT, < )
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckGEImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:183:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(GE, >=)
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckGTImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:184:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(GT, > )
+ ^
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h: In member function ‘virtual void tincan::ControlDispatch::DisconnectedControllerHandle::Deliver(tincan::TincanControl&)’:
+../include/control_dispatch.h:83:32: error: no match for ‘operator<<’ (operand types are ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ and ‘<unresolved overloaded function type>’)
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                ^
+In file included from ../include/control_listener.h:28:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../../external/include/webrtc/rtc_base/logging.h:357:45: note: candidate: template<class U, class V, absl::enable_if_t<(std::is_arithmetic<_Tp>::value || std::is_enum<_Tp>::value)>* <anonymous> > rtc::webrtc_logging_impl::LogStreamer<V, T, Ts ...> rtc::webrtc_logging_impl::LogStreamer<T, Ts ...>::operator<<(U) const [with U = U; V = V; absl::enable_if_t<(std::is_arithmetic<U>::value || std::is_enum<X>::value)>* <anonymous> = <enumerator>; T = rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char>*>; Ts = {rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata>}]
+   RTC_FORCE_INLINE LogStreamer<V, T, Ts...> operator<<(U arg) const {
+                                             ^~~~~~~~
+../../external/include/webrtc/rtc_base/logging.h:357:45: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   couldn't deduce template parameter ‘U’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/control_listener.h:28:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../../external/include/webrtc/rtc_base/logging.h:365:45: note: candidate: template<class U, class V, absl::enable_if_t<((! std::is_arithmetic<_Tp>::value) && (! std::is_enum<_Tp>::value))>* <anonymous> > rtc::webrtc_logging_impl::LogStreamer<V, T, Ts ...> rtc::webrtc_logging_impl::LogStreamer<T, Ts ...>::operator<<(const U&) const [with U = U; V = V; absl::enable_if_t<((! std::is_arithmetic<U>::value) && (! std::is_enum<X>::value))>* <anonymous> = <enumerator>; T = rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char>*>; Ts = {rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata>}]
+   RTC_FORCE_INLINE LogStreamer<V, T, Ts...> operator<<(const U& arg) const {
+                                             ^~~~~~~~
+../../external/include/webrtc/rtc_base/logging.h:365:45: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   couldn't deduce template parameter ‘U’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../../external/include/webrtc/base/containers/checked_iterators.h:13:0,
+                 from ../../external/include/webrtc/base/containers/span.h:17,
+                 from ../../external/include/webrtc/base/files/file_util.h:26,
+                 from ../include/control_dispatch.h:28,
+                 from ../include/control_listener.h:34,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../../external/include/webrtc/base/logging.h:699:22: note: candidate: std::ostream& std::operator<<(std::ostream&, const wstring&)
+ inline std::ostream& operator<<(std::ostream& out, const std::wstring& wstr) {
+                      ^~~~~~~~
+../../external/include/webrtc/base/logging.h:699:22: note:   no known conversion for argument 1 from ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
+../../external/include/webrtc/base/logging.h:698:27: note: candidate: std::ostream& std::operator<<(std::ostream&, const wchar_t*)
+ BASE_EXPORT std::ostream& operator<<(std::ostream& out, const wchar_t* wstr);
+                           ^~~~~~~~
+../../external/include/webrtc/base/logging.h:698:27: note:   no known conversion for argument 1 from ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
+In file included from /usr/include/c++/7/memory:81:0,
+                 from ../include/tincan_base.h:38,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/bits/shared_ptr.h:66:5: note: candidate: template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__shared_ptr<_Tp, _Lp>&)
+     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/shared_ptr.h:66:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:363:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_time<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:363:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:311:5: note: candidate: template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_money<_MoneyT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:311:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:238:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setw)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:238:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:208:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setprecision)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:208:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:178:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setfill<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:178:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:143:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setbase)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:143:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:109:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:109:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:79:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Resetiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:79:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:682:5: note: candidate: template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&)
+     operator<<(_Ostream&& __os, const _Tp& __x)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:682:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   couldn't deduce template parameter ‘_Tp’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:574:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:569:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:556:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/ostream:693:0,
+                 from /usr/include/c++/7/istream:39,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/bits/ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:539:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:519:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:514:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:508:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:502:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:497:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/bits/ios_base.h:46:0,
+                 from /usr/include/c++/7/iomanip:40,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/system_error:217:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+/usr/include/c++/7/system_error:217:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/stdexcept:39,
+                 from /usr/include/c++/7/array:39,
+                 from ../include/tincan_base.h:31,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/bits/basic_string.h:6284:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:6284:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:83:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+../include/control_dispatch.h: In member function ‘virtual void tincan::ControlDispatch::DisconnectedControllerHandle::Deliver(std::unique_ptr<tincan::TincanControl>)’:
+../include/control_dispatch.h:88:32: error: no match for ‘operator<<’ (operand types are ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ and ‘<unresolved overloaded function type>’)
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                ^
+In file included from ../include/control_listener.h:28:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../../external/include/webrtc/rtc_base/logging.h:357:45: note: candidate: template<class U, class V, absl::enable_if_t<(std::is_arithmetic<_Tp>::value || std::is_enum<_Tp>::value)>* <anonymous> > rtc::webrtc_logging_impl::LogStreamer<V, T, Ts ...> rtc::webrtc_logging_impl::LogStreamer<T, Ts ...>::operator<<(U) const [with U = U; V = V; absl::enable_if_t<(std::is_arithmetic<U>::value || std::is_enum<X>::value)>* <anonymous> = <enumerator>; T = rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char>*>; Ts = {rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata>}]
+   RTC_FORCE_INLINE LogStreamer<V, T, Ts...> operator<<(U arg) const {
+                                             ^~~~~~~~
+../../external/include/webrtc/rtc_base/logging.h:357:45: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   couldn't deduce template parameter ‘U’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/control_listener.h:28:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../../external/include/webrtc/rtc_base/logging.h:365:45: note: candidate: template<class U, class V, absl::enable_if_t<((! std::is_arithmetic<_Tp>::value) && (! std::is_enum<_Tp>::value))>* <anonymous> > rtc::webrtc_logging_impl::LogStreamer<V, T, Ts ...> rtc::webrtc_logging_impl::LogStreamer<T, Ts ...>::operator<<(const U&) const [with U = U; V = V; absl::enable_if_t<((! std::is_arithmetic<U>::value) && (! std::is_enum<X>::value))>* <anonymous> = <enumerator>; T = rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char>*>; Ts = {rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata>}]
+   RTC_FORCE_INLINE LogStreamer<V, T, Ts...> operator<<(const U& arg) const {
+                                             ^~~~~~~~
+../../external/include/webrtc/rtc_base/logging.h:365:45: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   couldn't deduce template parameter ‘U’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../../external/include/webrtc/base/containers/checked_iterators.h:13:0,
+                 from ../../external/include/webrtc/base/containers/span.h:17,
+                 from ../../external/include/webrtc/base/files/file_util.h:26,
+                 from ../include/control_dispatch.h:28,
+                 from ../include/control_listener.h:34,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../../external/include/webrtc/base/logging.h:699:22: note: candidate: std::ostream& std::operator<<(std::ostream&, const wstring&)
+ inline std::ostream& operator<<(std::ostream& out, const std::wstring& wstr) {
+                      ^~~~~~~~
+../../external/include/webrtc/base/logging.h:699:22: note:   no known conversion for argument 1 from ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
+../../external/include/webrtc/base/logging.h:698:27: note: candidate: std::ostream& std::operator<<(std::ostream&, const wchar_t*)
+ BASE_EXPORT std::ostream& operator<<(std::ostream& out, const wchar_t* wstr);
+                           ^~~~~~~~
+../../external/include/webrtc/base/logging.h:698:27: note:   no known conversion for argument 1 from ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
+In file included from /usr/include/c++/7/memory:81:0,
+                 from ../include/tincan_base.h:38,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/bits/shared_ptr.h:66:5: note: candidate: template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__shared_ptr<_Tp, _Lp>&)
+     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/shared_ptr.h:66:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:363:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_time<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:363:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:311:5: note: candidate: template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_money<_MoneyT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:311:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:238:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setw)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:238:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:208:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setprecision)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:208:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:178:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setfill<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:178:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:143:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setbase)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:143:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:109:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:109:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan_base.h:34:0,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/iomanip:79:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Resetiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:79:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:682:5: note: candidate: template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&)
+     operator<<(_Ostream&& __os, const _Tp& __x)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:682:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   couldn't deduce template parameter ‘_Tp’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:574:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:569:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:556:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/ostream:693:0,
+                 from /usr/include/c++/7/istream:39,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/bits/ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:539:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:519:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:514:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:508:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<char, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:502:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/bits/quoted_string.h:38,
+                 from /usr/include/c++/7/iomanip:45,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:497:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/bits/ios_base.h:46:0,
+                 from /usr/include/c++/7/iomanip:40,
+                 from ../include/tincan_base.h:34,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/system_error:217:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+/usr/include/c++/7/system_error:217:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/stdexcept:39,
+                 from /usr/include/c++/7/array:39,
+                 from ../include/tincan_base.h:31,
+                 from ../src/tincan_main.cc:24:
+/usr/include/c++/7/bits/basic_string.h:6284:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:6284:5: note:   template argument deduction/substitution failed:
+In file included from ../include/control_listener.h:34:0,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../include/control_dispatch.h:88:35: note:   ‘rtc::webrtc_logging_impl::LogStreamer<rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)10, const std::basic_string<char, std::char_traits<char>, std::allocator<char> >*>, rtc::webrtc_logging_impl::Val<(rtc::webrtc_logging_impl::LogArgType)13, rtc::webrtc_logging_impl::LogMetadata> >’ is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+       RTC_LOG(LS_INFO) << msg_ << endl;
+                                   ^~~~
+In file included from ../include/tincan.h:27:0,
+                 from ../src/tincan_main.cc:25:
+../include/control_listener.h: At global scope:
+../include/control_listener.h:46:1: error: expected class-name before ‘{’ token
+ {
+ ^
+../include/control_listener.h:55:11: error: ‘PacketTime’ does not name a type; did you mean ‘adjtime’?
+     const PacketTime & ptime);
+           ^~~~~~~~~~
+           adjtime
+../include/control_listener.h:72:8: error: ‘void tincan::ControlListener::Run(rtc::Thread*)’ marked ‘override’, but does not override
+   void Run(Thread* thread) override;
+        ^~~
+In file included from ../include/peer_network.h:26:0,
+                 from ../include/basic_tunnel.h:39,
+                 from ../include/single_link_tunnel.h:26,
+                 from ../include/tincan.h:29,
+                 from ../src/tincan_main.cc:25:
+../include/virtual_link.h:146:11: error: ‘PacketTime’ does not name a type; did you mean ‘adjtime’?
+     const PacketTime & ptime,
+           ^~~~~~~~~~
+           adjtime
+In file included from ../include/basic_tunnel.h:39:0,
+                 from ../include/single_link_tunnel.h:26,
+                 from ../include/tincan.h:29,
+                 from ../src/tincan_main.cc:25:
+../include/peer_network.h:35:1: error: expected class-name before ‘{’ token
+ {
+ ^
+../include/peer_network.h:86:8: error: ‘void tincan::PeerNetwork::Run(rtc::Thread*)’ marked ‘override’, but does not override
+   void Run(Thread* thread) override;
+        ^~~
+Makefile:23: recipe for target '../out/release/x86_64/obj/tincan_main.o' failed
+make: *** [../out/release/x86_64/obj/tincan_main.o] Error 1

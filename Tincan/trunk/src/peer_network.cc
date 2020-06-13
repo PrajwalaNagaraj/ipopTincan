@@ -52,7 +52,7 @@ void PeerNetwork::Add(shared_ptr<VirtualLink> vlink)
     lock_guard<mutex> lg(mac_map_mtx_);
     if(mac_map_.count(mac) == 1)
     {
-      LOG(LS_INFO) << "Entry " << vlink->PeerInfo().mac_address <<
+      RTC_LOG(LS_INFO) << "Entry " << vlink->PeerInfo().mac_address <<
         " already exists in peer net. It will be updated.";
     }
     mac_map_[mac] = vlink;
@@ -177,12 +177,12 @@ PeerNetwork::Remove(
     link_map_.erase(vl->Id());
   } catch(exception & e)
   {
-    LOG(LS_WARNING) << e.what();
+    RTC_LOG(LS_WARNING) << e.what();
   } catch(...)
   {
     ostringstream oss;
     oss << "Failed to remove link: " << link_id;
-    LOG(LS_WARNING) << oss.str().c_str();
+    RTC_LOG(LS_WARNING) << oss.str().c_str();
   }
 }
 
@@ -210,13 +210,13 @@ PeerNetwork::Run(Thread* thread)
     }
     for(auto & mac : ml)
     {
-      LOG(LS_INFO) << "Scavenging route to "
+      RTC_LOG(LS_INFO) << "Scavenging route to "
         << ByteArrayToString(mac.begin(), mac.end());
       mac_routes_.erase(mac);
     }
-    if(LOG_CHECK_LEVEL(LS_INFO))
+    if(RTC_LOG_CHECK_LEVEL(LS_INFO))
     {
-      LOG(LS_INFO) << "PeerNetwork scavenge took "
+      RTC_LOG(LS_INFO) << "PeerNetwork scavenge took "
         << (steady_clock::now() - accessed).count() << " nanosecs.";
     }
   }
@@ -247,7 +247,7 @@ void PeerNetwork::UpdateRouteTable(
   }
   mac_routes_[dest].vl = mac_map_.at(route);
   mac_routes_[dest].accessed = steady_clock::now();
-  LOG(LS_INFO) << "Updated route to node=" <<
+  RTC_LOG(LS_INFO) << "Updated route to node=" <<
     ByteArrayToString(dest.begin(), dest.end()) << " through node=" <<
     ByteArrayToString(route.begin(), route.end()) << " vlink obj=" <<
     mac_routes_[dest].vl.get();

@@ -43,11 +43,11 @@
 namespace tincan
 {
 using namespace rtc;
-using cricket::TransportController;
-using cricket::TransportChannelImpl;
-using cricket::TransportChannel;
+using webrtc::JsepTransportController;
+using cricket::IceTransportInternal;
+using cricket::P2PTransportChannel;
 using cricket::ConnectionRole;
-using rtc::PacketTransportInterface;
+using rtc::PacketTransportInternal;
 
 class PeerNetwork;
 
@@ -129,7 +129,7 @@ private:
     cricket::IceGatheringState gather_state);
 
   void OnWriteableState(
-    PacketTransportInterface * transport);
+    PacketTransportInternal * transport);
 
   void RegisterLinkEventHandlers();
 
@@ -140,14 +140,14 @@ private:
     SSLFingerprint const & local_fingerprint);
 
   void OnReadPacket(
-    PacketTransportInterface* transport,
+    PacketTransportInternal* transport,
     const char* data,
     size_t len,
     const PacketTime & ptime,
     int flags);
 
   void OnSentPacket(
-    PacketTransportInterface * transport,
+    PacketTransportInternal * transport,
     const SentPacket & packet);
 
   unique_ptr<VlinkDescriptor> vlink_desc_;
@@ -157,7 +157,7 @@ private:
   const uint64_t tiebreaker_;
   cricket::IceRole ice_role_;
   ConnectionRole conn_role_;
-  TransportChannel * channel_;
+  IceTransportInternal * channel_;
   unique_ptr<cricket::TransportDescription> local_description_;
   unique_ptr<cricket::TransportDescription> remote_description_;
   unique_ptr<SSLFingerprint> remote_fingerprint_;
@@ -165,7 +165,7 @@ private:
   PacketOptions packet_options_;
   BasicPacketSocketFactory packet_factory_;
   unique_ptr<cricket::BasicPortAllocator> port_allocator_;
-  unique_ptr<cricket::TransportController> transport_ctlr_;
+  unique_ptr<webrtc::JsepTransportController> transport_ctlr_;
 
   cricket::IceGatheringState gather_state_;
   bool is_valid_;

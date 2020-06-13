@@ -236,10 +236,10 @@ uint32_t TapFrame::Capacity() const
 
 void TapFrame::Dump(const string & label)
 {
-  if(LOG_CHECK_LEVEL(LS_VERBOSE))
+  if(RTC_LOG_CHECK_LEVEL(LS_VERBOSE))
   {
     ostringstream oss;
-    LOG(LS_VERBOSE) << label << " header=" <<
+    RTC_LOG(LS_VERBOSE) << label << " header=" <<
       ByteArrayToString(Begin(), Payload(), 0, false) << endl <<
       ByteArrayToString(Payload(), PayloadEnd(), 16, true);
   }

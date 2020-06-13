@@ -134,7 +134,7 @@ void TapDevLnx::SetFlags(
   {
     emsg.append("a socket bind failed.");
     //throw TCEXCEPT(emsg.c_str());
-    LOG(LS_ERROR) << emsg;
+    RTC_LOG(LS_ERROR) << emsg;
   }
 
   //set or unset the right flags
@@ -145,7 +145,7 @@ void TapDevLnx::SetFlags(
   {
     close(cfg_skt);
     //throw TCEXCEPT(emsg.c_str());
-    LOG(LS_ERROR) << emsg;
+    RTC_LOG(LS_ERROR) << emsg;
   }
   close(cfg_skt);
 }
@@ -213,7 +213,7 @@ void TapDevLnx::Down()
   writer_.reset();
   SetFlags(0, IFF_UP);
 
-  LOG(LS_INFO) << "TAP device state set to DOWN";
+  RTC_LOG(LS_INFO) << "TAP device state set to DOWN";
 }
 
 
@@ -232,7 +232,7 @@ void TapDevLnx::OnMessage(Message * msg)
     }
     else
     {
-      LOG(LS_INFO) << "TAP shutting down, dropping IO.";
+      RTC_LOG(LS_INFO) << "TAP shutting down, dropping IO.";
       delete aio_read;
     }
   }
@@ -243,7 +243,7 @@ void TapDevLnx::OnMessage(Message * msg)
     int nwrite = write(fd_, aio_write->BufferToTransfer(), aio_write->BytesToTransfer());
     if(nwrite < 0)
     {
-      LOG(LS_WARNING) << "A TAP Write operation failed.";
+      RTC_LOG(LS_WARNING) << "A TAP Write operation failed.";
       aio_write->good_ = false;
     }
     else
