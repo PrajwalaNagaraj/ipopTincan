@@ -46,11 +46,11 @@ ControlListener::ReadPacketHandler(
 {
   try {
     TincanControl ctrl(data, len);
-    LOG(LS_INFO) << "Received CONTROL: " << ctrl.StyledString();
+    RTC_LOG(LS_INFO) << "Received CONTROL: " << ctrl.StyledString();
     (*ctrl_dispatch_)(ctrl);
   }
   catch(exception & e) {
-    LOG(LS_WARNING) << "A control failed to execute." << endl
+    RTC_LOG(LS_WARNING) << "A control failed to execute."
       << string(data, len) << endl
       << e.what();
   }
@@ -62,7 +62,7 @@ ControlListener::Deliver(
   TincanControl & ctrl_resp)
 {
   std::string msg = ctrl_resp.StyledString();
-  LOG(LS_INFO) << "Sending CONTROL: " << msg;
+  RTC_LOG(LS_INFO) << "Sending CONTROL: " << msg;
   lock_guard<mutex> lg(skt_mutex_);
   snd_socket_->SendTo(msg.c_str(), msg.length(), *ctrl_addr_, packet_options_);
 }
@@ -94,7 +94,7 @@ ControlListener::Run(
     SocketAddress(tp.kLocalHost, tp.kUdpPort), 0, 0));
   if (!rcv_socket_)
     throw TCEXCEPT("Failed to create control listener socket");
-  LOG(LS_INFO) << "Tincan listening on " << tp.kLocalHost << " UDP port " << tp.kUdpPort;
+  RTC_LOG(LS_INFO) << "Tincan listening on " << tp.kLocalHost << " UDP port " << tp.kUdpPort;
   rcv_socket_->SignalReadPacket.connect(this,
     &ControlListener::ReadPacketHandler);
   thread->ProcessMessages(-1); //run until stopped

@@ -80,12 +80,12 @@ private:
   private:
     virtual void Deliver(
       TincanControl &) {
-      RTC_LOG(LS_INFO) << msg_ << endl;
+      RTC_LOG(LS_INFO) << msg_;
     }
     virtual void Deliver(
       unique_ptr<TincanControl>)
     {
-      RTC_LOG(LS_INFO) << msg_ << endl;
+      RTC_LOG(LS_INFO) << msg_;
     }
     string msg_;
   };

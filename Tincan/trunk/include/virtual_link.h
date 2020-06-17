@@ -143,7 +143,7 @@ private:
     PacketTransportInternal* transport,
     const char* data,
     size_t len,
-    const PacketTime & ptime,
+    const int64_t & ptime,
     int flags);
 
   void OnSentPacket(
@@ -157,7 +157,7 @@ private:
   const uint64_t tiebreaker_;
   cricket::IceRole ice_role_;
   ConnectionRole conn_role_;
-  IceTransportInternal * channel_;
+  P2PTransportChannel * channel_;
   unique_ptr<cricket::TransportDescription> local_description_;
   unique_ptr<cricket::TransportDescription> remote_description_;
   unique_ptr<SSLFingerprint> remote_fingerprint_;
@@ -165,12 +165,13 @@ private:
   PacketOptions packet_options_;
   BasicPacketSocketFactory packet_factory_;
   unique_ptr<cricket::BasicPortAllocator> port_allocator_;
-  unique_ptr<webrtc::JsepTransportController> transport_ctlr_;
+  unique_ptr<JsepTransportController> transport_ctlr_;
 
   cricket::IceGatheringState gather_state_;
   bool is_valid_;
   rtc::Thread* signaling_thread_;
   rtc::Thread* network_thread_;
+  JsepTransportController::Config config;
 };
 } //namespace tincan
 #endif // !TINCAN_VIRTUAL_LINK_H_

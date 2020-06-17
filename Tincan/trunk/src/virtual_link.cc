@@ -76,12 +76,17 @@ VirtualLink::Initialize(
 
   port_allocator_->set_flags(cricket::PORTALLOCATOR_DISABLE_TCP);
   SetupTURN(vlink_desc_->turn_descs);
-  transport_ctlr_ = make_unique<TransportController>(signaling_thread_,
-    network_thread_, port_allocator_.get());
+  transport_ctlr_ = make_unique<JsepTransportController>(signaling_thread_,
+    						         network_thread_, 
+							 port_allocator_.get(),
+							 /*async_resolver_factory*/ nullptr,
+		 					 config);
 
   transport_ctlr_->SetLocalCertificate(RTCCertificate::Create(move(sslid)));
-  channel_ = transport_ctlr_->CreateTransportChannel(content_name_,
-    cricket::ICE_CANDIDATE_COMPONENT_DEFAULT);
+  //replacing CreateTransportChannel
+  channel_ = new P2PTransportChannel(content_name_,
+    	     cricket::ICE_CANDIDATE_COMPONENT_DEFAULT,
+	     port_allocator_.get());
   RegisterLinkEventHandlers();
   SetupICE(local_fingerprint);
   transport_ctlr_->MaybeStartGathering();
@@ -119,19 +124,18 @@ VirtualLink::AddRemoteCandidates(
       cas_vec.push_back(candidate);
     }
   } while(iss);
-  string err;
-  bool rv = transport_ctlr_->AddRemoteCandidates(content_name_, cas_vec, &err);
-  if(!rv)
-    throw TCEXCEPT(string("Failed to add remote candidates - ").append(err).c_str());
+  RTCError error = transport_ctlr_->AddRemoteCandidates(content_name_, cas_vec);
+  if (!error.ok()) {
+    throw TCEXCEPT(string("Failed to add remote candidates - ").append(error.message());
   return;
 }
 
 void
 VirtualLink::OnReadPacket(
-  PacketTransportInterface *,
+  PacketTransportInternal *,
   const char * data,
   size_t len,
-  const rtc::PacketTime &,
+  const int64_t &,
   int)
 {
   SignalMessageReceived((uint8_t*)data, *(uint32_t*)&len, *this);
@@ -139,7 +143,7 @@ VirtualLink::OnReadPacket(
 
 void
 VirtualLink::OnSentPacket(
-  PacketTransportInterface *,
+  PacketTransportInternal *,
   const rtc::SentPacket &)
 {
   //nothing to do atm ...
@@ -165,7 +169,7 @@ void VirtualLink::OnGatheringState(
 }
 
 void VirtualLink::OnWriteableState(
-  PacketTransportInterface * transport)
+  PacketTransportInternal * transport)
 {
   if(transport->writable())
   {
@@ -235,34 +239,34 @@ VirtualLink::PeerCandidates(
 void
 VirtualLink::GetStats(Json::Value & stats)
 {
-  cricket::ConnectionInfos infos;
+  cricket::IceTransportStats infos;
   channel_->GetStats(&infos);
-  for(auto info : infos)
+  for(auto info: infos)
   {
       Json::Value stat(Json::objectValue);
-      stat["best_conn"] = info.best_connection;
-      stat["writable"] = info.writable;
-      stat["receiving"] = info.receiving;
-      stat["timeout"] = info.timeout;
-      stat["new_conn"] = info.new_connection;
+      stat["best_conn"] = info.connection_infos.best_connection;
+      stat["writable"] = info.connection_infos.writable;
+      stat["receiving"] = info.connection_infos.receiving;
+      stat["timeout"] = info.connection_infos.timeout;
+      stat["new_conn"] = info.connection_infos.new_connection;
 
-      stat["rtt"] = (Json::UInt64)info.rtt;
-      stat["sent_total_bytes"] = (Json::UInt64)info.sent_total_bytes;
-      stat["sent_bytes_second"] = (Json::UInt64)info.sent_bytes_second;
-      stat["sent_discarded_packets"] = (Json::UInt64)info.sent_discarded_packets;
-      stat["sent_total_packets"] = (Json::UInt64)info.sent_total_packets;
-      stat["sent_ping_requests_total"] = (Json::UInt64)info.sent_ping_requests_total;
-      stat["sent_ping_requests_before_first_response"] = (Json::UInt64)info.sent_ping_requests_before_first_response;
-      stat["sent_ping_responses"] = (Json::UInt64)info.sent_ping_responses;
+      stat["rtt"] = (Json::UInt64)info.connection_infos.rtt;
+      stat["sent_total_bytes"] = (Json::UInt64)info.connection_infos.sent_total_bytes;
+      stat["sent_bytes_second"] = (Json::UInt64)info.connection_infos.sent_bytes_second;
+      stat["sent_discarded_packets"] = (Json::UInt64)info.connection_infos.sent_discarded_packets;
+      stat["sent_total_packets"] = (Json::UInt64)info.connection_infos.sent_total_packets;
+      stat["sent_ping_requests_total"] = (Json::UInt64)info.connection_infos.sent_ping_requests_total;
+      stat["sent_ping_requests_before_first_response"] = (Json::UInt64)info.connection_infos.sent_ping_requests_before_first_response;
+      stat["sent_ping_responses"] = (Json::UInt64)info.connection_infos.sent_ping_responses;
 
-      stat["recv_total_bytes"] = (Json::UInt64)info.recv_total_bytes;
-      stat["recv_bytes_second"] = (Json::UInt64)info.recv_bytes_second;
-      stat["recv_ping_requests"] = (Json::UInt64)info.recv_ping_requests;
-      stat["recv_ping_responses"] = (Json::UInt64)info.recv_ping_responses;
+      stat["recv_total_bytes"] = (Json::UInt64)info.connection_infos.recv_total_bytes;
+      stat["recv_bytes_second"] = (Json::UInt64)info.connection_infos.recv_bytes_second;
+      stat["recv_ping_requests"] = (Json::UInt64)info.connection_infos.recv_ping_requests;
+      stat["recv_ping_responses"] = (Json::UInt64)info.connection_infos.recv_ping_responses;
 
-      stat["local_candidate"] = info.local_candidate.ToString();
-      stat["remote_candidate"] = info.remote_candidate.ToString();
-      stat["state"] = (Json::UInt)info.state;
+      stat["local_candidate"] = info.connection_infos.local_candidate.ToString();
+      stat["remote_candidate"] = info.connection_infos.remote_candidate.ToString();
+      stat["state"] = (Json::UInt)info.connection_infos.state;
       // http://tools.ietf.org/html/rfc5245#section-5.7.4
     stats.append(stat);
   }
@@ -311,17 +315,17 @@ VirtualLink::SetupICE(
   if(cricket::ICEROLE_CONTROLLING == ice_role_)
   {
     //when controlling the remote description must be set first.
-    transport_ctlr_->SetRemoteTransportDescription(content_name_,
-      *remote_description_.get(), cricket::CA_OFFER, NULL);
-    transport_ctlr_->SetLocalTransportDescription(content_name_,
-      *local_description_.get(), cricket::CA_ANSWER, NULL);
+    transport_ctlr_->SetRemoteDescription(SdpType::kOffer,
+      *remote_description_.get());
+    transport_ctlr_->SetLocalDescription(SdpType::kAnswer,
+      *local_description_.get());
   }
   else if(cricket::ICEROLE_CONTROLLED == ice_role_)
   {
-    transport_ctlr_->SetLocalTransportDescription(content_name_,
-      *local_description_.get(), cricket::CA_OFFER, NULL);
-    transport_ctlr_->SetRemoteTransportDescription(content_name_,
-      *remote_description_.get(), cricket::CA_ANSWER, NULL);
+    transport_ctlr_->SetLocalDescription(SdpType::kOffer,
+      *local_description_.get());
+    transport_ctlr_->SetRemoteDescription(SdpType::kAnswer,
+      *remote_description_.get());
   }
   else
   {
@@ -370,8 +374,7 @@ VirtualLink::StartConnections()
 }
 void VirtualLink::Disconnect()
 {
-  transport_ctlr_->DestroyTransportChannel_n(content_name_,
-    cricket::ICE_CANDIDATE_COMPONENT_DEFAULT);
+  channel_.reset();
 }
 
 bool VirtualLink::IsReady()
