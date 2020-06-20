@@ -49,7 +49,7 @@ BasicTunnel::Configure(
   tdev_->Open(*tap_desc_.get());
   //create X509 identity for secure connections
   string sslid_name = descriptor_->node_id + descriptor_->uid;
-  sslid_.reset(SSLIdentity::Generate(sslid_name, rtc::KT_RSA));
+  sslid_.reset(SSLIdentity::Create(sslid_name, rtc::KT_RSA));
   if(!sslid_)
     throw TCEXCEPT("Failed to generate SSL Identity");
   local_fingerprint_.reset(
@@ -87,7 +87,7 @@ BasicTunnel::CreateVlink(
   vlink_desc->turn_descs = descriptor_->turn_descs;
   unique_ptr<VirtualLink> vl = make_unique<VirtualLink>(
     move(vlink_desc), move(peer_desc), &sig_worker_, &net_worker_);
-  unique_ptr<SSLIdentity> sslid_copy(sslid_->GetReference());
+  unique_ptr<SSLIdentity> sslid_copy(sslid_.Clone());
   vl->Initialize(net_manager_, move(sslid_copy), *local_fingerprint_.get(),
     ice_role);
   vl->SignalMessageReceived.connect(this, &BasicTunnel::VlinkReadComplete);

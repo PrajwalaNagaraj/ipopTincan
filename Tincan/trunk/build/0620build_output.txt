@@ -1,0 +1,59 @@
+if [ ! -d ../out/release/x86_64/obj ]; then  mkdir -p ../out/release/x86_64/obj; fi
+g++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0 -O3 -std=c++14 -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/tincan_main.cc -o ../out/release/x86_64/obj/tincan_main.o
+In file included from ../../external/include/webrtc/base/logging.h:18:0,
+                 from ../../external/include/webrtc/base/containers/checked_iterators.h:13,
+                 from ../../external/include/webrtc/base/containers/span.h:17,
+                 from ../../external/include/webrtc/base/files/file_util.h:26,
+                 from ../include/control_dispatch.h:28,
+                 from ../include/control_listener.h:34,
+                 from ../include/tincan.h:27,
+                 from ../src/tincan_main.cc:25:
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckEQImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:179:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(EQ, ==)
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckNEImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:180:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(NE, !=)
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckLEImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:181:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(LE, <=)
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckLTImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:182:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(LT, < )
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckGEImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:183:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(GE, >=)
+ ^
+../../external/include/webrtc/base/check_op.h: In function ‘constexpr logging::CheckOpResult logging::CheckGTImpl(int, int, const char*)’:
+../../external/include/webrtc/base/check_op.h:184:1: error: call to non-constexpr function ‘logging::CheckOpResult::CheckOpResult(const char*, char*, char*)’
+ DEFINE_CHECK_OP_IMPL(GT, > )
+ ^
+In file included from ../include/tincan.h:27:0,
+                 from ../src/tincan_main.cc:25:
+../include/control_listener.h: At global scope:
+../include/control_listener.h:46:1: error: expected class-name before ‘{’ token
+ {
+ ^
+../include/control_listener.h:55:11: error: ‘PacketTime’ does not name a type; did you mean ‘adjtime’?
+     const PacketTime & ptime);
+           ^~~~~~~~~~
+           adjtime
+../include/control_listener.h:72:8: error: ‘void tincan::ControlListener::Run(rtc::Thread*)’ marked ‘override’, but does not override
+   void Run(Thread* thread) override;
+        ^~~
+In file included from ../include/basic_tunnel.h:39:0,
+                 from ../include/single_link_tunnel.h:26,
+                 from ../include/tincan.h:29,
+                 from ../src/tincan_main.cc:25:
+../include/peer_network.h:35:1: error: expected class-name before ‘{’ token
+ {
+ ^
+../include/peer_network.h:86:8: error: ‘void tincan::PeerNetwork::Run(rtc::Thread*)’ marked ‘override’, but does not override
+   void Run(Thread* thread) override;
+        ^~~
+Makefile:23: recipe for target '../out/release/x86_64/obj/tincan_main.o' failed
+make: *** [../out/release/x86_64/obj/tincan_main.o] Error 1
