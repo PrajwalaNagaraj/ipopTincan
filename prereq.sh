@@ -1,4 +1,5 @@
 #!/bin/bash
+#Ensure git works in the setup
 #steps to install webrtc M84[4147] version for release build
 sudo apt-get update && sudo apt-get -y install git python
 mkdir -p ~/workspace/ && cd ~/workspace/
@@ -12,7 +13,7 @@ git checkout branch-heads/4147
 gclient sync
 sudo apt-get install gtk2.0
 gn gen out/release "--args=enable_iterator_debugging=false is_component_build=false is_debug=false"
-ninja -C out/release/ boringssl protobuf_lite p2p base jsoncpp
+ninja -C out/release/ 
 #steps to build ipop by adding the required libraries
 cd ../..
 sudo apt update -y
