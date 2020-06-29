@@ -42,7 +42,7 @@ ControlListener::ReadPacketHandler(
   const char * data,
   size_t len,
   const SocketAddress &,
-  const PacketTime &)
+  int64_t PacketTime)
 {
   try {
     TincanControl ctrl(data, len);
@@ -85,7 +85,7 @@ ControlListener::CreateIpopControllerLink(
     sf->CreateAsyncSocket(ctrl_addr_->family(), SOCK_DGRAM));
 }
 
-void
+/*void
 ControlListener::Run(
   Thread* thread)
 {
@@ -98,5 +98,5 @@ ControlListener::Run(
   rcv_socket_->SignalReadPacket.connect(this,
     &ControlListener::ReadPacketHandler);
   thread->ProcessMessages(-1); //run until stopped
-}
+}*/
 }  // namespace tincan

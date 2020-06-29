@@ -41,8 +41,8 @@ using namespace rtc;
 class ControlListener :
   public IpopControllerLink,
   public DispatchToListenerInf,
-  public sigslot::has_slots<>,
-  public Runnable
+  public sigslot::has_slots<>
+  //public Runnable
 {
 public:
   ControlListener(unique_ptr<ControlDispatch> control_dispatch);
@@ -52,7 +52,7 @@ public:
     const char * data,
     size_t len,
     const SocketAddress & remote_addr,
-    const PacketTime & ptime);
+    int64_t ptime);
 
   void Deliver(
     TincanControl & ctrl_resp) override;
@@ -69,7 +69,7 @@ public:
   }
   //
   //Runnable
-  void Run(Thread* thread) override;
+  //void Run(Thread* thread) override;
 
 private:
   unique_ptr<ControlDispatch> ctrl_dispatch_;

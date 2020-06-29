@@ -27,7 +27,7 @@
 #include "control_listener.h"
 #include "control_dispatch.h"
 #include "single_link_tunnel.h"
-#include "multi_link_tunnel.h"
+//#include "multi_link_tunnel.h"
 
 namespace tincan {
 class Tincan :

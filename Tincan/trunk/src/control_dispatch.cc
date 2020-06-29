@@ -112,9 +112,10 @@ ControlDispatch::ConfigureLogging(
     {
       LogMessage::SetLogToStderr(false);
       string dir = req["Directory"].asString();
-      rtc::Pathname pn(dir);
-      if(!Filesystem::IsFolder(pn))
-        Filesystem::CreateFolder(pn);
+      //rtc::Pathname pn(dir);
+      FilePath pn(dir.GetPath().AppendASCII(req["Directory"].asString()));
+      if(!DirectoryExists(pn))
+      	CreateDirectory(pn);
       string fn = req["Filename"].asString();
       size_t max_sz = req["MaxFileSize"].asUInt64();
       size_t num_fls = req["MaxArchives"].asUInt64();
