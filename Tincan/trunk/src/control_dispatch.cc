@@ -112,10 +112,11 @@ ControlDispatch::ConfigureLogging(
     {
       LogMessage::SetLogToStderr(false);
       string dir = req["Directory"].asString();
+      //TODO: uncomment below three lines and solve the issue with file_util.h header from webrtc
       //rtc::Pathname pn(dir);
-      FilePath pn(dir.GetPath().AppendASCII(req["Directory"].asString()));
-      if(!DirectoryExists(pn))
-      	CreateDirectory(pn);
+      //FilePath pn(dir.GetPath().AppendASCII(req["Directory"].asString()));
+      /*if(!DirectoryExists(pn))
+      	CreateDirectory(pn);*/
       string fn = req["Filename"].asString();
       size_t max_sz = req["MaxFileSize"].asUInt64();
       size_t num_fls = req["MaxArchives"].asUInt64();
@@ -244,8 +245,6 @@ ControlDispatch::GetLogLevel(
     lv = rtc::LS_WARNING;
   else if (log_level == "INFO" || log_level == "VERBOSE" || log_level == "DEBUG")
     lv = rtc::LS_INFO;
-  else if (log_level == "SENSITIVE")
-    lv = rtc::LS_SENSITIVE;
   else if (log_level == "LS_VERBOSE")
     lv = rtc::LS_VERBOSE;
   else

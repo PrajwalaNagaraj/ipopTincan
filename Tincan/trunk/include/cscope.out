@@ -1,4 +1,4 @@
-cscope 15 $HOME/Prajwala-webrtc/private_branch/ipopTincan/Tincan/trunk/include               0000110792
+cscope 15 $HOME/Prajwala-webrtc/private_branch/ipopTincan/Tincan/trunk/include               0000107393
 	@async_io.h
 
 23 #iâdeà
@@ -519,10 +519,6 @@ max
 
 38 
 	~"cÚŒŞËr_hªdË.h
-"
-
-39 
-	~"³”_ÃtwÜk.h
 "
 
 40 
@@ -1207,45 +1203,37 @@ TINCAN_CONTROL_DISPATCH_H_
 	~"¹c_ba£/log_sšks.h
 "
 
-28 
-	~"ba£/fes/fe_ut.h
-"
-
 29 
-	~"ba£/ªdroid/·th_uts.h
-"
-
-30 
 	~<m­
 >
 
-31 
+30 
 	~<memÜy
 >
 
-32 
+31 
 	~<mu‹x
 >
 
-33 
+32 
 	~"cÚŒŞËr_hªdË.h
 "
 
-34 
+33 
 	~"p_äame.h
 "
 
-35 
+34 
 	~"tšÿn_cÚŒŞ.h
 "
 
-36 
+35 
 Çme¥aû
  
 	gtšÿn
 
 
-38 
+37 
 usšg
  
 	g¹c
@@ -1253,7 +1241,7 @@ usšg
 FeRÙ©šgLogSšk
 ;
 
-39 
+38 
 usšg
  
 	g¹c
@@ -1261,23 +1249,23 @@ usšg
 LogMes§ge
 ;
 
-42 şas 
+41 şas 
 	cCÚŒŞDi¥©ch
 
 
-44 
+43 
 	gpublic
 :
 
-45 
+44 
 CÚŒŞDi¥©ch
 ();
 
-46 ~
+45 ~
 CÚŒŞDi¥©ch
 ();
 
-47 
+46 
 İ”©Ü
  (è(
 	gTšÿnCÚŒŞ
@@ -1285,7 +1273,7 @@ CÚŒŞDi¥©ch
 	gcÚŒŞ
 );
 
-48 
+47 
 S‘Di¥©chToTšÿnInf
 (
 TšÿnDi¥©chIÁ”çû
@@ -1293,7 +1281,7 @@ TšÿnDi¥©chIÁ”çû
 dtÙ
 );
 
-49 
+48 
 S‘Di¥©chToLi¡’”Inf
 (
 Di¥©chToLi¡’”Inf
@@ -1301,11 +1289,11 @@ Di¥©chToLi¡’”Inf
 dtŞ
 );
 
-51 
+50 
 	g´iv©e
 :
 
-52 
+51 
 CÚfigu»Loggšg
 (
 TšÿnCÚŒŞ
@@ -1313,7 +1301,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-53 
+52 
 C»©eLšk
 (
 TšÿnCÚŒŞ
@@ -1321,7 +1309,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-54 
+53 
 C»©eIpİCÚŒŞËrRe¥Lšk
 (
 TšÿnCÚŒŞ
@@ -1329,7 +1317,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-55 
+54 
 C»©eTuÂ–
 (
 TšÿnCÚŒŞ
@@ -1337,7 +1325,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-56 
+55 
 Echo
 (
 TšÿnCÚŒŞ
@@ -1345,7 +1333,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-57 
+56 
 InjeùF¿me
 (
 TšÿnCÚŒŞ
@@ -1353,7 +1341,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-58 
+57 
 Qu”yLškSts
 (
 TšÿnCÚŒŞ
@@ -1361,7 +1349,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-59 
+58 
 Qu”yTuÂ–Info
 (
 TšÿnCÚŒŞ
@@ -1369,7 +1357,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-60 
+59 
 Qu”yCªdid©eAdd»ssS‘
 (
 TšÿnCÚŒŞ
@@ -1377,7 +1365,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-61 
+60 
 RemoveLšk
 (
 TšÿnCÚŒŞ
@@ -1385,7 +1373,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-62 
+61 
 RemoveTuÂ–
 (
 TšÿnCÚŒŞ
@@ -1393,7 +1381,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-63 
+62 
 Upd©eRou‹TabË
 (
 TšÿnCÚŒŞ
@@ -1401,7 +1389,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-64 
+63 
 LoggšgSev”™y
  
 G‘LogLev–
@@ -1411,7 +1399,7 @@ G‘LogLev–
 log_Ëv–
 );
 
-65 
+64 
 S’dIcc
 (
 TšÿnCÚŒŞ
@@ -1419,7 +1407,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 );
 
-67 
+66 
 	gm­
 <
 	g¡ršg
@@ -1433,31 +1421,31 @@ cÚŒŞ
 cÚŒŞ_m­_
 ;
 
-68 
+67 
 Di¥©chToLi¡’”Inf
  * 
 	gdtŞ_
 ;
 
-69 
+68 
 TšÿnDi¥©chIÁ”çû
  * 
 	gtšÿn_
 ;
 
-70 
+69 
 IpİCÚŒŞËrLšk
  * 
 	gù¾_lšk_
 ;
 
-71 
+70 
 mu‹x
  
 	gdi¥_mu‹x_
 ;
 
-72 
+71 
 	gunique_±r
 <
 	gFeRÙ©šgLogSšk
@@ -1465,7 +1453,7 @@ mu‹x
 	glog_sšk_
 ;
 
-73 şas 
+72 şas 
 	cDiscÚÃùedCÚŒŞËrHªdË
  : 
 vœtu®
@@ -1475,71 +1463,67 @@ public
 IpİCÚŒŞËrLšk
  {
 
-74 
+73 
 public
 :
 
-75 
+74 
 DiscÚÃùedCÚŒŞËrHªdË
 () {
 
-76 
+75 
 msg_
  = "No connectiono Controllerƒxists. "
 
-79 
+78 
 	gvœtu®
  ~
 DiscÚÃùedCÚŒŞËrHªdË
 () = ;
 
-80 
+79 
 	g´iv©e
 :
 
-81 
+80 
 vœtu®
  
 D–iv”
 (
 
-82 
+81 
 TšÿnCÚŒŞ
  &) {
 
-83 
+82 
 RTC_LOG
 (
 LS_INFO
 è<< 
 msg_
- << 
-’dl
 ;
 
-85 
+84 
 vœtu®
  
 D–iv”
 (
 
-86 
+85 
 unique_±r
 <
 TšÿnCÚŒŞ
 >)
 
-88 
+87 
 RTC_LOG
 (
 LS_INFO
 è<< 
 	gmsg_
- << 
-	g’dl
 ;
 
-90 
+89 
 ¡ršg
  
 	gmsg_
@@ -1639,16 +1623,10 @@ public
 	gsig¦Ù
 ::
 has_¦Ùs
-<>,
-
-45 
-public
- 
-	gRuÂabË
-
+<>
 
 47 
-	gpublic
+public
 :
 
 48 
@@ -1691,9 +1669,9 @@ Sock‘Add»ss
 »mÙe_addr
 ,
 
-55 cÚ¡ 
-Pack‘Time
- & 
+55 
+št64_t
+ 
 ±ime
 );
 
@@ -1749,16 +1727,6 @@ G‘IpİCÚŒŞËrLšk
 
 68  *
 	gthis
-;
-
-72 
-Run
-(
-Th»ad
-* 
-th»ad
-è
-	gov”ride
 ;
 
 74 
@@ -2571,284 +2539,6 @@ sockaddr
 b
 );
 
-	@multi_link_tunnel.h
-
-23 #iâdeà
-TINCAN_VIRTUAL_NETWORK_H_
-
-
-24 
-	#TINCAN_VIRTUAL_NETWORK_H_
-
-
-	)
-
-25 
-	~"tšÿn_ba£.h
-"
-
-26 
-	~"basic_tuÂ–.h
-"
-
-27 
-Çme¥aû
- 
-	gtšÿn
-
-
-29 şas 
-	cMuÉiLškTuÂ–
- :
-
-30 
-public
- 
-BasicTuÂ–
-
-
-32 
-public
-:
-
-34 
-MuÉiLškTuÂ–
-(
-
-35 
-unique_±r
-<
-TuÂ–DesütÜ
-> 
-desütÜ
-,
-
-36 
-IpİCÚŒŞËrLšk
- * 
-ù¾_hªdË
-);
-
-38 ~
-MuÉiLškTuÂ–
-();
-
-40 
-	gsh¬ed_±r
-<
-	gVœtu®Lšk
-> 
-C»©eVlšk
-(
-
-41 
-unique_±r
-<
-VlškDesütÜ
-> 
-vlšk_desc
-,
-
-42 
-unique_±r
-<
-P“rDesütÜ
-> 
-³”_desc
-è
-	gov”ride
-;
-
-44 
-Qu”yInfo
-(
-
-45 
-JsÚ
-::
-V®ue
- & 
-Šl_šfo
-è
-ov”ride
-;
-
-47 
-Qu”yLškCas
-(
-
-48 cÚ¡ 
-¡ršg
- & 
-vlšk_id
-,
-
-49 
-JsÚ
-::
-V®ue
- & 
-ÿs_šfo
-è
-ov”ride
-;
-
-51 
-Qu”yLškIds
-(
-
-52 
-veùÜ
-<
-¡ršg
-> & 
-lšk_ids
-è
-	gov”ride
-;
-
-54 
-Qu”yLškInfo
-(
-
-55 cÚ¡ 
-¡ršg
- & 
-vlšk_id
-,
-
-56 
-JsÚ
-::
-V®ue
- & 
-vlšk_šfo
-è
-ov”ride
-;
-
-58 
-Shutdown
-(è
-	gov”ride
-;
-
-60 
-S’dIcc
-(
-
-61 cÚ¡ 
-¡ršg
- & 
-»c›Á_mac
-,
-
-62 cÚ¡ 
-¡ršg
- & 
-d©a
-è
-	gov”ride
-;
-
-64 
-S¹
-(è
-	gov”ride
-;
-
-66 
-RemoveLšk
-(
-
-67 cÚ¡ 
-¡ršg
- & 
-vlšk_id
-è
-	gov”ride
-;
-
-69 
-Upd©eRou‹TabË
-(
-
-70 cÚ¡ 
-JsÚ
-::
-V®ue
- & 
-¹_desü
-è
-ov”ride
-;
-
-73 
-VlškR—dCom¶‘e
-(
-
-74 
-ušt8_t
- * 
-d©a
-,
-
-75 
-ušt32_t
- 
-d©a_Ën
-,
-
-76 
-Vœtu®Lšk
- & 
-vlšk
-è
-	gov”ride
-;
-
-79 
-T­R—dCom¶‘e
-(
-
-80 
-AsyncIo
- * 
-aio_rd
-);
-
-81 
-T­Wr™eCom¶‘e
-(
-
-82 
-AsyncIo
- * 
-aio_wr
-è
-	gov”ride
-;
-
-84 
-	g´iv©e
-:
-
-85 
-unique_±r
-<
-P“rN‘wÜk
-> 
-³”_ÃtwÜk_
-;
-
-86 
-	g¹c
-::
-Th»ad
- 
-³”_Ãt_th»ad_
-;
-
 	@peer_descriptor.h
 
 23 #ià!
@@ -2905,364 +2595,6 @@ TINCAN_PEER_DESCRIPTOR_H_
 ¡ršg
  
 	gÿs
-;
-
-	@peer_network.h
-
-23 #ià!
-defšed
-(
-_TINCAN_PEER_NETWORK_H_
-)
-
-24 
-	#_TINCAN_PEER_NETWORK_H_
-
-
-	)
-
-25 
-	~"tšÿn_ba£.h
-"
-
-26 
-	~"vœtu®_lšk.h
-"
-
-27 
-	~<¥¬£µ/¥p.h
->
-
-29 
-usšg
- 
-	g¥p
-::
-¥¬£_hash_m­
-;
-
-31 
-Çme¥aû
- 
-	gtšÿn
-
-
-33 şas 
-	cP“rN‘wÜk
- :
-
-34 
-public
- 
-RuÂabË
-
-
-36 
-public
-:
-
-37 
-P“rN‘wÜk
-();
-
-38 ~
-P“rN‘wÜk
-();
-
-39 
-Add
-(
-sh¬ed_±r
-<
-Vœtu®Lšk
-> 
-vlšk
-);
-
-40 
-CË¬
-();
-
-41 
-	gsh¬ed_±r
-<
-	gVœtu®Lšk
-> 
-G‘Rou‹
-(cÚ¡ 
-MacAdd»ssTy³
- & 
-mac
-);
-
-42 
-	gsh¬ed_±r
-<
-	gVœtu®Lšk
-> 
-G‘Vlšk
-(cÚ¡ 
-¡ršg
- & 
-mac
-);
-
-43 
-	gsh¬ed_±r
-<
-	gVœtu®Lšk
-> 
-G‘Vlšk
-(cÚ¡ 
-MacAdd»ssTy³
- & 
-mac
-);
-
-44 
-	gsh¬ed_±r
-<
-	gVœtu®Lšk
-> 
-G‘VlškById
-(cÚ¡ 
-¡ršg
- & 
-lšk_id
-);
-
-45 
-boŞ
- 
-Exi¡s
-(cÚ¡ 
-¡ršg
- & 
-lšk_id
-);
-
-46 
-boŞ
- 
-IsAdjaûÁ
-(cÚ¡ 
-¡ršg
- & 
-mac
-);
-
-47 
-boŞ
- 
-IsAdjaûÁ
-(cÚ¡ 
-MacAdd»ssTy³
-& 
-mac
-);
-
-48 
-boŞ
- 
-IsRou‹Exi¡s
-(cÚ¡ 
-MacAdd»ssTy³
-& 
-mac
-);
-
-49 
-	gveùÜ
-<
-	g¡ršg
-> 
-Qu”yVlšks
-();
-
-50 
-Remove
-(cÚ¡ 
-¡ršg
- & 
-lšk_id
-);
-
-51 
-Upd©eRou‹TabË
-(
-MacAdd»ssTy³
- & 
-de¡
-, MacAdd»ssTy³ & 
-rou‹
-);
-
-52 
-	g´iv©e
-:
-
-53 
-	sMacAdd»ssHash”
-
-
-55 
-size_t
- 
-İ”©Ü
-()(cÚ¡ 
-MacAdd»ssTy³
-& 
-mac
-) const
-
-57 
-size_t
- 
-h
- = 0;
-
-58 autØ
-	ge
- : 
-mac
-)
-
-60 
-h
- ^ğ
-hash
-<
-ušt8_t
->{}(
-e
-)+0x9e3779b9 + (h << 6) + (h >> 2);
-
-62  
-	gh
-;
-
-65 
-	sWidth6t8
-
-
-67 
-size_t
- 
-İ”©Ü
-()(cÚ¡ 
-	gMacAdd»ssTy³
-& 
-	gmac
-) const
-
-69 
-size_t
- 
-	gh
- = 0;
-
-70 
-memıy
-(&
-h
-, 
-mac
-.
-d©a
-(), 6);
-
-71  
-	gh
-;
-
-74 
-	sHubEx
-
-
-76 
-HubEx
-(è: 
-acûs£d
-(
-¡—dy_şock
-::
-now
-())
-
-78 
-sh¬ed_±r
-<
-Vœtu®Lšk
-> 
-vl
-;
-
-79 
-	g¡—dy_şock
-::
-time_pošt
- 
-acûs£d
-;
-
-81 
-mu‹x
- 
-	gmac_m­_mtx_
-;
-
-82 
-	gunÜd”ed_m­
-<
-	g¡ršg
-, 
-	gsh¬ed_±r
-<
-	gVœtu®Lšk
->> 
-	glšk_m­_
-;
-
-84 
-	g¥¬£_hash_m­
-<
-	gMacAdd»ssTy³
-, 
-	gsh¬ed_±r
-<
-	gVœtu®Lšk
->, 
-	gMacAdd»ssHash”
->
-	gmac_m­_
-;
-
-85 
-	gunÜd”ed_m­
-<
-	gMacAdd»ssTy³
-, 
-	gHubEx
-, 
-	gMacAdd»ssHash”
-> 
-	gmac_rou‹s_
-;
-
-86 
-Run
-(
-Th»ad
-* 
-th»ad
-è
-	gov”ride
-;
-
-87 
-mli£cÚds
- cÚ¡ 
-	gsÿv’ge_š‹rv®
 ;
 
 	@single_link_tunnel.h
@@ -4885,10 +4217,6 @@ TINCAN_TINCAN_H_
 
 29 
 	~"sšgË_lšk_tuÂ–.h
-"
-
-30 
-	~"muÉi_lšk_tuÂ–.h
 "
 
 32 
@@ -7554,9 +6882,9 @@ usšg
 46 
 usšg
  
-	güick‘
+	gweb¹c
 ::
-T¿n¥ÜtCÚŒŞËr
+J£pT¿n¥ÜtCÚŒŞËr
 ;
 
 47 
@@ -7564,7 +6892,7 @@ usšg
  
 	güick‘
 ::
-T¿n¥ÜtChªÃlIm¶
+IûT¿n¥ÜtIÁ”Çl
 ;
 
 48 
@@ -7572,7 +6900,7 @@ usšg
  
 	güick‘
 ::
-T¿n¥ÜtChªÃl
+P2PT¿n¥ÜtChªÃl
 ;
 
 49 
@@ -7588,13 +6916,7 @@ usšg
  
 	g¹c
 ::
-Pack‘T¿n¥ÜtIÁ”çû
-;
-
-52 
-şass
- 
-	gP“rN‘wÜk
+Pack‘T¿n¥ÜtIÁ”Çl
 ;
 
 54 
@@ -7646,12 +6968,6 @@ has_¦Ùs
 65 
 public
 :
-
-66 
-ä›nd
- 
-P“rN‘wÜk
-;
 
 67 
 Vœtu®Lšk
@@ -7928,7 +7244,7 @@ OnWr™—bËS‹
 (
 
 132 
-Pack‘T¿n¥ÜtIÁ”çû
+Pack‘T¿n¥ÜtIÁ”Çl
  * 
 Œª¥Üt
 );
@@ -7962,7 +7278,7 @@ OnR—dPack‘
 (
 
 143 
-Pack‘T¿n¥ÜtIÁ”çû
+Pack‘T¿n¥ÜtIÁ”Çl
 * 
 Œª¥Üt
 ,
@@ -7978,7 +7294,7 @@ size_t
 ,
 
 146 cÚ¡ 
-Pack‘Time
+št64_t
  & 
 ±ime
 ,
@@ -7992,7 +7308,7 @@ OnS’tPack‘
 (
 
 150 
-Pack‘T¿n¥ÜtIÁ”çû
+Pack‘T¿n¥ÜtIÁ”Çl
  * 
 Œª¥Üt
 ,
@@ -8056,7 +7372,7 @@ CÚÃùiÚRŞe
 ;
 
 160 
-T¿n¥ÜtChªÃl
+P2PT¿n¥ÜtChªÃl
  * 
 	gchªÃl_
 ;
@@ -8120,11 +7436,9 @@ pÜt_®loÿtÜ_
 168 
 	gunique_±r
 <
-	güick‘
-::
-T¿n¥ÜtCÚŒŞËr
+	gJ£pT¿n¥ÜtCÚŒŞËr
 > 
-Œª¥Üt_ùÌ_
+	gŒª¥Üt_ùÌ_
 ;
 
 170 
@@ -8155,6 +7469,14 @@ sigÇlšg_th»ad_
 Th»ad
 * 
 ÃtwÜk_th»ad_
+;
+
+174 
+	gJ£pT¿n¥ÜtCÚŒŞËr
+::
+CÚfig
+ 
+cÚfig
 ;
 
 	@windows/tapdev_win.h
@@ -20528,8 +19850,8 @@ __šlše__
 .
 1
 /usr/include
-40
-831
+38
+796
 async_io.h
 basic_tunnel.h
 control_dispatch.h
@@ -20537,9 +19859,7 @@ control_listener.h
 controller_handle.h
 linux/lnx_exception.h
 linux/tapdev_lnx.h
-multi_link_tunnel.h
 peer_descriptor.h
-peer_network.h
 single_link_tunnel.h
 tap_frame.h
 tapdev.h

@@ -49,7 +49,7 @@ using cricket::P2PTransportChannel;
 using cricket::ConnectionRole;
 using rtc::PacketTransportInternal;
 
-class PeerNetwork;
+//class PeerNetwork;
 
 struct  VlinkDescriptor
 {
@@ -63,7 +63,7 @@ class VirtualLink :
   public sigslot::has_slots<>
 {
 public:
-  friend PeerNetwork;
+ // friend PeerNetwork;
   VirtualLink(
     unique_ptr<VlinkDescriptor> vlink_desc,
     unique_ptr<PeerDescriptor> peer_desc,

@@ -50,9 +50,8 @@ ControlListener::ReadPacketHandler(
     (*ctrl_dispatch_)(ctrl);
   }
   catch(exception & e) {
-    RTC_LOG(LS_WARNING) << "A control failed to execute."
-      << string(data, len) << endl
-      << e.what();
+    RTC_LOG(LS_WARNING) << "A control failed to execute." << "\n"
+      << string(data, len) << "\n" << e.what();
   }
 }
 //

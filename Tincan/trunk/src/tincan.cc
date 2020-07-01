@@ -69,16 +69,17 @@ void Tincan::CreateTunnel(
   }
   td->enable_ip_mapping = false;
   unique_ptr<BasicTunnel> tnl;
-  if(tnl_desc[TincanControl::Type].asString() == "VNET")
+ /* if(tnl_desc[TincanControl::Type].asString() == "VNET")
   {
     tnl = make_unique<MultiLinkTunnel>(move(td), ctrl_link_);
   }
-  else if(tnl_desc[TincanControl::Type].asString() == "TUNNEL")
-  {
-    tnl = make_unique<SingleLinkTunnel>(move(td), ctrl_link_);
-  }
-  else
-    throw TCEXCEPT("Invalid Tunnel type specified");
+  else 
+  if(tnl_desc[TincanControl::Type].asString() == "TUNNEL")
+  {*/
+  tnl = make_unique<SingleLinkTunnel>(move(td), ctrl_link_);
+  //}
+  //else
+  //  throw TCEXCEPT("Invalid Tunnel type specified");
   unique_ptr<TapDescriptor> tap_desc = make_unique<TapDescriptor>();
   tap_desc->name = tnl_desc["TapName"].asString();
   tap_desc->ip4 = tnl_desc["IP4"].asString();
@@ -86,7 +87,7 @@ void Tincan::CreateTunnel(
   tap_desc->mtu4 = tnl_desc[TincanControl::MTU4].asUInt();
 
   Json::Value network_ignore_list =
-    tnl_desc[TincanControl::IgnoredNetInterfaces];
+  tnl_desc[TincanControl::IgnoredNetInterfaces];
   int count = network_ignore_list.size();
   vector<string> if_list(count);
   for (int i = 0; i < count; i++)

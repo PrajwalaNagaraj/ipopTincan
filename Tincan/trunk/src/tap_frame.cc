@@ -240,7 +240,7 @@ void TapFrame::Dump(const string & label)
   {
     ostringstream oss;
     RTC_LOG(LS_VERBOSE) << label << " header=" <<
-      ByteArrayToString(Begin(), Payload(), 0, false) << endl <<
+      ByteArrayToString(Begin(), Payload(), 0, false) << "\n" <<
       ByteArrayToString(Payload(), PayloadEnd(), 16, true);
   }
 }

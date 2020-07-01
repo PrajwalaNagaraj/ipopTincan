@@ -109,9 +109,11 @@ TincanControl::TincanControl(
   dict_resp_(new Json::Value(Json::objectValue))
 {
   //create Json from full request
-  Json::Reader parser;
+  Json::CharReaderBuilder b;
+  Json::CharReader* parser(b.newCharReader());
+  Json::String errs;
   Json::Value ctrl(Json::objectValue);
-  if(!parser.parse(req_data, req_data + len, ctrl))
+  if(!parser->parse(req_data, req_data + len, &ctrl, &errs))
   {
     string errmsg = "Unable to parse json control object - ";
     errmsg.append(req_data, req_data + len);
@@ -148,10 +150,16 @@ TincanControl::TincanControl(
   tag_ = ctrl[IPOP][TransactionId].asInt64();
   if(ctrl[IPOP].isMember(Request))
   {
-    (*dict_req_) = ctrl[IPOP].removeMember(Request);
+    Json::Value removed_mem;
+    bool status = ctrl[IPOP].removeMember(Request, &removed_mem);
+    if(status == true)
+    	(*dict_req_) = removed_mem;
   }
   if(ctrl[IPOP].isMember(Response)) {
-    (*dict_resp_) = ctrl[IPOP].removeMember(Response);
+    Json::Value removed_mem;
+    bool status = ctrl[IPOP].removeMember(Response, &removed_mem);
+    if(status == true)
+    	(*dict_resp_) = removed_mem;
   }
 }
 

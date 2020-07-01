@@ -1,0 +1,51 @@
+if [ ! -d ../out/release/x86_64/obj ]; then  mkdir -p ../out/release/x86_64/obj; fi
+g++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0 -O3 -std=c++14 -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/basic_tunnel.cc -o ../out/release/x86_64/obj/basic_tunnel.o
+../src/basic_tunnel.cc: In constructor ‘tincan::BasicTunnel::BasicTunnel(std::unique_ptr<tincan::TunnelDescriptor>, tincan::IpopControllerLink*)’:
+../src/basic_tunnel.cc:34:25: error: no matching function for call to ‘rtc::Thread::Thread()’
+   ctrl_link_(ctrl_handle)
+                         ^
+In file included from ../../external/include/webrtc/rtc_base/network_monitor.h:16:0,
+                 from ../../external/include/webrtc/rtc_base/network.h:25,
+                 from ../include/basic_tunnel.h:26,
+                 from ../src/basic_tunnel.cc:23:
+../../external/include/webrtc/rtc_base/thread.h:184:3: note: candidate: rtc::Thread::Thread(std::unique_ptr<rtc::SocketServer>, bool)
+   Thread(std::unique_ptr<SocketServer> ss, bool do_init);
+   ^~~~~~
+../../external/include/webrtc/rtc_base/thread.h:184:3: note:   candidate expects 2 arguments, 0 provided
+../../external/include/webrtc/rtc_base/thread.h:183:3: note: candidate: rtc::Thread::Thread(rtc::SocketServer*, bool)
+   Thread(SocketServer* ss, bool do_init);
+   ^~~~~~
+../../external/include/webrtc/rtc_base/thread.h:183:3: note:   candidate expects 2 arguments, 0 provided
+../../external/include/webrtc/rtc_base/thread.h:178:12: note: candidate: rtc::Thread::Thread(std::unique_ptr<rtc::SocketServer>)
+   explicit Thread(std::unique_ptr<SocketServer> ss);
+            ^~~~~~
+../../external/include/webrtc/rtc_base/thread.h:178:12: note:   candidate expects 1 argument, 0 provided
+../../external/include/webrtc/rtc_base/thread.h:177:12: note: candidate: rtc::Thread::Thread(rtc::SocketServer*)
+   explicit Thread(SocketServer* ss);
+            ^~~~~~
+../../external/include/webrtc/rtc_base/thread.h:177:12: note:   candidate expects 1 argument, 0 provided
+../src/basic_tunnel.cc:34:25: error: no matching function for call to ‘rtc::Thread::Thread()’
+   ctrl_link_(ctrl_handle)
+                         ^
+In file included from ../../external/include/webrtc/rtc_base/network_monitor.h:16:0,
+                 from ../../external/include/webrtc/rtc_base/network.h:25,
+                 from ../include/basic_tunnel.h:26,
+                 from ../src/basic_tunnel.cc:23:
+../../external/include/webrtc/rtc_base/thread.h:184:3: note: candidate: rtc::Thread::Thread(std::unique_ptr<rtc::SocketServer>, bool)
+   Thread(std::unique_ptr<SocketServer> ss, bool do_init);
+   ^~~~~~
+../../external/include/webrtc/rtc_base/thread.h:184:3: note:   candidate expects 2 arguments, 0 provided
+../../external/include/webrtc/rtc_base/thread.h:183:3: note: candidate: rtc::Thread::Thread(rtc::SocketServer*, bool)
+   Thread(SocketServer* ss, bool do_init);
+   ^~~~~~
+../../external/include/webrtc/rtc_base/thread.h:183:3: note:   candidate expects 2 arguments, 0 provided
+../../external/include/webrtc/rtc_base/thread.h:178:12: note: candidate: rtc::Thread::Thread(std::unique_ptr<rtc::SocketServer>)
+   explicit Thread(std::unique_ptr<SocketServer> ss);
+            ^~~~~~
+../../external/include/webrtc/rtc_base/thread.h:178:12: note:   candidate expects 1 argument, 0 provided
+../../external/include/webrtc/rtc_base/thread.h:177:12: note: candidate: rtc::Thread::Thread(rtc::SocketServer*)
+   explicit Thread(SocketServer* ss);
+            ^~~~~~
+../../external/include/webrtc/rtc_base/thread.h:177:12: note:   candidate expects 1 argument, 0 provided
+Makefile:23: recipe for target '../out/release/x86_64/obj/basic_tunnel.o' failed
+make: *** [../out/release/x86_64/obj/basic_tunnel.o] Error 1

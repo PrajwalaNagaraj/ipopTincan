@@ -62,6 +62,7 @@ cp -r webrtc-checkout/src/p2p ipop-project/Tincan/external/include/webrtc
 cp -r webrtc-checkout/src/pc ipop-project/Tincan/external/include/webrtc
 cp -r webrtc-checkout/src/system_wrappers ipop-project/Tincan/external/include/webrtc
 cp -r webrtc-checkout/src/rtc_base ipop-project/Tincan/external/include/webrtc
+cp -r webrtc-checkout/src/third_party/jsoncpp/source/include/json ipop-project/Tincan/external/include
 cp webrtc-checkout/src/common_types.h ipop-project/Tincan/external/include/webrtc
 cp webrtc-checkout/src/third_party/ffmpeg/libavcodec/jni.h ipop-project/Tincan/external/include/webrtc
 cp webrtc-checkout/src/out/release/gen/base/logging_buildflags.h ipop-project/Tincan/external/include/webrtc/base
