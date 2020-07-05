@@ -51,6 +51,7 @@ namespace linux
 using rtc::Message;
 using rtc::MessageData;
 using rtc::MessageHandler;
+using rtc::SocketServer;
 class TapDevLnx :
   public TapDevInf,
   public MessageHandler

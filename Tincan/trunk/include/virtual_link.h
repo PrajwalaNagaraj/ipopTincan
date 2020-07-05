@@ -48,6 +48,8 @@ using cricket::IceTransportInternal;
 using cricket::P2PTransportChannel;
 using cricket::ConnectionRole;
 using rtc::PacketTransportInternal;
+using cricket::JsepTransportDescription;
+using webrtc::SdpType;
 
 //class PeerNetwork;
 
@@ -158,8 +160,8 @@ private:
   cricket::IceRole ice_role_;
   ConnectionRole conn_role_;
   P2PTransportChannel * channel_;
-  unique_ptr<cricket::TransportDescription> local_description_;
-  unique_ptr<cricket::TransportDescription> remote_description_;
+  unique_ptr<cricket::SessionDescription> local_description_; //unique_ptr<cricket::TransportDescription> local_description_;
+  unique_ptr<cricket::SessionDescription> remote_description_; //unique_ptr<cricket::TransportDescription> remote_description_;
   unique_ptr<SSLFingerprint> remote_fingerprint_;
   string content_name_;
   PacketOptions packet_options_;

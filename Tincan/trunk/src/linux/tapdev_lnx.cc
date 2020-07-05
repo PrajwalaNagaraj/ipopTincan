@@ -196,9 +196,9 @@ void TapDevLnx::Up()
     reader_->Quit();
     reader_.reset();
   }
-  reader_ = make_unique<rtc::Thread>();
+  reader_ = make_unique<rtc::Thread>(SocketServer::CreateDefault());
   reader_->Start();
-  writer_ = make_unique<rtc::Thread>();
+  writer_ = make_unique<rtc::Thread>(SocketServer::CreateDefault());
   writer_->Start();
 }
 

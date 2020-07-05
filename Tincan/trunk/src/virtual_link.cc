@@ -124,10 +124,11 @@ VirtualLink::AddRemoteCandidates(
       cas_vec.push_back(candidate);
     }
   } while(iss);
-  RTCError error = transport_ctlr_->AddRemoteCandidates(content_name_, cas_vec);
-  if (!error.ok()) {
-    throw TCEXCEPT(string("Failed to add remote candidates - ").append(error.message());
+  //RTCError err = transport_ctlr_->AddRemoteCandidates(content_name_, cas_vec);
+  if (!(transport_ctlr_->AddRemoteCandidates(content_name_, cas_vec).ok())) {
+    throw TCEXCEPT(string("Failed to add remote candidates - "));
   return;
+  }
 }
 
 void
@@ -191,9 +192,9 @@ VirtualLink::RegisterLinkEventHandlers()
   channel_->SignalWritableState.connect(this, &VirtualLink::OnWriteableState);
   //channel_->SignalReadyToSend.connect(this, &VirtualLink::OnWriteableState);
 
-  transport_ctlr_->SignalCandidatesGathered.connect(
+  transport_ctlr_->SignalIceCandidatesGathered.connect(
     this, &VirtualLink::OnCandidatesGathered);
-  transport_ctlr_->SignalGatheringState.connect(
+  transport_ctlr_->SignalIceGatheringState.connect(
     this, &VirtualLink::OnGatheringState);
 }
 
@@ -241,32 +242,35 @@ VirtualLink::GetStats(Json::Value & stats)
 {
   cricket::IceTransportStats infos;
   channel_->GetStats(&infos);
-  for(auto info: infos)
+  //for (const cricket::ConnectionInfo& info :
+           //channel_stats.ice_transport_stats.connection_infos
+	   //rtc_stats_collector.cc file reference
+  for(const cricket::ConnectionInfo& info : infos.connection_infos)//(auto info: infos)
   {
       Json::Value stat(Json::objectValue);
-      stat["best_conn"] = info.connection_infos.best_connection;
-      stat["writable"] = info.connection_infos.writable;
-      stat["receiving"] = info.connection_infos.receiving;
-      stat["timeout"] = info.connection_infos.timeout;
-      stat["new_conn"] = info.connection_infos.new_connection;
+      stat["best_conn"] = info.best_connection;
+      stat["writable"] = info.writable;
+      stat["receiving"] = info.receiving;
+      stat["timeout"] = info.timeout;
+      stat["new_conn"] = info.new_connection;
 
-      stat["rtt"] = (Json::UInt64)info.connection_infos.rtt;
-      stat["sent_total_bytes"] = (Json::UInt64)info.connection_infos.sent_total_bytes;
-      stat["sent_bytes_second"] = (Json::UInt64)info.connection_infos.sent_bytes_second;
-      stat["sent_discarded_packets"] = (Json::UInt64)info.connection_infos.sent_discarded_packets;
-      stat["sent_total_packets"] = (Json::UInt64)info.connection_infos.sent_total_packets;
-      stat["sent_ping_requests_total"] = (Json::UInt64)info.connection_infos.sent_ping_requests_total;
-      stat["sent_ping_requests_before_first_response"] = (Json::UInt64)info.connection_infos.sent_ping_requests_before_first_response;
-      stat["sent_ping_responses"] = (Json::UInt64)info.connection_infos.sent_ping_responses;
+      stat["rtt"] = (Json::UInt64)info.rtt;
+      stat["sent_total_bytes"] = (Json::UInt64)info.sent_total_bytes;
+      stat["sent_bytes_second"] = (Json::UInt64)info.sent_bytes_second;
+      stat["sent_discarded_packets"] = (Json::UInt64)info.sent_discarded_packets;
+      stat["sent_total_packets"] = (Json::UInt64)info.sent_total_packets;
+      stat["sent_ping_requests_total"] = (Json::UInt64)info.sent_ping_requests_total;
+      stat["sent_ping_requests_before_first_response"] = (Json::UInt64)info.sent_ping_requests_before_first_response;
+      stat["sent_ping_responses"] = (Json::UInt64)info.sent_ping_responses;
 
-      stat["recv_total_bytes"] = (Json::UInt64)info.connection_infos.recv_total_bytes;
-      stat["recv_bytes_second"] = (Json::UInt64)info.connection_infos.recv_bytes_second;
-      stat["recv_ping_requests"] = (Json::UInt64)info.connection_infos.recv_ping_requests;
-      stat["recv_ping_responses"] = (Json::UInt64)info.connection_infos.recv_ping_responses;
+      stat["recv_total_bytes"] = (Json::UInt64)info.recv_total_bytes;
+      stat["recv_bytes_second"] = (Json::UInt64)info.recv_bytes_second;
+      stat["recv_ping_requests"] = (Json::UInt64)info.recv_ping_requests;
+      stat["recv_ping_responses"] = (Json::UInt64)info.recv_ping_responses;
 
-      stat["local_candidate"] = info.connection_infos.local_candidate.ToString();
-      stat["remote_candidate"] = info.connection_infos.remote_candidate.ToString();
-      stat["state"] = (Json::UInt)info.connection_infos.state;
+      stat["local_candidate"] = info.local_candidate.ToString();
+      stat["remote_candidate"] = info.remote_candidate.ToString();
+      stat["state"] = (Json::UInt)info.state;
       // http://tools.ietf.org/html/rfc5245#section-5.7.4
     stats.append(stat);
   }
@@ -288,7 +292,8 @@ VirtualLink::SetupICE(
   //cricket::IceConfig ic;
   //ic.continual_gathering_policy = cricket::GATHER_CONTINUALLY_AND_RECOVER;
   //transport_ctlr_->SetIceConfig(ic);
-  transport_ctlr_->SetIceRole(ice_role_);
+  //referred from jsep_transport_controller.cc
+  channel_->SetIceRole(ice_role_);
   cricket::ConnectionRole remote_conn_role = cricket::CONNECTIONROLE_ACTIVE;
   conn_role_ = cricket::CONNECTIONROLE_ACTPASS;
   if(cricket::ICEROLE_CONTROLLING == ice_role_) {
@@ -296,36 +301,39 @@ VirtualLink::SetupICE(
     remote_conn_role = cricket::CONNECTIONROLE_ACTPASS;
   }
 
-  local_description_.reset(new cricket::TransportDescription(
-    vector<string>(),
+   cricket::TransportDescription local_transport_desc
+   (vector<string>(),
     tp.kIceUfrag,
     tp.kIcePwd,
     cricket::ICEMODE_FULL,
     conn_role_,
-    & local_fingerprint));
-
-  remote_description_.reset(new cricket::TransportDescription(
-    vector<string>(),
+    & local_fingerprint);
+   
+   cricket::TransportDescription remote_transport_desc
+   (vector<string>(),
     tp.kIceUfrag,
     tp.kIcePwd,
     cricket::ICEMODE_FULL,
     remote_conn_role,
-    remote_fingerprint_.get()));
+    remote_fingerprint_.get());
+	   
+
+   // description->AddTransportInfo(cricket::TransportInfo(mid, transport_desc));
+   local_description_->AddTransportInfo(cricket::TransportInfo(content_name_, local_transport_desc));
+   remote_description_->AddTransportInfo(cricket::TransportInfo(content_name_, remote_transport_desc));
+/*  RTCError SetRemoteDescription(SdpType type,
+                                const cricket::SessionDescription* description); */
 
   if(cricket::ICEROLE_CONTROLLING == ice_role_)
   {
     //when controlling the remote description must be set first.
-    transport_ctlr_->SetRemoteDescription(SdpType::kOffer,
-      *remote_description_.get());
-    transport_ctlr_->SetLocalDescription(SdpType::kAnswer,
-      *local_description_.get());
+    transport_ctlr_->SetRemoteDescription(SdpType::kOffer, remote_description_.get());
+    transport_ctlr_->SetLocalDescription(SdpType::kAnswer, local_description_.get());
   }
   else if(cricket::ICEROLE_CONTROLLED == ice_role_)
   {
-    transport_ctlr_->SetLocalDescription(SdpType::kOffer,
-      *local_description_.get());
-    transport_ctlr_->SetRemoteDescription(SdpType::kAnswer,
-      *remote_description_.get());
+    transport_ctlr_->SetLocalDescription(SdpType::kOffer, local_description_.get());
+    transport_ctlr_->SetRemoteDescription(SdpType::kAnswer, remote_description_.get());
   }
   else
   {
@@ -374,7 +382,7 @@ VirtualLink::StartConnections()
 }
 void VirtualLink::Disconnect()
 {
-  channel_.reset();
+  channel_->~P2PTransportChannel();
 }
 
 bool VirtualLink::IsReady()

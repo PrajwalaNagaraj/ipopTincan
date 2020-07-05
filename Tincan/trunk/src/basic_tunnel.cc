@@ -61,8 +61,8 @@ BasicTunnel::Configure(
 void
 BasicTunnel::Start()
 {
-  net_worker_.Start();
-  sig_worker_.Start();
+  net_worker_->Start();
+  sig_worker_->Start();
   tdev_->read_completion_.connect(this, &BasicTunnel::TapReadComplete);
   tdev_->write_completion_.connect(this, &BasicTunnel::TapWriteComplete);
 }
@@ -70,8 +70,8 @@ BasicTunnel::Start()
 void
 BasicTunnel::Shutdown()
 {
-  net_worker_.Quit();
-  sig_worker_.Quit();
+  net_worker_->Quit();
+  sig_worker_->Quit();
   tdev_->Down();
   tdev_->Close();
 }
@@ -85,7 +85,7 @@ BasicTunnel::CreateVlink(
   vlink_desc->stun_servers = descriptor_->stun_servers;
   vlink_desc->turn_descs = descriptor_->turn_descs;
   unique_ptr<VirtualLink> vl = make_unique<VirtualLink>(
-    move(vlink_desc), move(peer_desc), &sig_worker_, &net_worker_);
+    move(vlink_desc), move(peer_desc), sig_worker_, net_worker_);
   unique_ptr<SSLIdentity> sslid_copy(sslid_->Clone());
   vl->Initialize(net_manager_, move(sslid_copy), *local_fingerprint_.get(),
     ice_role);

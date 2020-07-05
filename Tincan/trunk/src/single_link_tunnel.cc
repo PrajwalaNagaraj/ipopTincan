@@ -105,7 +105,7 @@ void SingleLinkTunnel::QueryLinkInfo(
     {
       LinkInfoMsgData md;
       md.vl = vlink_;
-      net_worker_.Post(RTC_FROM_HERE, this, MSGID_QUERY_NODE_INFO, &md);
+      net_worker_->Post(RTC_FROM_HERE, this, MSGID_QUERY_NODE_INFO, &md);
       md.msg_event.Wait(Event::kForever);
       vlink_info[TincanControl::Stats].swap(md.info);
       vlink_info[TincanControl::Status] = "ONLINE";
@@ -135,7 +135,7 @@ void SingleLinkTunnel::SendIcc(
   unique_ptr<TransmitMsgData> md = make_unique<TransmitMsgData>();
   md->frm = move(icc);
   md->vl = vlink_;
-  net_worker_.Post(RTC_FROM_HERE, this, MSGID_SEND_ICC, md.release());
+  net_worker_->Post(RTC_FROM_HERE, this, MSGID_SEND_ICC, md.release());
 
 }
 
@@ -145,7 +145,7 @@ void SingleLinkTunnel::Shutdown()
   {
     LinkInfoMsgData md;
     md.vl = vlink_;
-    net_worker_.Post(RTC_FROM_HERE, this, MSGID_DISC_LINK, &md);
+    net_worker_->Post(RTC_FROM_HERE, this, MSGID_DISC_LINK, &md);
     md.msg_event.Wait(Event::kForever);
   }
   vlink_.reset();
@@ -176,7 +176,7 @@ void SingleLinkTunnel::RemoveLink(
   {
     LinkInfoMsgData md;
     md.vl = vlink_;
-    net_worker_.Post(RTC_FROM_HERE, this, MSGID_DISC_LINK, &md);
+    net_worker_->Post(RTC_FROM_HERE, this, MSGID_DISC_LINK, &md);
     md.msg_event.Wait(Event::kForever);
   }
   vlink_.reset();
@@ -258,7 +258,7 @@ void SingleLinkTunnel::TapReadComplete(
     TransmitMsgData *md = new TransmitMsgData;
     md->frm.reset(frame);
     md->vl = vlink_;
-    net_worker_.Post(RTC_FROM_HERE, this, MSGID_TRANSMIT, md);
+    net_worker_->Post(RTC_FROM_HERE, this, MSGID_TRANSMIT, md);
   }
 }
 

@@ -23,7 +23,7 @@
 #ifndef BASIC_TUNNEL_H_
 #define BASIC_TUNNEL_H_
 #include "tincan_base.h"
-#include "rtc_base/network.h"
+//#include "rtc_base/network.h"
 #ifdef min
 #undef min
 #endif //
@@ -176,8 +176,8 @@ protected:
   IpopControllerLink * ctrl_link_;
   unique_ptr<rtc::SSLIdentity> sslid_;
   unique_ptr<rtc::SSLFingerprint> local_fingerprint_;
-  rtc::Thread net_worker_;
-  rtc::Thread sig_worker_;
+  rtc::Thread *net_worker_ = new Thread(SocketServer::CreateDefault());
+  rtc::Thread *sig_worker_ = new Thread(SocketServer::CreateDefault());
   rtc::BasicNetworkManager net_manager_;
 };
 }  // namespace tincan
