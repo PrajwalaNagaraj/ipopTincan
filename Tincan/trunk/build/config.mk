@@ -1,4 +1,4 @@
-CC = g++
+CC = clang++
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -27,11 +27,13 @@ BIN_DIR = $(OUT)/$(OPT)/$(ARCH)
 BINARY = ipop-tincan
 TARGET = $(patsubst %,$(BIN_DIR)/%,$(BINARY))
 
-defines = -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0
+defines = -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0 
 
-cflags_cc += -std=c++14 -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti
-
-LIBS = -ljsoncpp -lrtc_p2p -lrtc_base -lrtc_base_approved -lboringssl -lboringssl_asm -lprotobuf_lite -lpthread -lutil
+cflags_cc += -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti
+#-stdlib=libc++ -nodefaultlibs
+LIBS = -nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc -ljsoncpp -lrtc_p2p -lrtc_base -llogging -lrtc_event -lrtc_base_approved -lboringssl -lboringssl_asm -lprotobuf_lite -lpthread -lutil -lstringutils -lchecks -lcriticalsection -lfield_trial -lfield_trial_parser -lice_log -llibjingle_peerconnection_api -lmetrics -loptions -lplatform_thread_types -lrtc_error -lrtc_pc_base -lsequence_checker -lstrings -lstun -ltimeutils -lweak_ptr -lsent_packet -lrtc_numerics -lthrow_delegate -lbase64 -lbad_optional_access -lmedia_transport_interface -lplatform_thread -lrtc_event_log -lrtc_media_base -lrtc_numerics -lrtp_parameters -lrtp_receiver -lrtp_rtcp_format -lthrow_delegate -lsrtp 
+#-ltask_queue -lfile_wrapper -lyield_policy 
+#-lbad_optional_access -lbase64 -lmedia_transport_interface -lplatform_thread -lrtc_event_log -lrtc_media_base -lrtc_numerics -lrtp_parameters -lrtp_receiver -lrtp_rtcp_format -lsent_packet -ltask_queue -lthrow_delegate -lweak_ptr -lyield_policy
 
 HDR_FILES = $(wildcard $(INC_DIR)/*.h)
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cc)

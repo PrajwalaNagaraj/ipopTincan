@@ -30,21 +30,64 @@ ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libboringssl_asm.a w
 
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libjsoncpp.a webrtc-checkout/src/out/release/obj/third_party/jsoncpp/jsoncpp/json_reader.o webrtc-checkout/src/out/release/obj/third_party/jsoncpp/jsoncpp/json_value.o webrtc-checkout/src/out/release/obj/third_party/jsoncpp/jsoncpp/json_writer.o
 
-cp webrtc-checkout/src/out/release/obj/third_party/boringssl/libboringssl.a ipop-project/Tincan/external/3rd-Party-Libs/release
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libboringssl.a webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtc_base.a webrtc-checkout/src/out/release/obj/rtc_base/rtc_base/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtc_base_approved.a webrtc-checkout/src/out/release/obj/rtc_base/rtc_base_approved/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtc_p2p.a webrtc-checkout/src/out/release/obj/p2p/rtc_p2p/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libprotobuf_lite.a webrtc-checkout/src/out/release/obj/third_party/protobuf/protobuf_lite/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/liblogging.a webrtc-checkout/src/out/release/obj/rtc_base/logging/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtc_event.a webrtc-checkout/src/out/release/obj/rtc_base/rtc_event/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libstringutils.a webrtc-checkout/src/out/release/obj/rtc_base/stringutils/*.o
+ar -rcs ipop-project//Tincan/external/3rd-Party-Libs/release/libtimeutils.a webrtc-checkout/src/out/release/obj/rtc_base/timeutils/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libplatform_thread_types.a webrtc-checkout/src/out/release/obj/rtc_base/platform_thread_types/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libcriticalsection.a webrtc-checkout/src/out/release/obj/rtc_base/criticalsection/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/liboptions.a webrtc-checkout/src/out/release/obj/api/crypto/options/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libsequence_checker.a webrtc-checkout/src/out/release/obj/rtc_base/sequence_checker/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtc_pc_base.a webrtc-checkout/src/out/release/obj/pc/rtc_pc_base/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libchecks.a webrtc-checkout/src/out/release/obj/rtc_base/checks/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libmetrics.a webrtc-checkout/src/out/release/obj/system_wrappers/metrics/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libfield_trial.a webrtc-checkout/src/out/release/obj/system_wrappers/field_trial/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libice_log.a webrtc-checkout/src/out/release/obj/logging/ice_log/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libfield_trial_parser.a webrtc-checkout/src/out/release/obj/rtc_base/experiments/field_trial_parser/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libstun.a webrtc-checkout/src/out/release/obj/api/transport/stun_types/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/liblibjingle_peerconnection_api.a webrtc-checkout/src/out/release/obj/api/libjingle_peerconnection_api/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libstrings.a webrtc-checkout/src/out/release/obj/third_party/abseil-cpp/absl/strings/strings/*.o
 
-cp webrtc-checkout/src/out/release/obj/system_wrappers/libfield_trial.a ipop-project/Tincan/external/3rd-Party-Libs/release
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libweak_ptr.a webrtc-checkout/src/out/release/obj/rtc_base/weak_ptr/*.o
 
-cp webrtc-checkout/src/out/release/obj/rtc_base/librtc_base.a ipop-project/Tincan/external/3rd-Party-Libs/release
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libsent_packet.a webrtc-checkout/src/out/release/obj/rtc_base/network/sent_packet/*.o
 
-cp webrtc-checkout/src/out/release/obj/rtc_base/librtc_base_approved.a ipop-project/Tincan/external/3rd-Party-Libs/release
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtc_numerics.a webrtc-checkout/src/out/release/obj/rtc_base/rtc_numerics/*.o
 
-cp webrtc-checkout/src/out/release/obj/p2p/librtc_p2p.a  ipop-project/Tincan/external/3rd-Party-Libs/release
-cp webrtc-checkout/src/out/release/obj/third_party/protobuf/libprotobuf_lite.a  ipop-project/Tincan/external/3rd-Party-Libs/release
-#converting thin archives to normal archive
-cd ipop-project/Tincan/external/3rd-Party-Libs/release
-for lib in `find -name '*.a'`;
-	do ar -t $lib | xargs ar rvs $lib.new && mv -v $lib.new $lib;
-done
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libthrow_delegate.a webrtc-checkout/src/out/release/obj/third_party/abseil-cpp/absl/base/throw_delegate/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libbase64.a webrtc-checkout/src/out/release/obj/rtc_base/third_party/base64/base64/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libtask_queue.a webrtc-checkout/src/out/release/obj/api/task_queue/task_queue/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libfile_wrapper.a webrtc-checkout/src/out/release/obj/rtc_base/system/file_wrapper/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libyield_policy.a webrtc-checkout/src/out/release/obj/rtc_base/synchronization/yield_policy/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libplatform_thread.a webrtc-checkout/src/out/release/obj/rtc_base/platform_thread/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libbad_optional_access.a webrtc-checkout/src/out/release/obj/third_party/abseil-cpp/absl/types/bad_optional_access/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtc_event_log.a webrtc-checkout/src/out/release/obj/api/rtc_event_log/rtc_event_log/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtp_parameters.a webrtc-checkout/src/out/release/obj/api/rtp_parameters/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libmedia_transport_interface.a webrtc-checkout/src/out/release/obj/api/transport/media/media_transport_interface/*.o
+
+ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/release/librtp_receiver.a webrtc-checkout/src/out/release/obj/call/rtp_receiver/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtp_rtcp_format.a webrtc-checkout/src/out/release/obj/modules/rtp_rtcp/rtp_rtcp_format/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libmedia_transport_interface.a webrtc-checkout/src/out/release/obj/api/transport/media/media_transport_interface/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtc_media_base.a webrtc-checkout/src/out/release/obj/media/rtc_media_base/*.o
+
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libsrtp.a webrtc-checkout/src/out/release/obj/third_party/libsrtp/libsrtp/*.o
+
 
 cd ../../../../..
 #getting the required include files and folders from webrtc-checkout
