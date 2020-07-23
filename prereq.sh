@@ -2,7 +2,7 @@
 #Ensure git works in the setup
 #steps to install webrtc M84[4147] version for release build
 sudo apt-get update && sudo apt-get -y install git python
-sudo apt install clang++
+sudo apt install clang
 sudo apt-get install libc++-dev
 mkdir -p ~/workspace/ && cd ~/workspace/
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
