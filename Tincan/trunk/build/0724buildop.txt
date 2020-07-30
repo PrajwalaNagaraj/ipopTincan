@@ -1,0 +1,25 @@
+if [ ! -d ../out/release/x86_64/obj ]; then  mkdir -p ../out/release/x86_64/obj; fi
+clang++ -v -o ../out/release/x86_64/ipop-tincan ../out/release/x86_64/obj/tincan_main.o ../out/release/x86_64/obj/control_listener.o ../out/release/x86_64/obj/control_dispatch.o ../out/release/x86_64/obj/tincan_control.o ../out/release/x86_64/obj/basic_tunnel.o ../out/release/x86_64/obj/tincan.o ../out/release/x86_64/obj/single_link_tunnel.o ../out/release/x86_64/obj/virtual_link.o ../out/release/x86_64/obj/tap_frame.o ../out/release/x86_64/obj/tapdev_lnx.o -L ../../external/3rd-Party-Libs/release -nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc -ljsoncpp -lrtc_p2p -lrtc_base -llogging -lrtc_event -lrtc_base_approved -lboringssl_asm -lprotobuf_lite -lpthread -lutil -lstringutils -lchecks -lcriticalsection -lfield_trial -lfield_trial_parser -lice_log -llibjingle_peerconnection_api -lmetrics -loptions -lplatform_thread_types -lrtc_error -lrtc_pc_base -lsequence_checker -lstrings -lstun -ltimeutils -lweak_ptr -lsent_packet -lrtc_numerics -lthrow_delegate -lbase64 -lbad_optional_access -lmedia_transport_interface -lplatform_thread -lrtc_event_log -lrtc_media_base -lrtc_numerics -lrtp_parameters -lrtp_receiver -lrtp_rtcp_format -lthrow_delegate -lsrtp -lyield_policy
+clang version 6.0.0-1ubuntu2 (tags/RELEASE_600/final)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/5
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/5.5.0
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/7
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.5.0
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/7
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/7.5.0
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o ../out/release/x86_64/ipop-tincan /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/crtbegin.o -L../../external/3rd-Party-Libs/release -L/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../.. -L/usr/lib/llvm-6.0/bin/../lib -L/lib -L/usr/lib ../out/release/x86_64/obj/tincan_main.o ../out/release/x86_64/obj/control_listener.o ../out/release/x86_64/obj/control_dispatch.o ../out/release/x86_64/obj/tincan_control.o ../out/release/x86_64/obj/basic_tunnel.o ../out/release/x86_64/obj/tincan.o ../out/release/x86_64/obj/single_link_tunnel.o ../out/release/x86_64/obj/virtual_link.o ../out/release/x86_64/obj/tap_frame.o ../out/release/x86_64/obj/tapdev_lnx.o -lc++ -lc++abi -lm -lc -lgcc_s -lgcc -ljsoncpp -lrtc_p2p -lrtc_base -llogging -lrtc_event -lrtc_base_approved -lboringssl_asm -lprotobuf_lite -lpthread -lutil -lstringutils -lchecks -lcriticalsection -lfield_trial -lfield_trial_parser -lice_log -llibjingle_peerconnection_api -lmetrics -loptions -lplatform_thread_types -lrtc_error -lrtc_pc_base -lsequence_checker -lstrings -lstun -ltimeutils -lweak_ptr -lsent_packet -lrtc_numerics -lthrow_delegate -lbase64 -lbad_optional_access -lmedia_transport_interface -lplatform_thread -lrtc_event_log -lrtc_media_base -lrtc_numerics -lrtp_parameters -lrtp_receiver -lrtp_rtcp_format -lthrow_delegate -lsrtp -lyield_policy /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu/crtn.o
+/usr/bin/ld: ../../external/3rd-Party-Libs/release/libyield_policy.a(yield_policy.o): undefined reference to symbol '__tls_get_addr@@GLIBC_2.3'
+/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2: error adding symbols: DSO missing from command line
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Makefile:19: recipe for target '../out/release/x86_64/ipop-tincan' failed
+make: *** [../out/release/x86_64/ipop-tincan] Error 1

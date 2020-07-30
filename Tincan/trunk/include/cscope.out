@@ -1,4 +1,4 @@
-cscope 15 $HOME/Prajwala-webrtc/private_branch/ipopTincan/Tincan/trunk/include               0000107393
+cscope 15 $HOME/praj_code/ipopTincan/Tincan/trunk/include               0000107574
 	@async_io.h
 
 23 #iâdeà
@@ -475,10 +475,6 @@ BASIC_TUNNEL_H_
 
 25 
 	~"tšÿn_ba£.h
-"
-
-26 
-	~"¹c_ba£/ÃtwÜk.h
 "
 
 27 #ifdeà
@@ -1159,17 +1155,29 @@ loÿl_fšg”´št_
 	g¹c
 ::
 Th»ad
- 
+ *
 Ãt_wÜk”_
-;
+ = 
+Ãw
+ Th»ad(
+Sock‘S”v”
+::
+C»©eDeçuÉ
+());
 
 180 
 	g¹c
 ::
 Th»ad
- 
+ *
 sig_wÜk”_
-;
+ = 
+Ãw
+ Th»ad(
+Sock‘S”v”
+::
+C»©eDeçuÉ
+());
 
 181 
 	g¹c
@@ -2196,7 +2204,7 @@ LnxExû±iÚ
 48 cÚ¡ * 
 wh©
 (ècÚ¡ 
-_GLIBCXX_USE_NOEXCEPT
+_NOEXCEPT
  
 	gov”ride
 
@@ -2326,38 +2334,46 @@ Mes§geHªdËr
 ;
 
 54 
+usšg
+ 
+	g¹c
+::
+Sock‘S”v”
+;
+
+55 
 şass
  
 	gT­DevLnx
  :
 
-55 
+56 
 public
  
 T­DevInf
 ,
 
-56 
+57 
 public
  
 	gMes§geHªdËr
 
 
-58 
+59 
 	gpublic
 :
 
-59 
+60 
 T­DevLnx
 ();
 
-60 
+61 
 	gvœtu®
  ~
 T­DevLnx
 ();
 
-61 
+62 
 	gsig¦Ù
 ::
 sigÇl1
@@ -2367,7 +2383,7 @@ AsyncIo
 »ad_com¶‘iÚ_
 ;
 
-62 
+63 
 	gsig¦Ù
 ::
 sigÇl1
@@ -2377,11 +2393,11 @@ AsyncIo
 wr™e_com¶‘iÚ_
 ;
 
-63 
+64 
 O³n
 (
 
-64 cÚ¡ 
+65 cÚ¡ 
 T­DesütÜ
  & 
 p_desc
@@ -2389,13 +2405,13 @@ T­DesütÜ
 	gov”ride
 ;
 
-65 
+66 
 Clo£
 (è
 	gov”ride
 ;
 
-66 
+67 
 ušt32_t
  
 R—d
@@ -2407,7 +2423,7 @@ aio_rd
 	gov”ride
 ;
 
-67 
+68 
 ušt32_t
  
 Wr™e
@@ -2419,7 +2435,7 @@ aio_wr
 	gov”ride
 ;
 
-68 
+69 
 ušt16_t
  
 Mtu
@@ -2427,19 +2443,19 @@ Mtu
 	gov”ride
 ;
 
-69 
+70 
 Up
 (è
 	gov”ride
 ;
 
-70 
+71 
 Down
 (è
 	gov”ride
 ;
 
-71 
+72 
 MacAdd»ssTy³
  
 MacAdd»ss
@@ -2447,7 +2463,7 @@ MacAdd»ss
 	gov”ride
 ;
 
-72 
+73 
 IP4Add»ssTy³
  
 Ip4
@@ -2455,11 +2471,11 @@ Ip4
 	gov”ride
 ;
 
-73 
+74 
 	g´Ùeùed
 :
 
-74 
+75 
 OnMes§ge
 (
 Mes§ge
@@ -2469,11 +2485,11 @@ msg
 ov”ride
 ;
 
-75 
+76 
 	g´iv©e
 :
 
-76 
+77 
 unique_±r
 <
 ¹c
@@ -2483,7 +2499,7 @@ Th»ad
 »ad”_
 ;
 
-77 
+78 
 	gunique_±r
 <
 	g¹c
@@ -2493,35 +2509,35 @@ Th»ad
 wr™”_
 ;
 
-78 
+79 
 iäeq
  
 	giä_
 ;
 
-79 
+80 
 	gfd_
 ;
 
-80 
+81 
 IP4Add»ssTy³
  
 	g4_
 ;
 
-81 
+82 
 MacAdd»ssTy³
  
 	gmac_
 ;
 
-83 
+84 
 boŞ
  
 	gis_good_
 ;
 
-84 
+85 
 S‘FÏgs
 (
 a
@@ -2529,7 +2545,7 @@ a
 b
 );
 
-85 
+86 
 PËnToIpv4Mask
 (
 a
@@ -4550,10 +4566,18 @@ IpİCÚŒŞËrLšk
 ;
 
 105 
+	g¹c
+::
 Th»ad
- 
-	gùl_th»ad_
-;
+ *
+ùl_th»ad_
+ = 
+Ãw
+ Th»ad(
+Sock‘S”v”
+::
+C»©eDeçuÉ
+());
 
 106 
 	gsh¬ed_±r
@@ -6919,23 +6943,39 @@ usšg
 Pack‘T¿n¥ÜtIÁ”Çl
 ;
 
-54 
+51 
+usšg
+ 
+	güick‘
+::
+J£pT¿n¥ÜtDesütiÚ
+;
+
+52 
+usšg
+ 
+	gweb¹c
+::
+SdpTy³
+;
+
+56 
 	sVlškDesütÜ
 
 
-56 
+58 
 boŞ
  
 	gds_’abËd
 ;
 
-57 
+59 
 ¡ršg
  
 	guid
 ;
 
-58 
+60 
 	gveùÜ
 <
 	g¡ršg
@@ -6943,7 +6983,7 @@ boŞ
 	g¡un_£rv”s
 ;
 
-59 
+61 
 	gveùÜ
 <
 	gTuºDesütÜ
@@ -6951,13 +6991,13 @@ boŞ
 	gtuº_descs
 ;
 
-62 
+64 
 şass
  
 	gVœtu®Lšk
  :
 
-63 
+65 
 public
  
 sig¦Ù
@@ -6965,15 +7005,15 @@ sig¦Ù
 has_¦Ùs
 <>
 
-65 
+67 
 public
 :
 
-67 
+69 
 Vœtu®Lšk
 (
 
-68 
+70 
 unique_±r
 <
 VlškDesütÜ
@@ -6981,7 +7021,7 @@ VlškDesütÜ
 vlšk_desc
 ,
 
-69 
+71 
 unique_±r
 <
 P“rDesütÜ
@@ -6989,7 +7029,7 @@ P“rDesütÜ
 ³”_desc
 ,
 
-70 
+72 
 ¹c
 ::
 Th»ad
@@ -6997,7 +7037,7 @@ Th»ad
 sigÇlšg_th»ad
 ,
 
-71 
+73 
 ¹c
 ::
 Th»ad
@@ -7005,27 +7045,27 @@ Th»ad
 ÃtwÜk_th»ad
 );
 
-72 ~
+74 ~
 Vœtu®Lšk
 ();
 
-74 
+76 
 ¡ršg
  
 Name
 ();
 
-76 
+78 
 In™Ÿlize
 (
 
-77 
+79 
 BasicN‘wÜkMªag”
  & 
 ÃtwÜk_mªag”
 ,
 
-78 
+80 
 unique_±r
 <
 SSLId’t™y
@@ -7033,13 +7073,13 @@ SSLId’t™y
 s¦id
 ,
 
-79 
+81 
 SSLFšg”´št
  cÚ¡ & 
 loÿl_fšg”´št
 ,
 
-80 
+82 
 üick‘
 ::
 IûRŞe
@@ -7047,33 +7087,33 @@ IûRŞe
 iû_rŞe
 );
 
-82 
+84 
 	gP“rDesütÜ
 & 
 P“rInfo
 ()
 
-84  *
+86  *
 	g³”_desc_
 .
 g‘
 ();
 
-87 
+89 
 S¹CÚÃùiÚs
 ();
 
-89 
+91 
 DiscÚÃù
 ();
 
-91 
+93 
 boŞ
  
 IsR—dy
 ();
 
-93 
+95 
 T¿nsm™
 (
 T­F¿me
@@ -7081,19 +7121,19 @@ T­F¿me
 äame
 );
 
-95 
+97 
 ¡ršg
  
 Cªdid©es
 ();
 
-97 
+99 
 ¡ršg
  
 P“rCªdid©es
 ();
 
-99 
+101 
 P“rCªdid©es
 (cÚ¡ 
 ¡ršg
@@ -7101,19 +7141,19 @@ P“rCªdid©es
 ³”_ÿs
 );
 
-101 
+103 
 ¡ršg
  
 Id
 ()
 
-103  
+105  
 	gvlšk_desc_
 ->
 	guid
 ;
 
-105 
+107 
 G‘Sts
 (
 JsÚ
@@ -7123,23 +7163,23 @@ V®ue
 šfos
 );
 
-107 
+109 
 	güick‘
 ::
 IûRŞe
  IceRole()
 
-109  
+111  
 iû_rŞe_
 ;
 
-112 
+114 
 boŞ
  
 IsG©h”šgCom¶‘e
 ()
 
-114  
+116  
 	gg©h”_¡©e_
  =ğ
 üick‘
@@ -7147,7 +7187,7 @@ IsG©h”šgCom¶‘e
 kIûG©h”šgCom¶‘e
 ;
 
-117 
+119 
 	gsig¦Ù
 ::
 sigÇl1
@@ -7159,7 +7199,7 @@ sigÇl1
 	gSigÇlLškUp
 ;
 
-118 
+120 
 	gsig¦Ù
 ::
 sigÇl1
@@ -7171,7 +7211,7 @@ sigÇl1
 	gSigÇlLškDown
 ;
 
-119 
+121 
 	gsig¦Ù
 ::
 sigÇl2
@@ -7183,7 +7223,7 @@ sigÇl2
 	gSigÇlLoÿlCasR—dy
 ;
 
-120 
+122 
 	gsig¦Ù
 ::
 sigÇl3
@@ -7197,11 +7237,11 @@ ušt8_t
 	gSigÇlMes§geReûived
 ;
 
-121 
+123 
 	g´iv©e
 :
 
-122 
+124 
 S‘upTURN
 (
 veùÜ
@@ -7209,17 +7249,17 @@ veùÜ
 TuºDesütÜ
 >);
 
-124 
+126 
 OnCªdid©esG©h”ed
 (
 
-125 cÚ¡ 
+127 cÚ¡ 
 ¡ršg
  & 
 Œª¥Üt_Çme
 ,
 
-126 cÚ¡ 
+128 cÚ¡ 
 üick‘
 ::
 Cªdid©es
@@ -7227,11 +7267,11 @@ Cªdid©es
 ÿndid©es
 );
 
-128 
+130 
 OnG©h”šgS‹
 (
 
-129 
+131 
 üick‘
 ::
 IûG©h”šgS‹
@@ -7239,87 +7279,87 @@ IûG©h”šgS‹
 g©h”_¡©e
 );
 
-131 
+133 
 OnWr™—bËS‹
 (
 
-132 
+134 
 Pack‘T¿n¥ÜtIÁ”Çl
  * 
 Œª¥Üt
 );
 
-134 
+136 
 Regi¡”LškEv’tHªdËrs
 ();
 
-136 
+138 
 AddRemÙeCªdid©es
 (
 
-137 cÚ¡ 
+139 cÚ¡ 
 ¡ršg
  & 
 ÿndid©es
 );
 
-139 
+141 
 S‘upICE
 (
 
-140 
+142 
 SSLFšg”´št
  cÚ¡ & 
 loÿl_fšg”´št
 );
 
-142 
+144 
 OnR—dPack‘
 (
 
-143 
+145 
 Pack‘T¿n¥ÜtIÁ”Çl
 * 
 Œª¥Üt
 ,
 
-144 cÚ¡ * 
+146 cÚ¡ * 
 d©a
 ,
 
-145 
+147 
 size_t
  
 Ën
 ,
 
-146 cÚ¡ 
+148 cÚ¡ 
 št64_t
  & 
 ±ime
 ,
 
-147 
+149 
 æags
 );
 
-149 
+151 
 OnS’tPack‘
 (
 
-150 
+152 
 Pack‘T¿n¥ÜtIÁ”Çl
  * 
 Œª¥Üt
 ,
 
-151 cÚ¡ 
+153 cÚ¡ 
 S’tPack‘
  & 
 ·ck‘
 );
 
-153 
+155 
 	gunique_±r
 <
 	gVlškDesütÜ
@@ -7327,7 +7367,7 @@ S’tPack‘
 	gvlšk_desc_
 ;
 
-154 
+156 
 	gunique_±r
 <
 	gP“rDesütÜ
@@ -7335,7 +7375,7 @@ S’tPack‘
 	g³”_desc_
 ;
 
-155 
+157 
 	g¡d
 ::
 mu‹x
@@ -7343,7 +7383,7 @@ mu‹x
 ÿs_mu‹x_
 ;
 
-156 
+158 
 	güick‘
 ::
 Cªdid©es
@@ -7351,13 +7391,13 @@ Cªdid©es
 loÿl_ÿndid©es_
 ;
 
-157 cÚ¡ 
+159 cÚ¡ 
 ušt64_t
  
 	gt›b»ak”_
 ;
 
-158 
+160 
 	güick‘
 ::
 IûRŞe
@@ -7365,39 +7405,39 @@ IûRŞe
 iû_rŞe_
 ;
 
-159 
+161 
 CÚÃùiÚRŞe
  
 	gcÚn_rŞe_
 ;
 
-160 
+162 
 P2PT¿n¥ÜtChªÃl
  * 
 	gchªÃl_
 ;
 
-161 
+163 
 	gunique_±r
 <
 	güick‘
 ::
-T¿n¥ÜtDesütiÚ
+SessiÚDesütiÚ
 > 
 loÿl_desütiÚ_
 ;
 
-162 
+164 
 	gunique_±r
 <
 	güick‘
 ::
-T¿n¥ÜtDesütiÚ
+SessiÚDesütiÚ
 > 
 »mÙe_desütiÚ_
 ;
 
-163 
+165 
 	gunique_±r
 <
 	gSSLFšg”´št
@@ -7405,25 +7445,25 @@ T¿n¥ÜtDesütiÚ
 	g»mÙe_fšg”´št_
 ;
 
-164 
+166 
 ¡ršg
  
 	gcÚ‹Á_Çme_
 ;
 
-165 
+167 
 Pack‘O±iÚs
  
 	g·ck‘_İtiÚs_
 ;
 
-166 
+168 
 BasicPack‘Sock‘FaùÜy
  
 	g·ck‘_çùÜy_
 ;
 
-167 
+169 
 	gunique_±r
 <
 	güick‘
@@ -7433,7 +7473,7 @@ BasicPÜtAÎoÿtÜ
 pÜt_®loÿtÜ_
 ;
 
-168 
+170 
 	gunique_±r
 <
 	gJ£pT¿n¥ÜtCÚŒŞËr
@@ -7441,7 +7481,7 @@ pÜt_®loÿtÜ_
 	gŒª¥Üt_ùÌ_
 ;
 
-170 
+172 
 	güick‘
 ::
 IûG©h”šgS‹
@@ -7449,13 +7489,13 @@ IûG©h”šgS‹
 g©h”_¡©e_
 ;
 
-171 
+173 
 boŞ
  
 	gis_v®id_
 ;
 
-172 
+174 
 	g¹c
 ::
 Th»ad
@@ -7463,7 +7503,7 @@ Th»ad
 sigÇlšg_th»ad_
 ;
 
-173 
+175 
 	g¹c
 ::
 Th»ad
@@ -7471,7 +7511,7 @@ Th»ad
 ÃtwÜk_th»ad_
 ;
 
-174 
+176 
 	gJ£pT¿n¥ÜtCÚŒŞËr
 ::
 CÚfig

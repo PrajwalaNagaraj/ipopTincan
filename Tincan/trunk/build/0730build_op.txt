@@ -1,0 +1,55 @@
+if [ ! -d ../out/release/x86_64/obj ]; then  mkdir -p ../out/release/x86_64/obj; fi
+#clang++ -fuse-ld=/usr/bin/ldd 
+clang++ -v -o ../out/release/x86_64/ipop-tincan ../out/release/x86_64/obj/tincan_main.o ../out/release/x86_64/obj/control_listener.o ../out/release/x86_64/obj/control_dispatch.o ../out/release/x86_64/obj/tincan_control.o ../out/release/x86_64/obj/basic_tunnel.o ../out/release/x86_64/obj/tincan.o ../out/release/x86_64/obj/single_link_tunnel.o ../out/release/x86_64/obj/virtual_link.o ../out/release/x86_64/obj/tap_frame.o ../out/release/x86_64/obj/tapdev_lnx.o -L ../../external/3rd-Party-Libs/release -nodefaultlibs -Wl,--start-group -lm -lgcc_s -lgcc -lc -lpthread -ljsoncpp -llogging -lrtc_event -lprotobuf_lite -lutil -lchecks -lcriticalsection -lfield_trial_parser -lice_log -loptions -lplatform_thread_types -lrtc_pc_base -lsequence_checker -lstrings -lstun -ltimeutils -lweak_ptr -lsent_packet -lrtc_numerics -lthrow_delegate -lbase64 -lbad_optional_access -lmedia_transport_interface -lplatform_thread -lrtc_event_log -lrtc_media_base -lrtc_numerics -lrtp_parameters -lrtp_receiver -lrtp_rtcp_format -lthrow_delegate -lsrtp -llibjingle_peerconnection_api -lboringssl -lboringssl_asm -lrtc_base -lrtc_base_approved -lstringutils -ldata_rate -ldata_size -ltime_delta -lc++ -lc++abi -lrtc_p2p -lraw_logging_internal -lrtc_error -lfield_trial -lmetrics -lvideo_rtp_headers -Wl,--end-group 
+clang version 6.0.0-1ubuntu2 (tags/RELEASE_600/final)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/5
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/5.5.0
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/7
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.5.0
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/7
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/7.5.0
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o ../out/release/x86_64/ipop-tincan /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/crtbegin.o -L../../external/3rd-Party-Libs/release -L/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../.. -L/usr/lib/llvm-6.0/bin/../lib -L/lib -L/usr/lib ../out/release/x86_64/obj/tincan_main.o ../out/release/x86_64/obj/control_listener.o ../out/release/x86_64/obj/control_dispatch.o ../out/release/x86_64/obj/tincan_control.o ../out/release/x86_64/obj/basic_tunnel.o ../out/release/x86_64/obj/tincan.o ../out/release/x86_64/obj/single_link_tunnel.o ../out/release/x86_64/obj/virtual_link.o ../out/release/x86_64/obj/tap_frame.o ../out/release/x86_64/obj/tapdev_lnx.o --start-group -lm -lgcc_s -lgcc -lc -lpthread -ljsoncpp -llogging -lrtc_event -lprotobuf_lite -lutil -lchecks -lcriticalsection -lfield_trial_parser -lice_log -loptions -lplatform_thread_types -lrtc_pc_base -lsequence_checker -lstrings -lstun -ltimeutils -lweak_ptr -lsent_packet -lrtc_numerics -lthrow_delegate -lbase64 -lbad_optional_access -lmedia_transport_interface -lplatform_thread -lrtc_event_log -lrtc_media_base -lrtc_numerics -lrtp_parameters -lrtp_receiver -lrtp_rtcp_format -lthrow_delegate -lsrtp -llibjingle_peerconnection_api -lboringssl -lboringssl_asm -lrtc_base -lrtc_base_approved -lstringutils -ldata_rate -ldata_size -ltime_delta -lc++ -lc++abi -lrtc_p2p -lraw_logging_internal -lrtc_error -lfield_trial -lmetrics -lvideo_rtp_headers --end-group /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu/crtn.o
+../../external/3rd-Party-Libs/release/librtc_event.a(event.o): In function `rtc::Event::Wait(int, int)':
+event.cc:(.text._ZN3rtc5Event4WaitEii+0x1b1): undefined reference to `rtc::ScopedYieldPolicy::YieldExecution()'
+../../external/3rd-Party-Libs/release/libsequence_checker.a(sequence_checker.o): In function `webrtc::SequenceCheckerImpl::SequenceCheckerImpl()':
+sequence_checker.cc:(.text._ZN6webrtc19SequenceCheckerImplC2Ev+0x1c): undefined reference to `webrtc::TaskQueueBase::Current()'
+../../external/3rd-Party-Libs/release/libsequence_checker.a(sequence_checker.o): In function `webrtc::SequenceCheckerImpl::IsCurrent() const':
+sequence_checker.cc:(.text._ZNK6webrtc19SequenceCheckerImpl9IsCurrentEv+0x11): undefined reference to `webrtc::TaskQueueBase::Current()'
+../../external/3rd-Party-Libs/release/librtc_base.a(thread.o): In function `rtc::Thread::PreRun(void*)':
+thread.cc:(.text._ZN3rtc6Thread6PreRunEPv+0x4f): undefined reference to `webrtc::TaskQueueBase::CurrentTaskQueueSetter::CurrentTaskQueueSetter(webrtc::TaskQueueBase*)'
+thread.cc:(.text._ZN3rtc6Thread6PreRunEPv+0x72): undefined reference to `webrtc::TaskQueueBase::CurrentTaskQueueSetter::~CurrentTaskQueueSetter()'
+../../external/3rd-Party-Libs/release/librtc_base.a(file_rotating_stream.o): In function `rtc::FileRotatingStream::Write(void const*, unsigned long, unsigned long*, int*)':
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream5WriteEPKvmPmPi+0x3f): undefined reference to `webrtc::FileWrapper::Write(void const*, unsigned long)'
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream5WriteEPKvmPmPi+0x58): undefined reference to `webrtc::FileWrapper::Flush()'
+../../external/3rd-Party-Libs/release/librtc_base.a(file_rotating_stream.o): In function `rtc::FileRotatingStream::RotateFiles()':
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream11RotateFilesEv+0x2e): undefined reference to `webrtc::FileWrapper::Close()'
+../../external/3rd-Party-Libs/release/librtc_base.a(file_rotating_stream.o): In function `rtc::FileRotatingStream::Flush()':
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream5FlushEv+0x11): undefined reference to `webrtc::FileWrapper::Flush()'
+../../external/3rd-Party-Libs/release/librtc_base.a(file_rotating_stream.o): In function `rtc::FileRotatingStream::Close()':
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream5CloseEv+0x1c): undefined reference to `webrtc::FileWrapper::Close()'
+../../external/3rd-Party-Libs/release/librtc_base.a(file_rotating_stream.o): In function `rtc::FileRotatingStream::CloseCurrentFile()':
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream16CloseCurrentFileEv+0x1c): undefined reference to `webrtc::FileWrapper::Close()'
+../../external/3rd-Party-Libs/release/librtc_base.a(file_rotating_stream.o): In function `rtc::FileRotatingStream::OpenCurrentFile()':
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream15OpenCurrentFileEv+0x2c): undefined reference to `webrtc::FileWrapper::Close()'
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream15OpenCurrentFileEv+0x7e): undefined reference to `webrtc::FileWrapper::OpenWriteOnly(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int*)'
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream15OpenCurrentFileEv+0x89): undefined reference to `webrtc::FileWrapper::operator=(webrtc::FileWrapper&&)'
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStream15OpenCurrentFileEv+0x91): undefined reference to `webrtc::FileWrapper::Close()'
+../../external/3rd-Party-Libs/release/librtc_base.a(file_rotating_stream.o): In function `rtc::FileRotatingStreamReader::ReadAll(void*, unsigned long) const':
+file_rotating_stream.cc:(.text._ZNK3rtc24FileRotatingStreamReader7ReadAllEPvm+0x55): undefined reference to `webrtc::FileWrapper::OpenReadOnly(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)'
+file_rotating_stream.cc:(.text._ZNK3rtc24FileRotatingStreamReader7ReadAllEPvm+0x72): undefined reference to `webrtc::FileWrapper::Read(void*, unsigned long)'
+file_rotating_stream.cc:(.text._ZNK3rtc24FileRotatingStreamReader7ReadAllEPvm+0x87): undefined reference to `webrtc::FileWrapper::Close()'
+../../external/3rd-Party-Libs/release/librtc_base.a(file_rotating_stream.o): In function `rtc::FileRotatingStream::~FileRotatingStream()':
+file_rotating_stream.cc:(.text._ZN3rtc18FileRotatingStreamD2Ev+0x72): undefined reference to `webrtc::FileWrapper::Close()'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Makefile:19: recipe for target '../out/release/x86_64/ipop-tincan' failed
+make: *** [../out/release/x86_64/ipop-tincan] Error 1

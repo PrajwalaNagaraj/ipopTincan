@@ -28,7 +28,7 @@ git clone https://github.com/ipop-project/Tincan
 cd ../..
 mkdir -p ipop-project/Tincan/external/3rd-Party-Libs/release ipop-project/Tincan/external/3rd-Party-Libs/debug
 #getting the required .o files and .a files to 3rd party libs from webrtc-checkout
-ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libboringssl_asm.a webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/aes128gcmsiv-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/aesni-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/vpaes-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/rsaz-avx2.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/x86_64-mont.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/x86_64-mont5.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/chacha-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/p256-x86_64-asm.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/md5-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/aesni-gcm-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/ghash-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/rdrand-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/sha1-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/sha256-x86_64.o webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/sha512-x86_64.o
+ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/release/libboringssl_asm.a webrtc-checkout/src/out/release/obj/third_party/boringssl/boringssl_asm/*.o
 
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libjsoncpp.a webrtc-checkout/src/out/release/obj/third_party/jsoncpp/jsoncpp/json_reader.o webrtc-checkout/src/out/release/obj/third_party/jsoncpp/jsoncpp/json_value.o webrtc-checkout/src/out/release/obj/third_party/jsoncpp/jsoncpp/json_writer.o
 
@@ -90,7 +90,15 @@ ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/librtc_media_base.a 
 
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libsrtp.a webrtc-checkout/src/out/release/obj/third_party/libsrtp/libsrtp/*.o
 
+ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/release/libdata_size.a webrtc-checkout/src/out/release/obj/api/units/data_size/*.o
 
+ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/release/libtime_delta.a webrtc-checkout/src/out/release/obj/api/units/time_delta/*.o
+
+ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/release/libdata_rate.a webrtc-checkout/src/out/release/obj/api/units/data_rate/*.o
+
+ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/release/libraw_logging_internal.a webrtc-checkout/src/out/release/obj/third_party/abseil-cpp/absl/base/raw_logging_internal/*.o
+
+ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/release/libvideo_rtp_headers.a webrtc-checkout/src/out/release/obj/api/video/video_rtp_headers/*.o
 cd ../../../../..
 #getting the required include files and folders from webrtc-checkout
 # folders required: absl,api,base,call,common_video,logging,media,modules,p2p,pc,system_wrappers,rtc_base,build,common_types.h, jni.h, logging_buildflags.h

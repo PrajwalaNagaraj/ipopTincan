@@ -16,7 +16,8 @@ mkdirs :
 	if [ ! -d $(OBJ_DIR) ]; then  mkdir -p $(OBJ_DIR); fi
 
 $(TARGET) : $(OBJ_FILES) $(LOBJ_FILES)
-	$(CC) -v -o $@ $^ -L $(EXT_LIB_DIR) $(LIBS)
+	#$(CC) -fuse-ld=/usr/bin/ldd 
+	$(CC) -v -o $@ $^ -L $(EXT_LIB_DIR) $(LIBS) 
 
 ## ../src/file.obj : comiples the specified object file
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cc $(HDR_FILES)	
