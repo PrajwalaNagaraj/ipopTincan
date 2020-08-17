@@ -23,6 +23,7 @@
 #ifndef TINCAN_CONTROL_LISTENER_H_
 #define TINCAN_CONTROL_LISTENER_H_
 #include "tincan_base.h"
+#include "rtc_base/async_socket.h"
 #include "rtc_base/async_udp_socket.h"
 #include "rtc_base/async_packet_socket.h"
 #include "rtc_base/logging.h"
@@ -52,7 +53,7 @@ public:
     const char * data,
     size_t len,
     const SocketAddress & remote_addr,
-    int64_t ptime);
+    const int64_t& ptime);
 
   void Deliver(
     TincanControl & ctrl_resp) override;
@@ -67,14 +68,16 @@ public:
   {
     return *this;
   }
+  std::unique_ptr<Thread> ctrl_thread_;
   //
   //Runnable
-  //void Run(Thread* thread) override;
+  void Quit();
+  void Run();
 
 private:
   unique_ptr<ControlDispatch> ctrl_dispatch_;
   unique_ptr<AsyncPacketSocket> rcv_socket_; //Listener for incoming Controls
-  unique_ptr<AsyncUDPSocket> snd_socket_;    //Sends to Listener Controller Module
+  unique_ptr<AsyncPacketSocket> snd_socket_;    //Sends to Listener Controller Module
   unique_ptr<SocketAddress> ctrl_addr_;      //Address for Listener Controller Module
   PacketOptions packet_options_;
   std::mutex skt_mutex_;

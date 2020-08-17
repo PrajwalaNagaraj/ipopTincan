@@ -1,0 +1,141 @@
+if [ ! -d ../out/release/x86_64/obj ]; then  mkdir -p ../out/release/x86_64/obj; fi
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/tincan_main.cc -o ../out/release/x86_64/obj/tincan_main.o
+In file included from ../src/tincan_main.cc:25:
+In file included from ../include/tincan.h:29:
+../include/single_link_tunnel.h:83:8: warning: 'TapReadComplete' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  void TapReadComplete(
+       ^
+../include/basic_tunnel.h:152:16: note: overridden virtual function is here
+  virtual void TapReadComplete(
+               ^
+In file included from ../src/tincan_main.cc:25:
+../include/tincan.h:82:8: warning: 'QueryLinkCas' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  void QueryLinkCas(
+       ^
+../include/controller_handle.h:73:18: note: overridden virtual function is here
+    virtual void QueryLinkCas(
+                 ^
+In file included from ../src/tincan_main.cc:25:
+In file included from ../include/tincan.h:27:
+In file included from ../include/control_listener.h:34:
+In file included from ../include/control_dispatch.h:33:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+3 warnings generated.
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/control_listener.cc -o ../out/release/x86_64/obj/control_listener.o
+../src/control_listener.cc:31:2: warning: field 'packet_options_' will be initialized after base 'rtc::Thread' [-Wreorder]
+ packet_options_(DSCP_DEFAULT),
+ ^
+In file included from ../src/control_listener.cc:24:
+In file included from ../include/control_listener.h:34:
+In file included from ../include/control_dispatch.h:33:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+2 warnings generated.
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/control_dispatch.cc -o ../out/release/x86_64/obj/control_dispatch.o
+In file included from ../src/control_dispatch.cc:23:
+In file included from ../include/control_dispatch.h:33:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+1 warning generated.
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/tincan_control.cc -o ../out/release/x86_64/obj/tincan_control.o
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/basic_tunnel.cc -o ../out/release/x86_64/obj/basic_tunnel.o
+In file included from ../src/basic_tunnel.cc:23:
+In file included from ../include/basic_tunnel.h:40:
+In file included from ../include/tapdev.h:27:
+In file included from ../include/linux/tapdev_lnx.h:28:
+In file included from ../include/tapdev_inf.h:27:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+1 warning generated.
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/tincan.cc -o ../out/release/x86_64/obj/tincan.o
+In file included from ../src/tincan.cc:24:
+In file included from ../include/tincan.h:29:
+../include/single_link_tunnel.h:83:8: warning: 'TapReadComplete' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  void TapReadComplete(
+       ^
+../include/basic_tunnel.h:152:16: note: overridden virtual function is here
+  virtual void TapReadComplete(
+               ^
+In file included from ../src/tincan.cc:24:
+../include/tincan.h:82:8: warning: 'QueryLinkCas' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  void QueryLinkCas(
+       ^
+../include/controller_handle.h:73:18: note: overridden virtual function is here
+    virtual void QueryLinkCas(
+                 ^
+In file included from ../src/tincan.cc:24:
+In file included from ../include/tincan.h:27:
+In file included from ../include/control_listener.h:34:
+In file included from ../include/control_dispatch.h:33:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+3 warnings generated.
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/single_link_tunnel.cc -o ../out/release/x86_64/obj/single_link_tunnel.o
+In file included from ../src/single_link_tunnel.cc:23:
+../include/single_link_tunnel.h:83:8: warning: 'TapReadComplete' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  void TapReadComplete(
+       ^
+../include/basic_tunnel.h:152:16: note: overridden virtual function is here
+  virtual void TapReadComplete(
+               ^
+In file included from ../src/single_link_tunnel.cc:23:
+In file included from ../include/single_link_tunnel.h:26:
+In file included from ../include/basic_tunnel.h:40:
+In file included from ../include/tapdev.h:27:
+In file included from ../include/linux/tapdev_lnx.h:28:
+In file included from ../include/tapdev_inf.h:27:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+2 warnings generated.
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/virtual_link.cc -o ../out/release/x86_64/obj/virtual_link.o
+In file included from ../src/virtual_link.cc:23:
+In file included from ../include/virtual_link.h:39:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+In file included from ../src/virtual_link.cc:23:
+../include/virtual_link.h:173:8: warning: private field 'is_valid_' is not used [-Wunused-private-field]
+  bool is_valid_;
+       ^
+2 warnings generated.
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/tap_frame.cc -o ../out/release/x86_64/obj/tap_frame.o
+In file included from ../src/tap_frame.cc:23:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+1 warning generated.
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -iquote ../include/linux -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/linux/tapdev_lnx.cc -o ../out/release/x86_64/obj/tapdev_lnx.o
+In file included from ../src/linux/tapdev_lnx.cc:25:
+In file included from ../include/linux/tapdev_lnx.h:28:
+In file included from ../include/tapdev_inf.h:27:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+1 warning generated.
+#clang++ -fuse-ld=/usr/bin/ldd 
+clang++ -v -o ../out/release/x86_64/ipop-tincan ../out/release/x86_64/obj/tincan_main.o ../out/release/x86_64/obj/control_listener.o ../out/release/x86_64/obj/control_dispatch.o ../out/release/x86_64/obj/tincan_control.o ../out/release/x86_64/obj/basic_tunnel.o ../out/release/x86_64/obj/tincan.o ../out/release/x86_64/obj/single_link_tunnel.o ../out/release/x86_64/obj/virtual_link.o ../out/release/x86_64/obj/tap_frame.o ../out/release/x86_64/obj/tapdev_lnx.o -L ../../external/3rd-Party-Libs/release -nodefaultlibs -Wl,--start-group -lm -lgcc_s -lgcc -lc -lpthread -ljsoncpp -llogging -lrtc_event -lprotobuf_lite -lutil -lchecks -lcriticalsection -lfield_trial_parser -lice_log -loptions -lplatform_thread_types -lrtc_pc_base -lsequence_checker -lstrings -lstun -ltimeutils -lweak_ptr -lsent_packet -lrtc_numerics -lthrow_delegate -lbase64 -lbad_optional_access -lmedia_transport_interface -lplatform_thread -lrtc_event_log -lrtc_media_base -lrtc_numerics -lrtp_parameters -lrtp_receiver -lrtp_rtcp_format -lthrow_delegate -lsrtp -llibjingle_peerconnection_api -lboringssl -lboringssl_asm -lrtc_base -lrtc_base_approved -lstringutils -ldata_rate -ldata_size -ltime_delta -lc++ -lc++abi -lrtc_p2p -lraw_logging_internal -lrtc_error -lfield_trial -lmetrics -lvideo_rtp_headers -ltask_queue -lfile_wrapper -Wl,--end-group 
+clang version 6.0.0-1ubuntu2 (tags/RELEASE_600/final)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/5
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/5.5.0
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/7
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.5.0
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/7
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/7.5.0
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o ../out/release/x86_64/ipop-tincan /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/crtbegin.o -L../../external/3rd-Party-Libs/release -L/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../.. -L/usr/lib/llvm-6.0/bin/../lib -L/lib -L/usr/lib ../out/release/x86_64/obj/tincan_main.o ../out/release/x86_64/obj/control_listener.o ../out/release/x86_64/obj/control_dispatch.o ../out/release/x86_64/obj/tincan_control.o ../out/release/x86_64/obj/basic_tunnel.o ../out/release/x86_64/obj/tincan.o ../out/release/x86_64/obj/single_link_tunnel.o ../out/release/x86_64/obj/virtual_link.o ../out/release/x86_64/obj/tap_frame.o ../out/release/x86_64/obj/tapdev_lnx.o --start-group -lm -lgcc_s -lgcc -lc -lpthread -ljsoncpp -llogging -lrtc_event -lprotobuf_lite -lutil -lchecks -lcriticalsection -lfield_trial_parser -lice_log -loptions -lplatform_thread_types -lrtc_pc_base -lsequence_checker -lstrings -lstun -ltimeutils -lweak_ptr -lsent_packet -lrtc_numerics -lthrow_delegate -lbase64 -lbad_optional_access -lmedia_transport_interface -lplatform_thread -lrtc_event_log -lrtc_media_base -lrtc_numerics -lrtp_parameters -lrtp_receiver -lrtp_rtcp_format -lthrow_delegate -lsrtp -llibjingle_peerconnection_api -lboringssl -lboringssl_asm -lrtc_base -lrtc_base_approved -lstringutils -ldata_rate -ldata_size -ltime_delta -lc++ -lc++abi -lrtc_p2p -lraw_logging_internal -lrtc_error -lfield_trial -lmetrics -lvideo_rtp_headers -ltask_queue -lfile_wrapper --end-group /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../x86_64-linux-gnu/crtn.o

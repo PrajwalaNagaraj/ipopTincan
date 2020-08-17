@@ -69,8 +69,6 @@ ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libtask_queue.a webr
 
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libfile_wrapper.a webrtc-checkout/src/out/release/obj/rtc_base/system/file_wrapper/*.o
 
-ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libyield_policy.a webrtc-checkout/src/out/release/obj/rtc_base/synchronization/yield_policy/*.o
-
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libplatform_thread.a webrtc-checkout/src/out/release/obj/rtc_base/platform_thread/*.o
 
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/release/libbad_optional_access.a webrtc-checkout/src/out/release/obj/third_party/abseil-cpp/absl/types/bad_optional_access/*.o

@@ -27,9 +27,11 @@ namespace tincan
 {
 using namespace rtc;
 ControlListener::ControlListener(unique_ptr<ControlDispatch> control_dispatch):
-  ctrl_dispatch_(move(control_dispatch)),
-  packet_options_(DSCP_DEFAULT)
+ ctrl_dispatch_(move(control_dispatch)),
+ packet_options_(DSCP_DEFAULT)
+// Thread(SocketServer::CreateDefault())
 {
+//  ctrl_thread_ = Thread::CreateWithSocketServer();
   ctrl_dispatch_->SetDispatchToListenerInf(this);
 }
 
@@ -42,7 +44,7 @@ ControlListener::ReadPacketHandler(
   const char * data,
   size_t len,
   const SocketAddress &,
-  int64_t PacketTime)
+  const int64_t& PacketTime)
 {
   try {
     TincanControl ctrl(data, len);
@@ -85,17 +87,55 @@ ControlListener::CreateIpopControllerLink(
 }
 
 /*void
-ControlListener::Run(
-  Thread* thread)
+ControlListener::Run()
 {
+	Thread* th = Thread::Current();
+	const SocketAddress addr(tp.kLocalHost, tp.kUdpPort);
+	//rcv_socket_ = make_unique<AsyncUDPSocket>(
+          //         ctrl_thread_->socketserver()->CreateAsyncSocket(addr.family(), SOCK_DGRAM));
+	rcv_socket_ = ctrl_thread_->socketserver()->CreateAsyncSocket(addr.family(), SOCK_DGRAM);
+	if(!rcv_socket_)
+    		throw TCEXCEPT("Failed to create control listener socket");
+	rcv_socket_->Bind(addr);
+	rcv_socket_->SignalReadPacket.connect(this,
+    &ControlListener::ReadPacketHandler);
+}*/
+
+void
+ControlListener::Run()
+{
+	cout << "At beginning of Run\n";
   BasicPacketSocketFactory packet_factory;
   rcv_socket_.reset(packet_factory.CreateUdpSocket(
-    SocketAddress(tp.kLocalHost, tp.kUdpPort), 0, 0));
-  if (!rcv_socket_)
+      SocketAddress(tp.kLocalHost, tp.kUdpPort), 0, 0));
+
+  /*const SocketAddress addr(tp.kLocalHost, tp.kUdpPort);
+  SocketServer* sf = Thread::Current()->socketserver();
+  if(!sf)
+	  cout << "Error creating server\n";
+  AsyncSocket* socket = sf->CreateAsyncSocket(addr.family(), SOCK_DGRAM);
+  if(!socket)
+  	cout << "error with async socket\n";
+  cout << "After creating asyncsocket\n";
+
+  AsyncUDPSocket* rs = (AsyncUDPSocket::Create(socket, addr));
+  //rcv_socket_.reset(AsyncUDPSocket::Create(socket, addr));
+
+  if (!rs)
     throw TCEXCEPT("Failed to create control listener socket");
   RTC_LOG(LS_INFO) << "Tincan listening on " << tp.kLocalHost << " UDP port " << tp.kUdpPort;
+  //rcv_socket_ = new AsyncUDPSocket::Create(socket_, addr);*/
+  if(!rcv_socket_)
+	  cout << "error with createUDPsocket\n";
   rcv_socket_->SignalReadPacket.connect(this,
     &ControlListener::ReadPacketHandler);
-  thread->ProcessMessages(-1); //run until stopped
-}*/
-}  // namespace tincan
+  //ctrl_thread_->Start();
+  //Thread::Current()->ProcessMessages(-1); //run until stopped
+}
+
+void
+ControlListener::Quit()
+{
+  ctrl_thread_->Stop();
+}  
+}// namespace tincan

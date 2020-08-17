@@ -1,4 +1,4 @@
-cscope 15 $HOME/Prajwala-webrtc/private_branch/ipopTincan/Tincan/trunk/src               0000094831
+cscope 15 $HOME/praj_code/ipopTincan/Tincan/trunk/src               0000095810
 	@basic_tunnel.cc
 
 23 
@@ -133,19 +133,17 @@ uid
 
 52 
 	gs¦id_
-.
-»£t
-(
+ = 
+¹c
+::
 SSLId’t™y
 ::
 C»©e
 (
 s¦id_Çme
-, 
-¹c
-::
+,„tc::
 KT_RSA
-));
+);
 
 53 if(!
 	gs¦id_
@@ -159,59 +157,53 @@ TCEXCEPT
 
 55 
 	gloÿl_fšg”´št_
-.
-»£t
-(
-
-56 
-SSLFšg”´št
-::
-C»©e
-(
+ = 
 ¹c
 ::
-DIGEST_SHA_1
-, 
+SSLFšg”´št
+::
+C»©eUnique
+("DIGEST_SHA_1", *
 s¦id_
 .
 g‘
-()));
+());
 
-57 if(!
+56 if(!
 	gloÿl_fšg”´št_
 )
 
-58 
+57 
 throw
  
 TCEXCEPT
 ("Failedo createhe†ocal finger…rint");
 
-59 
+58 
 S‘IgnÜedN‘wÜkIÁ”çûs
 (
 ignÜed_li¡
 );
 
-63 
+62 
 	gBasicTuÂ–
 ::
 S¹
 ()
 
-65 
+64 
 Ãt_wÜk”_
-.
+->
+S¹
+();
+
+65 
+	gsig_wÜk”_
+->
 S¹
 ();
 
 66 
-	gsig_wÜk”_
-.
-S¹
-();
-
-67 
 	gtdev_
 ->
 	g»ad_com¶‘iÚ_
@@ -225,7 +217,7 @@ BasicTuÂ–
 T­R—dCom¶‘e
 );
 
-68 
+67 
 	gtdev_
 ->
 	gwr™e_com¶‘iÚ_
@@ -239,49 +231,49 @@ BasicTuÂ–
 T­Wr™eCom¶‘e
 );
 
-72 
+71 
 	gBasicTuÂ–
 ::
 Shutdown
 ()
 
-74 
+73 
 Ãt_wÜk”_
-.
+->
+Qu™
+();
+
+74 
+	gsig_wÜk”_
+->
 Qu™
 ();
 
 75 
-	gsig_wÜk”_
-.
-Qu™
-();
-
-76 
 	gtdev_
 ->
 Down
 ();
 
-77 
+76 
 	gtdev_
 ->
 Clo£
 ();
 
-80 
+79 
 	gunique_±r
 <
 	gVœtu®Lšk
 >
 
-81 
+80 
 	gBasicTuÂ–
 ::
 C»©eVlšk
 (
 
-82 
+81 
 unique_±r
 <
 VlškDesütÜ
@@ -289,7 +281,7 @@ VlškDesütÜ
 vlšk_desc
 ,
 
-83 
+82 
 unique_±r
 <
 P“rDesütÜ
@@ -297,7 +289,7 @@ P“rDesütÜ
 ³”_desc
 ,
 
-84 
+83 
 üick‘
 ::
 IûRŞe
@@ -305,7 +297,7 @@ IûRŞe
 iû_rŞe
 )
 
-86 
+85 
 vlšk_desc
 ->
 ¡un_£rv”s
@@ -313,7 +305,7 @@ vlšk_desc
 desütÜ_
 ->stun_servers;
 
-87 
+86 
 	gvlšk_desc
 ->
 	gtuº_descs
@@ -323,7 +315,7 @@ desütÜ_
 tuº_descs
 ;
 
-88 
+87 
 	gunique_±r
 <
 	gVœtu®Lšk
@@ -335,19 +327,19 @@ make_unique
 Vœtu®Lšk
 >(
 
-89 
+88 
 move
 (
 vlšk_desc
 ), move(
 ³”_desc
-), &
+), 
 	gsig_wÜk”_
-, &
+, 
 	gÃt_wÜk”_
 );
 
-90 
+89 
 	gunique_±r
 <
 	gSSLId’t™y
@@ -355,11 +347,11 @@ vlšk_desc
 s¦id_cİy
 (
 s¦id_
-.
+->
 ClÚe
 ());
 
-91 
+90 
 	gvl
 ->
 In™Ÿlize
@@ -375,11 +367,11 @@ loÿl_fšg”´št_
 g‘
 (),
 
-92 
+91 
 iû_rŞe
 );
 
-93 
+92 
 	gvl
 ->
 	gSigÇlMes§geReûived
@@ -393,7 +385,7 @@ BasicTuÂ–
 VlškR—dCom¶‘e
 );
 
-94 
+93 
 	gvl
 ->
 	gSigÇlLškUp
@@ -407,7 +399,7 @@ BasicTuÂ–
 VLškUp
 );
 
-95 
+94 
 	gvl
 ->
 	gSigÇlLškDown
@@ -421,7 +413,7 @@ BasicTuÂ–
 VLškDown
 );
 
-96 ià(
+95 ià(
 	gvl
 ->
 P“rCªdid©es
@@ -429,33 +421,33 @@ P“rCªdid©es
 Ëngth
 () != 0)
 
-97 
+96 
 vl
 ->
 S¹CÚÃùiÚs
 ();
 
-99  
+98  
 	gvl
 ;
 
-103 
+102 
 	gBasicTuÂ–
 ::
 VLškUp
 (
 
-104 
+103 
 ¡ršg
  
 vlšk_id
 )
 
-106 
+105 
 S¹Io
 ();
 
-107 
+106 
 	gunique_±r
 <
 	gTšÿnCÚŒŞ
@@ -467,7 +459,7 @@ make_unique
 TšÿnCÚŒŞ
 >();
 
-108 
+107 
 	gù¾
 ->
 S‘CÚŒŞTy³
@@ -477,7 +469,7 @@ TšÿnCÚŒŞ
 CTTšÿnReque¡
 );
 
-109 
+108 
 	gJsÚ
 ::
 V®ue
@@ -489,7 +481,7 @@ V®ue
 G‘Reque¡
 ();
 
-110 
+109 
 	g»q
 [
 TšÿnCÚŒŞ
@@ -499,7 +491,7 @@ Commªd
 LškS‹Chªge
 ;
 
-111 
+110 
 	g»q
 [
 TšÿnCÚŒŞ
@@ -511,7 +503,7 @@ desütÜ_
 uid
 ;
 
-112 
+111 
 	g»q
 [
 TšÿnCÚŒŞ
@@ -521,7 +513,7 @@ LškId
 vlšk_id
 ;
 
-113 
+112 
 	g»q
 [
 TšÿnCÚŒŞ
@@ -529,7 +521,7 @@ TšÿnCÚŒŞ
 D©a
 ] = "LINK_STATE_UP";
 
-114 
+113 
 	gù¾_lšk_
 ->
 D–iv”
@@ -539,19 +531,19 @@ move
 ù¾
 ));
 
-118 
+117 
 	gBasicTuÂ–
 ::
 VLškDown
 (
 
-119 
+118 
 ¡ršg
  
 vlšk_id
 )
 
-122 
+121 
 unique_±r
 <
 TšÿnCÚŒŞ
@@ -561,7 +553,7 @@ TšÿnCÚŒŞ
 make_unique
 <TincanControl>();
 
-123 
+122 
 	gù¾
 ->
 S‘CÚŒŞTy³
@@ -571,7 +563,7 @@ TšÿnCÚŒŞ
 CTTšÿnReque¡
 );
 
-124 
+123 
 	gJsÚ
 ::
 V®ue
@@ -583,7 +575,7 @@ V®ue
 G‘Reque¡
 ();
 
-125 
+124 
 	g»q
 [
 TšÿnCÚŒŞ
@@ -593,7 +585,7 @@ Commªd
 LškS‹Chªge
 ;
 
-126 
+125 
 	g»q
 [
 TšÿnCÚŒŞ
@@ -605,7 +597,7 @@ desütÜ_
 uid
 ;
 
-127 
+126 
 	g»q
 [
 TšÿnCÚŒŞ
@@ -615,7 +607,7 @@ LškId
 vlšk_id
 ;
 
-128 
+127 
 	g»q
 [
 TšÿnCÚŒŞ
@@ -623,7 +615,7 @@ TšÿnCÚŒŞ
 D©a
 ] = "LINK_STATE_DOWN";
 
-129 
+128 
 	gù¾_lšk_
 ->
 D–iv”
@@ -633,13 +625,13 @@ move
 ù¾
 ));
 
-133 
+132 
 	gBasicTuÂ–
 ::
 S¹Io
 ()
 
-135 
+134 
 ušt8_t
  
 i
@@ -651,7 +643,7 @@ i
 	gkLškCÚcu¼’tAIO
 ; i++)
 
-137 
+136 
 	gunique_±r
 <
 	gT­F¿me
@@ -663,13 +655,13 @@ make_unique
 T­F¿me
 >();
 
-138 
+137 
 	gtf
 ->
 In™Ÿlize
 ();
 
-139 
+138 
 	gtf
 ->
 BufãrToT¿nsãr
@@ -679,7 +671,7 @@ tf
 Paylßd
 ());
 
-140 
+139 
 	gtf
 ->
 By‹sToT¿nsãr
@@ -689,7 +681,7 @@ tf
 PaylßdC­ac™y
 ());
 
-141 if(0 =ğ
+140 if(0 =ğ
 tdev_
 ->
 R—d
@@ -697,61 +689,61 @@ R—d
 tf
 ))
 
-142 
+141 
 tf
 .
 »Ëa£
 ();
 
-144 
+143 
 RTC_LOG
 (
 LS_ERROR
 ) << "A TAP„ead operation failedo start!";
 
-148 
+147 
 	gTuÂ–DesütÜ
  &
 
-149 
+148 
 	gBasicTuÂ–
 ::
 DesütÜ
 ()
 
-151  *
+150  *
 desütÜ_
 .
 g‘
 ();
 
-154 
+153 
 ¡ršg
 
 
-155 
+154 
 	gBasicTuÂ–
 ::
 Name
 ()
 
-157  
+156  
 desütÜ_
 ->
 uid
 ;
 
-160 
+159 
 ¡ršg
 
 
-161 
+160 
 	gBasicTuÂ–
 ::
 MacAdd»ss
 ()
 
-163 
+162 
 MacAdd»ssTy³
  
 mac
@@ -761,7 +753,7 @@ tdev_
 MacAdd»ss
 ();
 
-164  
+163  
 By‹A¼ayToSŒšg
 (
 mac
@@ -771,29 +763,29 @@ begš
 ’d
 (), 0);
 
-167 
+166 
 ¡ršg
 
 
-168 
+167 
 	gBasicTuÂ–
 ::
 Fšg”´št
 ()
 
-170  
+169  
 loÿl_fšg”´št_
 ->
 ToSŒšg
 ();
 
-174 
+173 
 	gBasicTuÂ–
 ::
 S‘IgnÜedN‘wÜkIÁ”çûs
 (
 
-175 cÚ¡ 
+174 cÚ¡ 
 veùÜ
 <
 ¡ršg
@@ -801,7 +793,7 @@ veùÜ
 ignÜed_li¡
 )
 
-177 
+176 
 Ãt_mªag”_
 .
 £t_ÃtwÜk_ignÜe_li¡
@@ -809,7 +801,7 @@ ignÜed_li¡
 ignÜed_li¡
 );
 
-180 
+179 
 	gBasicTuÂ–
 ::
 OnMes§ge
@@ -819,17 +811,17 @@ Mes§ge
 msg
 )
 
-182 
+181 
 msg
 ->
 mes§ge_id
 )
 
-184 
+183 
 MSGID_TRANSMIT
 :
 
-186 
+185 
 unique_±r
 <
 T­F¿me
@@ -847,7 +839,7 @@ pd©a
 äm
 );
 
-187 
+186 
 	gsh¬ed_±r
 <
 	gVœtu®Lšk
@@ -863,7 +855,7 @@ pd©a
 vl
 ;
 
-188 
+187 
 	gvl
 ->
 T¿nsm™
@@ -871,7 +863,7 @@ T¿nsm™
 äame
 );
 
-189 
+188 
 d–‘e
  
 	gmsg
@@ -879,7 +871,7 @@ d–‘e
 	gpd©a
 ;
 
-190 
+189 
 	gäame
 ->
 In™Ÿlize
@@ -891,7 +883,7 @@ Paylßd
 PaylßdC­ac™y
 ());
 
-191 if(0 =ğ
+190 if(0 =ğ
 tdev_
 ->
 R—d
@@ -899,17 +891,17 @@ R—d
 äame
 ))
 
-192 
+191 
 äame
 .
 »Ëa£
 ();
 
-195 
+194 
 	gMSGID_SEND_ICC
 :
 
-197 
+196 
 unique_±r
 <
 T­F¿me
@@ -927,7 +919,7 @@ pd©a
 äm
 );
 
-198 
+197 
 	gsh¬ed_±r
 <
 	gVœtu®Lšk
@@ -943,7 +935,7 @@ pd©a
 vl
 ;
 
-199 
+198 
 	gvl
 ->
 T¿nsm™
@@ -951,7 +943,7 @@ T¿nsm™
 äame
 );
 
-202 
+201 
 d–‘e
  
 	gmsg
@@ -959,11 +951,11 @@ d–‘e
 	gpd©a
 ;
 
-205 
+204 
 	gMSGID_QUERY_NODE_INFO
 :
 
-207 
+206 
 sh¬ed_±r
 <
 Vœtu®Lšk
@@ -977,7 +969,7 @@ msg
 pd©a
 )->vl;
 
-208 
+207 
 	gvl
 ->
 G‘Sts
@@ -991,7 +983,7 @@ pd©a
 šfo
 );
 
-209 ((
+208 ((
 	gLškInfoMsgD©a
 *)
 	gmsg
@@ -1003,15 +995,15 @@ pd©a
 S‘
 ();
 
-212 
+211 
 	gMSGID_FWD_FRAME
 :
 
-213 
+212 
 MSGID_FWD_FRAME_RD
 :
 
-215 
+214 
 unique_±r
 <
 T­F¿me
@@ -1029,7 +1021,7 @@ pd©a
 äm
 );
 
-216 
+215 
 	gsh¬ed_±r
 <
 	gVœtu®Lšk
@@ -1045,7 +1037,7 @@ pd©a
 vl
 ;
 
-217 
+216 
 	gvl
 ->
 T¿nsm™
@@ -1053,7 +1045,7 @@ T¿nsm™
 äame
 );
 
-219 if(
+218 if(
 	gmsg
 ->
 	gmes§ge_id
@@ -1061,7 +1053,7 @@ T¿nsm™
 MSGID_FWD_FRAME_RD
 )
 
-221 
+220 
 äame
 ->
 In™Ÿlize
@@ -1071,7 +1063,7 @@ Paylßd
 PaylßdC­ac™y
 ());
 
-222 if(0 =ğ
+221 if(0 =ğ
 tdev_
 ->
 R—d
@@ -1079,13 +1071,13 @@ R—d
 äame
 ))
 
-223 
+222 
 äame
 .
 »Ëa£
 ();
 
-225 
+224 
 d–‘e
  
 	gmsg
@@ -1093,11 +1085,11 @@ d–‘e
 	gpd©a
 ;
 
-228 
+227 
 	gMSGID_DISC_LINK
 :
 
-230 
+229 
 sh¬ed_±r
 <
 Vœtu®Lšk
@@ -1111,13 +1103,13 @@ msg
 pd©a
 )->vl;
 
-231 
+230 
 	gvl
 ->
 DiscÚÃù
 ();
 
-232 ((
+231 ((
 	gLškInfoMsgD©a
 *)
 	gmsg
@@ -1129,19 +1121,19 @@ DiscÚÃù
 S‘
 ();
 
-239 
+238 
 	gBasicTuÂ–
 ::
 InjeùFame
 (
 
-240 
+239 
 ¡ršg
  && 
 d©a
 )
 
-242 
+241 
 unique_±r
 <
 T­F¿me
@@ -1151,13 +1143,13 @@ tf
 make_unique
 <TapFrame>();
 
-243 
+242 
 	gtf
 ->
 In™Ÿlize
 ();
 
-244 if(
+243 if(
 	gd©a
 .
 Ëngth
@@ -1167,13 +1159,13 @@ In™Ÿlize
 	gkT­BufãrSize
 )
 
-246 
+245 
 ¡ršg¡»am
  
 	goss
 ;
 
-247 
+246 
 	goss
  << "Injeù F¿mİ”©iÚ faed - f¿msiz" << 
 	gd©a
@@ -1181,13 +1173,13 @@ In™Ÿlize
 Ëngth
 () / 2
 
-248 << " i Ïrg”hª maximum‡cû±ed " << 
+247 << " i Ïrg”hª maximum‡cû±ed " << 
 	g
 .
 	gkT­BufãrSize
 ;
 
-249 
+248 
 throw
  
 TCEXCEPT
@@ -1199,7 +1191,7 @@ oss
 c_¡r
 ());
 
-251 
+250 
 size_t
  
 	gËn
@@ -1215,7 +1207,7 @@ Paylßd
 End
 ());
 
-252 if(
+251 if(
 	gËn
  !ğ
 d©a
@@ -1223,19 +1215,19 @@ d©a
 Ëngth
 () / 2)
 
-253 
+252 
 throw
  
 TCEXCEPT
 ("Inject Frame operation failed - ICC decode failure");
 
-254 
+253 
 	gtf
 ->
 S‘Wr™eOp
 ();
 
-255 
+254 
 	gtf
 ->
 PaylßdL’gth
@@ -1245,7 +1237,7 @@ ušt32_t
 Ën
 );
 
-256 
+255 
 	gtf
 ->
 BufãrToT¿nsãr
@@ -1255,7 +1247,7 @@ tf
 Paylßd
 ());
 
-257 
+256 
 	gtf
 ->
 By‹sT¿nsã¼ed
@@ -1265,7 +1257,7 @@ ušt32_t
 Ën
 );
 
-258 
+257 
 	gtf
 ->
 By‹sToT¿nsãr
@@ -1275,7 +1267,7 @@ ušt32_t
 Ën
 );
 
-259 
+258 
 	gtdev_
 ->
 Wr™e
@@ -1445,23 +1437,23 @@ TšÿnCÚŒŞ
 cÚŒŞ
 )
 
-59 
+61 
 Œy
  {
 
-60 
+62 
 cÚŒŞ
 .
 G‘CÚŒŞTy³
 ()) {
 
-61 
+63 
 TšÿnCÚŒŞ
 ::
 CTTšÿnReque¡
 :
 
-62 (
+64 (
 this
 ->*
 cÚŒŞ_m­_
@@ -1473,19 +1465,19 @@ cÚŒŞ
 G‘Commªd
 ()))(control);
 
-64 
+66 
 	gTšÿnCÚŒŞ
 ::
 CTTšÿnRe¥Ú£
 :
 
-68 
+70 
 RTC_LOG
 (
 LS_WARNING
 ) << "Unrecognized controlype„eceived‡nd discarded.";
 
-72 
+74 
 ÿtch
 (
 out_of_¿nge
@@ -1493,13 +1485,13 @@ out_of_¿nge
 e
 ) {
 
-73 
+75 
 RTC_LOG
 (
 LS_WARNING
 ) << "An invalid IPOP control operation was„eceived‡nd "
 
-74 "disÿrded: " << 
+76 "disÿrded: " << 
 	gcÚŒŞ
 .
 StyËdSŒšg
@@ -1509,7 +1501,7 @@ StyËdSŒšg
 wh©
 ();
 
-76 
+78 
 ÿtch
 (
 exû±iÚ
@@ -1517,7 +1509,7 @@ exû±iÚ
 e
 )
 
-78 
+80 
 RTC_LOG
 (
 LS_WARNING
@@ -1527,55 +1519,55 @@ LS_WARNING
 wh©
 ();
 
-82 
+84 
 	gCÚŒŞDi¥©ch
 ::
 S‘Di¥©chToTšÿnInf
 (
 
-83 
+85 
 TšÿnDi¥©chIÁ”çû
  * 
 dtÙ
 )
 
-85 
+87 
 tšÿn_
  = 
 dtÙ
 ;
 
-88 
+90 
 	gCÚŒŞDi¥©ch
 ::
 S‘Di¥©chToLi¡’”Inf
 (
 
-89 
+91 
 Di¥©chToLi¡’”Inf
  * 
 dtŞ
 )
 
-91 
+93 
 dtŞ_
  = 
 dtŞ
 ;
 
-95 
+97 
 	gCÚŒŞDi¥©ch
 ::
 CÚfigu»Loggšg
 (
 
-96 
+98 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-98 
+100 
 JsÚ
 ::
 V®ue
@@ -1587,7 +1579,7 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-99 
+101 
 ¡ršg
  
 	glog_lvl
@@ -1601,13 +1593,13 @@ Lev–
 asSŒšg
 ();
 
-100 
+102 
 ¡ršg
  
 msg
 ("Tincan†ogging successfully configured.");
 
-101 
+103 
 boŞ
  
 	g¡©us
@@ -1615,17 +1607,17 @@ boŞ
 Œue
 ;
 
-102 
+104 
 	gŒy
 
 
-104 
+106 
 o¡ršg¡»am
  
 	goss
 ;
 
-105 
+107 
 	g¡d
 ::
 ŒªsfÜm
@@ -1637,7 +1629,7 @@ begš
 ’d
 (),†og_lvl.begin(),
 
-106 [=](
+108 [=](
 c
 è{ 
 ¡©ic_ÿ¡
@@ -1645,7 +1637,7 @@ c
 tŞow”
 (c));});
 
-107 
+109 
 	goss
  << "t¡am°" << "th»ad " << 
 	glog_lvl
@@ -1653,7 +1645,7 @@ tŞow”
 c_¡r
 ();
 
-108 
+110 
 	gLogMes§ge
 ::
 CÚfigu»Loggšg
@@ -1665,7 +1657,7 @@ oss
 c_¡r
 ());
 
-109 
+111 
 	gLogMes§ge
 ::
 LogToDebug
@@ -1673,7 +1665,7 @@ LogToDebug
 LS_WARNING
 );
 
-110 
+112 
 	gLogMes§ge
 ::
 S‘LogToStd”r
@@ -1681,7 +1673,7 @@ S‘LogToStd”r
 Œue
 );
 
-111 if(
+113 if(
 	g»q
 ["Deviû"].
 asSŒšg
@@ -1689,7 +1681,7 @@ asSŒšg
 »q
 ["Device"].asString() == "File")
 
-113 
+115 
 LogMes§ge
 ::
 S‘LogToStd”r
@@ -1697,7 +1689,7 @@ S‘LogToStd”r
 çl£
 );
 
-114 
+116 
 ¡ršg
  
 	gdœ
@@ -1707,7 +1699,7 @@ S‘LogToStd”r
 asSŒšg
 ();
 
-120 
+122 
 ¡ršg
  
 	gâ
@@ -1717,7 +1709,7 @@ asSŒšg
 asSŒšg
 ();
 
-121 
+123 
 size_t
  
 	gmax_sz
@@ -1727,7 +1719,7 @@ size_t
 asUIÁ64
 ();
 
-122 
+124 
 size_t
  
 	gnum_æs
@@ -1737,7 +1729,7 @@ size_t
 asUIÁ64
 ();
 
-123 
+125 
 	glog_sšk_
  = 
 make_unique
@@ -1753,13 +1745,13 @@ dœ
 	gnum_æs
 );
 
-124 
+126 
 	glog_sšk_
 ->
 In™
 ();
 
-125 
+127 
 	glog_lvl
  = 
 »q
@@ -1771,7 +1763,7 @@ Lev–
 asSŒšg
 ();
 
-126 
+128 
 	gLogMes§ge
 ::
 AddLogToSŒ—m
@@ -1785,41 +1777,21 @@ G‘LogLev–
 log_lvl
 ));
 
-128 if(
+130 if(
 	g»q
 ["Deviû"].
 asSŒšg
 () == "All" ||
 
-129 
+131 
 »q
 ["Deviû"].
 asSŒšg
 () == "Console")
 
-131 if(
+133 if(
 »q
 ["CÚsŞeLev–"].
-asSŒšg
-().
-Ëngth
-() > 0)
-
-132 
-log_lvl
- = 
-»q
-["CÚsŞeLev–"].
-asSŒšg
-();
-
-133 if(
-	g»q
-[
-TšÿnCÚŒŞ
-::
-Lev–
-].
 asSŒšg
 ().
 Ëngth
@@ -1829,6 +1801,26 @@ asSŒšg
 log_lvl
  = 
 »q
+["CÚsŞeLev–"].
+asSŒšg
+();
+
+135 if(
+	g»q
+[
+TšÿnCÚŒŞ
+::
+Lev–
+].
+asSŒšg
+().
+Ëngth
+() > 0)
+
+136 
+log_lvl
+ = 
+»q
 [
 TšÿnCÚŒŞ
 ::
@@ -1837,7 +1829,7 @@ Lev–
 asSŒšg
 ();
 
-135 
+137 
 	gLogMes§ge
 ::
 LogToDebug
@@ -1847,7 +1839,7 @@ G‘LogLev–
 log_lvl
 ));
 
-136 
+138 
 	gLogMes§ge
 ::
 S‘LogToStd”r
@@ -1855,13 +1847,13 @@ S‘LogToStd”r
 Œue
 );
 
-138 } 
+140 } 
 ÿtch
 (
 exû±iÚ
  &)
 
-140 
+142 
 	gLogMes§ge
 ::
 LogToDebug
@@ -1869,7 +1861,7 @@ LogToDebug
 LS_WARNING
 );
 
-141 
+143 
 	gLogMes§ge
 ::
 S‘LogToStd”r
@@ -1877,11 +1869,11 @@ S‘LogToStd”r
 Œue
 );
 
-142 
+144 
 	gmsg
  = "The configure†ogging operation failed. Using Console/WARNING";
 
-143 
+145 
 RTC_LOG
 (
 LS_WARNING
@@ -1889,13 +1881,13 @@ LS_WARNING
 	gmsg
 ;
 
-144 
+146 
 	g¡©us
  = 
 çl£
 ;
 
-146 
+148 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -1905,7 +1897,7 @@ msg
 ¡©us
 );
 
-147 
+149 
 	gù¾_lšk_
 ->
 D–iv”
@@ -1913,19 +1905,19 @@ D–iv”
 cÚŒŞ
 );
 
-151 
+153 
 	gCÚŒŞDi¥©ch
 ::
 C»©eLšk
 (
 
-152 
+154 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-154 
+157 
 JsÚ
 ::
 V®ue
@@ -1937,13 +1929,13 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-155 
+158 
 ¡ršg
  
 msg
 ("Connectiono…eer‚ode in…rogress.");
 
-156 
+159 
 boŞ
  
 	g¡©us
@@ -1951,7 +1943,7 @@ boŞ
 çl£
 ;
 
-157 
+160 
 	glock_gu¬d
 <
 	gmu‹x
@@ -1961,11 +1953,11 @@ lg
 di¥_mu‹x_
 );
 
-158 
+161 
 	gŒy
 
 
-160 
+163 
 	gtšÿn_
 ->
 C»©eVlšk
@@ -1975,13 +1967,13 @@ C»©eVlšk
 cÚŒŞ
 );
 
-161 
+164 
 	g¡©us
  = 
 Œue
 ;
 
-162 } 
+165 } 
 ÿtch
 (
 exû±iÚ
@@ -1989,11 +1981,11 @@ exû±iÚ
 e
 )
 
-164 
+167 
 	gmsg
  = "CreateLink failed.";
 
-165 
+168 
 RTC_LOG
 (
 LS_WARNING
@@ -2003,17 +1995,17 @@ LS_WARNING
 wh©
 () << ". Control Data=\n" <<
 
-166 
+169 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-168 if(!
+172 if(!
 	g¡©us
 )
 
-170 
+174 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -2023,7 +2015,7 @@ msg
 ¡©us
 );
 
-171 
+175 
 	gù¾_lšk_
 ->
 D–iv”
@@ -2031,19 +2023,19 @@ D–iv”
 cÚŒŞ
 );
 
-175 
+179 
 	gCÚŒŞDi¥©ch
 ::
 C»©eIpİCÚŒŞËrRe¥Lšk
 (
 
-176 
+180 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-178 
+182 
 JsÚ
 ::
 V®ue
@@ -2055,7 +2047,7 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-179 
+183 
 ¡ršg
  
 	g
@@ -2065,7 +2057,7 @@ G‘Reque¡
 asSŒšg
 ();
 
-180 
+184 
 	gpÜt
  = 
 »q
@@ -2073,13 +2065,13 @@ asSŒšg
 asIÁ
 ();
 
-181 
+186 
 ¡ršg
  
 msg
 ("Controllerƒndpoint successfully created.");
 
-182 
+187 
 	glock_gu¬d
 <
 	gmu‹x
@@ -2089,11 +2081,11 @@ lg
 di¥_mu‹x_
 );
 
-183 
+188 
 	gŒy
 
 
-185 
+190 
 	gunique_±r
 <
 	gSock‘Add»ss
@@ -2109,7 +2101,7 @@ Sock‘Add»ss
 pÜt
 ));
 
-186 
+191 
 	gdtŞ_
 ->
 C»©eIpİCÚŒŞËrLšk
@@ -2119,13 +2111,13 @@ move
 ù¾_addr
 ));
 
-187 
+192 
 d–‘e
  
 	gù¾_lšk_
 ;
 
-188 
+193 
 	gù¾_lšk_
  = &
 dtŞ_
@@ -2133,7 +2125,7 @@ dtŞ_
 G‘IpİCÚŒŞËrLšk
 ();
 
-189 
+194 
 	gtšÿn_
 ->
 S‘IpİCÚŒŞËrLšk
@@ -2141,7 +2133,7 @@ S‘IpİCÚŒŞËrLšk
 ù¾_lšk_
 );
 
-190 
+195 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -2151,7 +2143,7 @@ msg
 Œue
 );
 
-191 
+196 
 	gù¾_lšk_
 ->
 D–iv”
@@ -2159,7 +2151,7 @@ D–iv”
 cÚŒŞ
 );
 
-193 
+198 
 ÿtch
 (
 exû±iÚ
@@ -2167,7 +2159,7 @@ exû±iÚ
 e
 )
 
-197 
+202 
 RTC_LOG
 (
 LS_ERROR
@@ -2177,25 +2169,25 @@ LS_ERROR
 wh©
 () << ". Control Data=\n" <<
 
-198 
+203 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-203 
+208 
 	gCÚŒŞDi¥©ch
 ::
 C»©eTuÂ–
 (
 
-204 
+209 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-206 
+212 
 JsÚ
 ::
 V®ue
@@ -2207,7 +2199,7 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-207 
+213 
 	gunique_±r
 <
 	gJsÚ
@@ -2223,7 +2215,7 @@ JsÚ
 objeùV®ue
 );
 
-208 
+214 
 	glock_gu¬d
 <
 	gmu‹x
@@ -2233,11 +2225,11 @@ lg
 di¥_mu‹x_
 );
 
-209 
+215 
 	gŒy
 
 
-211 
+217 
 	gtšÿn_
 ->
 C»©eTuÂ–
@@ -2247,13 +2239,13 @@ C»©eTuÂ–
 »¥
 )["Message"]);
 
-212 (*
+218 (*
 	g»¥
 )["Sucûss"] = 
 Œue
 ;
 
-213 } 
+219 } 
 ÿtch
 (
 exû±iÚ
@@ -2261,13 +2253,13 @@ exû±iÚ
 e
 )
 
-215 
+221 
 ¡ršg
  
 	g”_msg
  = "The CreateTunnel operation failed.";
 
-216 
+222 
 RTC_LOG
 (
 LS_ERROR
@@ -2279,25 +2271,25 @@ LS_ERROR
 wh©
 () << ". Control Data=\n" <<
 
-217 
+223 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-218 (*
+224 (*
 	g»¥
 )["Mes§ge"] = 
 ”_msg
 ;
 
-219 (*
+225 (*
 	g»¥
 )["Sucûss"] = 
 çl£
 ;
 
-221 
+227 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -2307,7 +2299,7 @@ move
 »¥
 ));
 
-222 
+228 
 	gù¾_lšk_
 ->
 D–iv”
@@ -2315,7 +2307,7 @@ D–iv”
 cÚŒŞ
 );
 
-225 
+231 
 	gCÚŒŞDi¥©ch
 ::
 Echo
@@ -2325,7 +2317,7 @@ TšÿnCÚŒŞ
 cÚŒŞ
 )
 
-227 
+233 
 JsÚ
 ::
 V®ue
@@ -2337,7 +2329,7 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-228 
+234 
 ¡ršg
  
 	gmsg
@@ -2351,7 +2343,7 @@ Mes§ge
 asSŒšg
 ();
 
-229 
+235 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -2361,7 +2353,7 @@ msg
 Œue
 );
 
-230 
+236 
 	gcÚŒŞ
 .
 S‘CÚŒŞTy³
@@ -2371,7 +2363,7 @@ TšÿnCÚŒŞ
 CTTšÿnRe¥Ú£
 );
 
-231 
+237 
 	gù¾_lšk_
 ->
 D–iv”
@@ -2379,23 +2371,23 @@ D–iv”
 cÚŒŞ
 );
 
-234 
+240 
 LoggšgSev”™y
 
 
-235 
+241 
 	gCÚŒŞDi¥©ch
 ::
 G‘LogLev–
 (
 
-236 cÚ¡ 
+242 cÚ¡ 
 ¡ršg
  & 
 log_Ëv–
 )
 
-238 
+244 
 LoggšgSev”™y
  
 lv
@@ -2403,7 +2395,7 @@ lv
 LS_WARNING
 ;
 
-239 
+245 
 	glock_gu¬d
 <
 	gmu‹x
@@ -2413,11 +2405,11 @@ lg
 di¥_mu‹x_
 );
 
-240 ià(
+246 ià(
 	glog_Ëv–
  == "NONE")
 
-241 
+247 
 lv
  = 
 ¹c
@@ -2425,11 +2417,11 @@ lv
 LS_NONE
 ;
 
-242 ià(
+248 ià(
 	glog_Ëv–
  == "ERROR")
 
-243 
+249 
 lv
  = 
 ¹c
@@ -2437,11 +2429,11 @@ lv
 LS_ERROR
 ;
 
-244 ià(
+250 ià(
 	glog_Ëv–
  == "WARNING")
 
-245 
+251 
 lv
  = 
 ¹c
@@ -2449,13 +2441,13 @@ lv
 LS_WARNING
 ;
 
-246 ià(
+252 ià(
 	glog_Ëv–
  =ğ"INFO" || 
 log_Ëv–
  == "VERBOSE" ||†og_level == "DEBUG")
 
-247 
+253 
 lv
  = 
 ¹c
@@ -2463,11 +2455,11 @@ lv
 LS_INFO
 ;
 
-248 ià(
+254 ià(
 	glog_Ëv–
  == "LS_VERBOSE")
 
-249 
+255 
 lv
  = 
 ¹c
@@ -2475,13 +2467,13 @@ lv
 LS_VERBOSE
 ;
 
-252 
+258 
 ¡ršg
  
 	gmsg
  = "An invalid†og†evel was specified = ";
 
-253 
+259 
 RTC_LOG
 (
 LS_WARNING
@@ -2491,23 +2483,23 @@ LS_WARNING
 	glog_Ëv–
  << ". Defaultingo WARNING";
 
-255  
+261  
 	glv
 ;
 
-259 
+265 
 	gCÚŒŞDi¥©ch
 ::
 InjeùF¿me
 (
 
-260 
+266 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-262 
+269 
 JsÚ
 ::
 V®ue
@@ -2519,13 +2511,13 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-263 
+270 
 ¡ršg
  
 	gmsg
  = "InjectFrame failed.";
 
-264 
+271 
 boŞ
  
 	g¡©us
@@ -2533,7 +2525,7 @@ boŞ
 çl£
 ;
 
-265 
+272 
 	glock_gu¬d
 <
 	gmu‹x
@@ -2543,11 +2535,11 @@ lg
 di¥_mu‹x_
 );
 
-266 
+273 
 	gŒy
 
 
-268 
+275 
 	gtšÿn_
 ->
 InjeùF¿me
@@ -2555,17 +2547,17 @@ InjeùF¿me
 »q
 );
 
-269 
+276 
 	gmsg
  = "InjectFrame succeeded.";
 
-270 
+277 
 	g¡©us
  = 
 Œue
 ;
 
-271 } 
+278 } 
 ÿtch
 (
 exû±iÚ
@@ -2573,7 +2565,7 @@ exû±iÚ
 e
 )
 
-273 
+280 
 RTC_LOG
 (
 LS_WARNING
@@ -2583,13 +2575,13 @@ LS_WARNING
 wh©
 () << ". Control Data=\n" <<
 
-274 
+281 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-276 
+283 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -2599,7 +2591,7 @@ msg
 ¡©us
 );
 
-277 
+284 
 	gù¾_lšk_
 ->
 D–iv”
@@ -2607,19 +2599,19 @@ D–iv”
 cÚŒŞ
 );
 
-281 
+288 
 	gCÚŒŞDi¥©ch
 ::
 Qu”yCªdid©eAdd»ssS‘
 (
 
-282 
+289 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-284 
+292 
 JsÚ
 ::
 V®ue
@@ -2633,13 +2625,13 @@ G‘Reque¡
 	gÿs_šfo
 ;
 
-285 
+293 
 ¡ršg
  
 	g»¥
 ;
 
-286 
+294 
 boŞ
  
 	g¡©us
@@ -2647,7 +2639,7 @@ boŞ
 çl£
 ;
 
-287 
+295 
 	glock_gu¬d
 <
 	gmu‹x
@@ -2657,11 +2649,11 @@ lg
 di¥_mu‹x_
 );
 
-288 
+296 
 	gŒy
 
 
-290 
+298 
 	gtšÿn_
 ->
 Qu”yLškCas
@@ -2671,7 +2663,7 @@ Qu”yLškCas
 ÿs_šfo
 );
 
-291 
+299 
 	g»¥
  = 
 ÿs_šfo
@@ -2679,13 +2671,13 @@ Qu”yLškCas
 toStyËdSŒšg
 ();
 
-292 
+300 
 	g¡©us
  = 
 Œue
 ;
 
-293 } 
+301 } 
 ÿtch
 (
 exû±iÚ
@@ -2693,11 +2685,11 @@ exû±iÚ
 e
 )
 
-295 
+303 
 	g»¥
  = "The QueryCandidateAddressSet operation failed. ";
 
-296 
+304 
 RTC_LOG
 (
 LS_WARNING
@@ -2709,13 +2701,13 @@ LS_WARNING
 wh©
 () << ". Control Data=\n" <<
 
-297 
+305 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-299 
+307 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -2725,7 +2717,7 @@ S‘Re¥Ú£
 ¡©us
 );
 
-300 
+308 
 	gù¾_lšk_
 ->
 D–iv”
@@ -2733,19 +2725,19 @@ D–iv”
 cÚŒŞ
 );
 
-304 
+312 
 	gCÚŒŞDi¥©ch
 ::
 Qu”yLškSts
 (
 
-305 
+313 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-307 
+316 
 JsÚ
 ::
 V®ue
@@ -2757,7 +2749,7 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-308 
+317 
 	gunique_±r
 <
 	gJsÚ
@@ -2773,13 +2765,13 @@ JsÚ
 objeùV®ue
 );
 
-309 (*
+318 (*
 	g»¥
 )["Sucûss"] = 
 çl£
 ;
 
-310 
+319 
 	glock_gu¬d
 <
 	gmu‹x
@@ -2789,11 +2781,11 @@ lg
 di¥_mu‹x_
 );
 
-311 
+320 
 	gŒy
 
 
-313 
+322 
 	gtšÿn_
 ->
 Qu”yLškSts
@@ -2803,13 +2795,13 @@ Qu”yLškSts
 »¥
 )["Message"]);
 
-314 (*
+323 (*
 	g»¥
 )["Sucûss"] = 
 Œue
 ;
 
-315 } 
+324 } 
 ÿtch
 (
 exû±iÚ
@@ -2817,13 +2809,13 @@ exû±iÚ
 e
 )
 
-317 
+326 
 ¡ršg
  
 	g”_msg
  = "The QueryLinkStats operation failed. ";
 
-318 
+327 
 RTC_LOG
 (
 LS_WARNING
@@ -2835,25 +2827,25 @@ LS_WARNING
 wh©
 () << ". Control Data=\n" <<
 
-319 
+328 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-320 (*
+329 (*
 	g»¥
 )["Mes§ge"] = 
 ”_msg
 ;
 
-321 (*
+330 (*
 	g»¥
 )["Sucûss"] = 
 çl£
 ;
 
-323 
+332 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -2863,7 +2855,7 @@ move
 »¥
 ));
 
-324 
+333 
 	gù¾_lšk_
 ->
 D–iv”
@@ -2871,19 +2863,19 @@ D–iv”
 cÚŒŞ
 );
 
-328 
+337 
 	gCÚŒŞDi¥©ch
 ::
 Qu”yTuÂ–Info
 (
 
-329 
+338 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-331 
+340 
 JsÚ
 ::
 V®ue
@@ -2897,13 +2889,13 @@ G‘Reque¡
 	gnode_šfo
 ;
 
-332 
+341 
 ¡ršg
  
 »¥
 ("The QueryTunnelInfo operation succeeded");
 
-333 
+342 
 boŞ
  
 	g¡©us
@@ -2911,7 +2903,7 @@ boŞ
 çl£
 ;
 
-334 
+343 
 	glock_gu¬d
 <
 	gmu‹x
@@ -2921,11 +2913,11 @@ lg
 di¥_mu‹x_
 );
 
-335 
+344 
 	gŒy
 
 
-337 
+346 
 	gtšÿn_
 ->
 Qu”yTuÂ–Info
@@ -2935,7 +2927,7 @@ Qu”yTuÂ–Info
 node_šfo
 );
 
-338 
+347 
 	g»¥
  = 
 node_šfo
@@ -2943,13 +2935,13 @@ node_šfo
 toStyËdSŒšg
 ();
 
-339 
+348 
 	g¡©us
  = 
 Œue
 ;
 
-340 } 
+349 } 
 ÿtch
 (
 exû±iÚ
@@ -2957,11 +2949,11 @@ exû±iÚ
 e
 )
 
-342 
+351 
 	g»¥
  = "The QueryTunnelInfo operation failed. ";
 
-343 
+352 
 	g»¥
 .
 ­³nd
@@ -2971,7 +2963,7 @@ e
 wh©
 ());
 
-344 
+353 
 RTC_LOG
 (
 LS_WARNING
@@ -2983,13 +2975,13 @@ LS_WARNING
 wh©
 () << ". Control Data=\n" <<
 
-345 
+354 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-347 
+356 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -2999,7 +2991,7 @@ S‘Re¥Ú£
 ¡©us
 );
 
-348 
+357 
 	gù¾_lšk_
 ->
 D–iv”
@@ -3007,19 +2999,19 @@ D–iv”
 cÚŒŞ
 );
 
-353 
+362 
 	gCÚŒŞDi¥©ch
 ::
 RemoveLšk
 (
 
-354 
+363 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-356 
+365 
 boŞ
  
 ¡©us
@@ -3027,7 +3019,7 @@ boŞ
 çl£
 ;
 
-357 
+366 
 	gJsÚ
 ::
 V®ue
@@ -3039,13 +3031,13 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-358 
+367 
 ¡ršg
  
 msg
 ("The RemoveLink operation succeeded");
 
-359 
+368 
 	glock_gu¬d
 <
 	gmu‹x
@@ -3055,11 +3047,11 @@ lg
 di¥_mu‹x_
 );
 
-360 
+369 
 	gŒy
 
 
-362 
+371 
 	gtšÿn_
 ->
 RemoveVlšk
@@ -3067,13 +3059,13 @@ RemoveVlšk
 »q
 );
 
-363 
+372 
 	g¡©us
  = 
 Œue
 ;
 
-364 } 
+373 } 
 ÿtch
 (
 exû±iÚ
@@ -3081,11 +3073,11 @@ exû±iÚ
 e
 )
 
-366 
+375 
 	gmsg
  = "The RemoveLink operation failed.";
 
-367 
+376 
 RTC_LOG
 (
 LS_WARNING
@@ -3095,13 +3087,13 @@ LS_WARNING
 wh©
 () << ". Control Data=\n" <<
 
-368 
+377 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-370 
+379 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -3111,7 +3103,7 @@ msg
 ¡©us
 );
 
-371 
+380 
 	gù¾_lšk_
 ->
 D–iv”
@@ -3119,19 +3111,19 @@ D–iv”
 cÚŒŞ
 );
 
-375 
+384 
 	gCÚŒŞDi¥©ch
 ::
 RemoveTuÂ–
 (
 
-376 
+385 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-378 
+387 
 boŞ
  
 ¡©us
@@ -3139,7 +3131,7 @@ boŞ
 çl£
 ;
 
-379 
+388 
 	gJsÚ
 ::
 V®ue
@@ -3151,13 +3143,13 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-380 
+389 
 ¡ršg
  
 msg
 ("The RemoveTunnel operation ");
 
-381 
+390 
 	glock_gu¬d
 <
 	gmu‹x
@@ -3167,11 +3159,11 @@ lg
 di¥_mu‹x_
 );
 
-382 
+391 
 	gŒy
 
 
-384 
+393 
 	gtšÿn_
 ->
 RemoveTuÂ–
@@ -3179,19 +3171,19 @@ RemoveTuÂ–
 »q
 );
 
-385 
+394 
 	g¡©us
  = 
 Œue
 ;
 
-386 
+395 
 	gmsg
 .
 ­³nd
 ("succeeded.");
 
-387 } 
+396 } 
 ÿtch
 (
 exû±iÚ
@@ -3199,11 +3191,11 @@ exû±iÚ
 e
 )
 
-389 
+398 
 	gmsg
  = "failed.";
 
-390 
+399 
 RTC_LOG
 (
 LS_WARNING
@@ -3213,13 +3205,13 @@ LS_WARNING
 wh©
 () << ". Control Data=\n" <<
 
-391 
+400 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-393 
+402 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -3229,7 +3221,7 @@ msg
 ¡©us
 );
 
-394 
+403 
 	gù¾_lšk_
 ->
 D–iv”
@@ -3237,19 +3229,19 @@ D–iv”
 cÚŒŞ
 );
 
-398 
+407 
 	gCÚŒŞDi¥©ch
 ::
 S’dIcc
 (
 
-399 
+408 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-401 
+411 
 JsÚ
 ::
 V®ue
@@ -3261,13 +3253,13 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-402 
+412 
 ¡ršg
  
 msg
 ("The ICC operation succeeded");
 
-403 
+413 
 	glock_gu¬d
 <
 	gmu‹x
@@ -3277,11 +3269,11 @@ lg
 di¥_mu‹x_
 );
 
-404 
+414 
 	gŒy
 
 
-406 
+416 
 	gtšÿn_
 ->
 S’dIcc
@@ -3289,7 +3281,7 @@ S’dIcc
 »q
 );
 
-407 } 
+417 } 
 ÿtch
 (
 exû±iÚ
@@ -3297,11 +3289,11 @@ exû±iÚ
 e
 )
 
-409 
+419 
 	gmsg
  = "The ICC operation failed.";
 
-410 
+420 
 RTC_LOG
 (
 LS_WARNING
@@ -3311,13 +3303,13 @@ LS_WARNING
 wh©
 () << ". Control Data=\n" <<
 
-411 
+421 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-412 
+422 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -3327,7 +3319,7 @@ msg
 çl£
 );
 
-413 
+423 
 	gù¾_lšk_
 ->
 D–iv”
@@ -3335,19 +3327,19 @@ D–iv”
 cÚŒŞ
 );
 
-418 
+428 
 	gCÚŒŞDi¥©ch
 ::
 Upd©eRou‹TabË
 (
 
-419 
+429 
 TšÿnCÚŒŞ
  & 
 cÚŒŞ
 )
 
-421 
+431 
 boŞ
  
 ¡©us
@@ -3355,7 +3347,7 @@ boŞ
 çl£
 ;
 
-422 
+432 
 	gJsÚ
 ::
 V®ue
@@ -3367,13 +3359,13 @@ cÚŒŞ
 G‘Reque¡
 ();
 
-423 
+433 
 ¡ršg
  
 	gmsg
  = "The Add Routes operation failed.";
 
-424 
+434 
 	glock_gu¬d
 <
 	gmu‹x
@@ -3383,11 +3375,11 @@ lg
 di¥_mu‹x_
 );
 
-425 
+435 
 	gŒy
 
 
-427 
+437 
 	gtšÿn_
 ->
 Upd©eRou‹TabË
@@ -3395,17 +3387,17 @@ Upd©eRou‹TabË
 »q
 );
 
-428 
+438 
 	g¡©us
  = 
 Œue
 ;
 
-429 
+439 
 	gmsg
  = "The Add Routes opertation completed successfully.";
 
-430 } 
+440 } 
 ÿtch
 (
 exû±iÚ
@@ -3413,7 +3405,7 @@ exû±iÚ
 e
 )
 
-432 
+442 
 RTC_LOG
 (
 LS_WARNING
@@ -3423,13 +3415,13 @@ LS_WARNING
 wh©
 () << ". Control Data=\n" <<
 
-433 
+443 
 	gcÚŒŞ
 .
 StyËdSŒšg
 ();
 
-435 
+445 
 	gcÚŒŞ
 .
 S‘Re¥Ú£
@@ -3439,7 +3431,7 @@ msg
 ¡©us
 );
 
-436 
+446 
 	gù¾_lšk_
 ->
 D–iv”
@@ -3499,57 +3491,65 @@ cÚŒŞ_di¥©ch
 ·ck‘_İtiÚs_
 (
 DSCP_DEFAULT
-)
+),
 
-33 
-	gù¾_di¥©ch_
+32 
+Th»ad
+(
+Sock‘S”v”
+::
+C»©eDeçuÉ
+())
+
+34 
+ù¾_di¥©ch_
 ->
 S‘Di¥©chToLi¡’”Inf
 (
 this
 );
 
-36 
+37 
 	gCÚŒŞLi¡’”
 ::~
 CÚŒŞLi¡’”
 ()
 
-40 
+41 
 CÚŒŞLi¡’”
 ::
 R—dPack‘HªdËr
 (
 
-41 
+42 
 AsyncPack‘Sock‘
  *,
 
-42 cÚ¡ * 
+43 cÚ¡ * 
 d©a
 ,
 
-43 
+44 
 size_t
  
 Ën
 ,
 
-44 cÚ¡ 
+45 cÚ¡ 
 Sock‘Add»ss
  &,
 
-45 
+46 cÚ¡ 
 št64_t
- 
+& 
 Pack‘Time
 )
 
-47 
+48 
 	gŒy
  {
 
-48 
+49 
 TšÿnCÚŒŞ
  
 ù¾
@@ -3559,7 +3559,7 @@ d©a
 Ën
 );
 
-49 
+50 
 RTC_LOG
 (
 LS_INFO
@@ -3569,13 +3569,13 @@ LS_INFO
 StyËdSŒšg
 ();
 
-50 (*
+51 (*
 	gù¾_di¥©ch_
 )(
 	gù¾
 );
 
-52 
+53 
 ÿtch
 (
 exû±iÚ
@@ -3583,13 +3583,13 @@ exû±iÚ
 e
 ) {
 
-53 
+54 
 RTC_LOG
 (
 LS_WARNING
 ) << "A control failedoƒxecute." << "\n"
 
-54 << 
+55 << 
 ¡ršg
 (
 d©a
@@ -3601,19 +3601,19 @@ d©a
 wh©
 ();
 
-60 
+61 
 	gCÚŒŞLi¡’”
 ::
 D–iv”
 (
 
-61 
+62 
 TšÿnCÚŒŞ
  & 
 ù¾_»¥
 )
 
-63 
+64 
 ¡d
 ::
 ¡ršg
@@ -3625,7 +3625,7 @@ msg
 StyËdSŒšg
 ();
 
-64 
+65 
 RTC_LOG
 (
 LS_INFO
@@ -3633,7 +3633,7 @@ LS_INFO
 	gmsg
 ;
 
-65 
+66 
 	glock_gu¬d
 <
 	gmu‹x
@@ -3643,7 +3643,7 @@ lg
 skt_mu‹x_
 );
 
-66 
+67 
 	g¢d_sock‘_
 ->
 S’dTo
@@ -3659,13 +3659,13 @@ c_¡r
 ·ck‘_İtiÚs_
 );
 
-69 
+70 
 	gCÚŒŞLi¡’”
 ::
 D–iv”
 (
 
-70 
+71 
 unique_±r
 <
 TšÿnCÚŒŞ
@@ -3673,7 +3673,7 @@ TšÿnCÚŒŞ
 ù¾_»¥
 )
 
-72 
+73 
 D–iv”
 (*
 ù¾_»¥
@@ -3681,13 +3681,13 @@ D–iv”
 g‘
 ());
 
-77 
+78 
 	gCÚŒŞLi¡’”
 ::
 C»©eIpİCÚŒŞËrLšk
 (
 
-78 
+79 
 unique_±r
 <
 Sock‘Add»ss
@@ -3695,7 +3695,7 @@ Sock‘Add»ss
 cÚŒŞËr_addr
 )
 
-80 
+81 
 lock_gu¬d
 <
 mu‹x
@@ -3705,7 +3705,7 @@ lg
 skt_mu‹x_
 );
 
-81 
+82 
 	gù¾_addr_
  = 
 move
@@ -3713,7 +3713,7 @@ move
 cÚŒŞËr_addr
 );
 
-82 
+83 
 Sock‘FaùÜy
 * 
 	gsf
@@ -3725,7 +3725,7 @@ Cu¼’t
 sock‘£rv”
 ();
 
-83 
+84 
 	g¢d_sock‘_
  = 
 make_unique
@@ -3733,7 +3733,7 @@ make_unique
 AsyncUDPSock‘
 >(
 
-84 
+85 
 sf
 ->
 C»©eAsyncSock‘
@@ -3744,6 +3744,88 @@ C»©eAsyncSock‘
 (), 
 SOCK_DGRAM
 ));
+
+89 
+	gCÚŒŞLi¡’”
+::
+Run
+()
+
+91 
+cout
+ << "At beginning‡t Run\n";
+
+92 
+BasicPack‘Sock‘FaùÜy
+ 
+	g·ck‘_çùÜy
+;
+
+93 
+	grcv_sock‘_
+.
+»£t
+(
+·ck‘_çùÜy
+.
+C»©eUdpSock‘
+(
+
+94 
+Sock‘Add»ss
+(
+
+.
+kLoÿlHo¡
+,p.
+kUdpPÜt
+), 0, 0));
+
+95 ià(!
+	grcv_sock‘_
+)
+
+96 
+throw
+ 
+TCEXCEPT
+("Failedo create control†istener socket");
+
+97 
+RTC_LOG
+(
+LS_INFO
+è<< "TšÿÀli¡’šg oÀ" << 
+	g
+.
+	gkLoÿlHo¡
+ << " UDP…Üˆ" <<p.
+	gkUdpPÜt
+;
+
+98 
+	grcv_sock‘_
+->
+	gSigÇlR—dPack‘
+.
+cÚÃù
+(
+this
+,
+
+99 &
+CÚŒŞLi¡’”
+::
+R—dPack‘HªdËr
+);
+
+100 
+	gTh»ad
+::
+Cu¼’t
+()->
+ProûssMes§ges
+(-1);
 
 	@linux/tapdev_lnx.cc
 
@@ -4435,7 +4517,11 @@ make_unique
 ¹c
 ::
 Th»ad
->();
+>(
+Sock‘S”v”
+::
+C»©eDeçuÉ
+());
 
 200 
 	g»ad”_
@@ -4451,7 +4537,11 @@ make_unique
 ¹c
 ::
 Th»ad
->();
+>(
+Sock‘S”v”
+::
+C»©eDeçuÉ
+());
 
 202 
 	gwr™”_
@@ -5143,7 +5233,7 @@ vlšk_
 
 108 
 	gÃt_wÜk”_
-.
+->
 Po¡
 (
 RTC_FROM_HERE
@@ -5325,7 +5415,7 @@ vlšk_
 
 138 
 	gÃt_wÜk”_
-.
+->
 Po¡
 (
 RTC_FROM_HERE
@@ -5367,7 +5457,7 @@ vlšk_
 
 148 
 	gÃt_wÜk”_
-.
+->
 Po¡
 (
 RTC_FROM_HERE
@@ -5485,7 +5575,7 @@ vlšk_
 
 179 
 	gÃt_wÜk”_
-.
+->
 Po¡
 (
 RTC_FROM_HERE
@@ -5897,7 +5987,7 @@ vlšk_
 
 261 
 	gÃt_wÜk”_
-.
+->
 Po¡
 (
 RTC_FROM_HERE
@@ -8788,16 +8878,12 @@ move
 ));
 
 321 
-	gùl_th»ad_
-.
+	gù¾_li¡’”_
+->
 S¹
-(
-ù¾_li¡’”_
-.
-g‘
-());
+();
 
-322 
+324 
 	gex™_ev’t_
 .
 Wa™
@@ -8807,23 +8893,23 @@ Ev’t
 kFÜev”
 );
 
-325 
+327 
 boŞ
 
 
-326 
+328 
 	gTšÿn
 ::
 IsTuÂ–Exis™
 (
 
-327 cÚ¡ 
+329 cÚ¡ 
 ¡ršg
  & 
 Šl_id
 )
 
-329 
+331 
 lock_gu¬d
 <
 mu‹x
@@ -8833,13 +8919,13 @@ lg
 tuÂ–s_mu‹x_
 );
 
-330 autØcÚ¡ & 
+332 autØcÚ¡ & 
 	gŠl
  : 
 tuÂ–s_
 ) {
 
-331 if(
+333 if(
 Šl
 ->
 DesütÜ
@@ -8851,31 +8937,31 @@ com·»
 Šl_id
 ) == 0)
 
-332  
+334  
 Œue
 ;
 
-334  
+336  
 	gçl£
 ;
 
-337 
+339 
 	gBasicTuÂ–
  &
 
-338 
+340 
 	gTšÿn
 ::
 TuÂ–FromId
 (
 
-339 cÚ¡ 
+341 cÚ¡ 
 ¡ršg
  & 
 Šl_id
 )
 
-341 
+343 
 lock_gu¬d
 <
 mu‹x
@@ -8885,13 +8971,13 @@ lg
 tuÂ–s_mu‹x_
 );
 
-342 autØcÚ¡ & 
+344 autØcÚ¡ & 
 	gŠl
  : 
 tuÂ–s_
 )
 
-345 if(
+347 if(
 Šl
 ->
 DesütÜ
@@ -8903,19 +8989,19 @@ com·»
 Šl_id
 ) == 0)
 
-346  *
+348  *
 Šl
 .
 g‘
 ();
 
-348 
+350 
 ¡ršg
  
 msg
 ("No virtual‚etworkƒxists byhis‚ame: ");
 
-349 
+351 
 	gmsg
 .
 ­³nd
@@ -8923,7 +9009,7 @@ msg
 Šl_id
 );
 
-350 
+352 
 throw
  
 TCEXCEPT
@@ -8933,29 +9019,29 @@ msg
 c_¡r
 ());
 
-353 
+355 
 	gTšÿn
 ::
 OnStİ
 () {
 
-354 
+356 
 Shutdown
 ();
 
-355 
+357 
 	gex™_ev’t_
 .
 S‘
 ();
 
-359 
+361 
 	gTšÿn
 ::
 Shutdown
 ()
 
-361 
+363 
 lock_gu¬d
 <
 mu‹x
@@ -8965,37 +9051,37 @@ lg
 tuÂ–s_mu‹x_
 );
 
-362 
-	gùl_th»ad_
-.
+364 
+	gù¾_li¡’”_
+->
 Qu™
 ();
 
-363 autØcÚ¡ & 
+365 autØcÚ¡ & 
 	gŠl
  : 
 tuÂ–s_
 ) {
 
-364 
+366 
 Šl
 ->
 Shutdown
 ();
 
-366 
+368 
 	gtuÂ–s_
 .
 ş—r
 ();
 
-375 #ià
+377 #ià
 defšed
 (
 _IPOP_WIN
 )
 
-376 
+378 
 BOOL
  
 __¡dÿÎ
@@ -9009,19 +9095,19 @@ DWORD
 CŒlTy³
 ) {
 
-377 
+379 
 CŒlTy³
 ) {
 
-378 
+380 
 CTRL_BREAK_EVENT
 :
 
-379 
+381 
 CTRL_C_EVENT
 :
 
-380 
+382 
 cout
  << "Stİpšgšÿn... " << 
 ¡d
@@ -9029,17 +9115,17 @@ cout
 ’dl
 ;
 
-381 
+383 
 	g£lf_
 ->
 OnStİ
 ();
 
-382 (
+384 (
 	gTRUE
 );
 
-384 (
+386 (
 	gFALSE
 );
 
@@ -9746,12 +9832,32 @@ objeùV®ue
 112 
 JsÚ
 ::
-Ch¬R—d”
+Ch¬R—d”Bud”
  
-·r£r
+b
 ;
 
 113 
+	gJsÚ
+::
+Ch¬R—d”
+* 
+·r£r
+(
+b
+.
+ÃwCh¬R—d”
+());
+
+114 
+	gJsÚ
+::
+SŒšg
+ 
+”rs
+;
+
+115 
 	gJsÚ
 ::
 V®ue
@@ -9763,25 +9869,27 @@ JsÚ
 objeùV®ue
 );
 
-114 if(!
+116 if(!
 	g·r£r
-.
+->
 ·r£
 (
 »q_d©a
 ,„eq_d©¨+ 
 Ën
-, 
+, &
 ù¾
+, &
+”rs
 ))
 
-116 
+118 
 ¡ršg
  
 	g”rmsg
  = "Unableo…arse json control object - ";
 
-117 
+119 
 	g”rmsg
 .
 ­³nd
@@ -9791,7 +9899,7 @@ objeùV®ue
 Ën
 );
 
-118 
+120 
 throw
  
 TCEXCEPT
@@ -9801,7 +9909,7 @@ TCEXCEPT
 c_¡r
 ());
 
-120 if(
+122 if(
 	gù¾
 [
 IPOP
@@ -9811,23 +9919,23 @@ isNuÎ
 em±y
 ())
 
-122 
+124 
 o¡ršg¡»am
  
 	goss
 ;
 
-123 
+125 
 	goss
  << "ThcÚŒŞ i šv®id,he'IPOP' h—d” i missšg" << 
 	g’dl
 
 
-124 << 
+126 << 
 	g»q_d©a
 ;
 
-125 
+127 
 throw
  
 TCEXCEPT
@@ -9839,7 +9947,7 @@ oss
 c_¡r
 ());
 
-127 
+129 
 ušt32_t
  
 	gv”
@@ -9853,7 +9961,7 @@ PrÙocŞV”siÚ
 asUIÁ
 ();
 
-128 if(
+130 if(
 	gv”
  !ğ
 
@@ -9861,19 +9969,19 @@ asUIÁ
 kTšÿnCÚŒŞV”
 )
 
-130 
+132 
 o¡ršg¡»am
  
 oss
 ;
 
-131 
+133 
 	goss
  << "Inv®id IPOP…rÙocŞ v”siÚ iÀcÚŒŞ h—d” (" << 
 	gv”
  << ")";
 
-132 
+134 
 throw
  
 TCEXCEPT
@@ -9885,13 +9993,13 @@ oss
 c_¡r
 ());
 
-134 
+136 
 	g´Ùo_v”_
  = 
 v”
 ;
 
-135 
+137 
 ¡ršg
  
 	gù
@@ -9905,7 +10013,7 @@ CÚŒŞTy³
 asSŒšg
 ();
 
-136 if(
+138 if(
 	gù
  =ğ
 CÚŒŞTy³SŒšgs
@@ -9913,13 +10021,13 @@ CÚŒŞTy³SŒšgs
 CTTšÿnReque¡
 ])
 
-138 
+140 
 ty³_
  = 
 CTTšÿnReque¡
 ;
 
-140 if(
+142 if(
 	gù
  =ğ
 CÚŒŞTy³SŒšgs
@@ -9927,19 +10035,19 @@ CÚŒŞTy³SŒšgs
 CTTšÿnRe¥Ú£
 ])
 
-142 
+144 
 ty³_
  = 
 CTTšÿnRe¥Ú£
 ;
 
-146 
+148 
 throw
  
 TCEXCEPT
 ("Invalid controlype");
 
-148 
+150 
 	gg_
  = 
 ù¾
@@ -9951,7 +10059,7 @@ T¿n§ùiÚId
 asIÁ64
 ();
 
-149 if(
+151 if(
 	gù¾
 [
 IPOP
@@ -9961,9 +10069,19 @@ isMemb”
 Reque¡
 ))
 
-151 (*
-	gdiù_»q_
-èğ
+153 
+	gJsÚ
+::
+V®ue
+ 
+»moved_mem
+;
+
+154 
+boŞ
+ 
+	g¡©us
+ = 
 ù¾
 [
 IPOP
@@ -9971,9 +10089,23 @@ IPOP
 »moveMemb”
 (
 Reque¡
+, &
+»moved_mem
 );
 
-153 if(
+155 if(
+	g¡©us
+ =ğ
+Œue
+)
+
+156 (*
+diù_»q_
+èğ
+»moved_mem
+;
+
+158 if(
 	gù¾
 [
 IPOP
@@ -9983,9 +10115,19 @@ isMemb”
 Re¥Ú£
 )) {
 
-154 (*
-	gdiù_»¥_
-èğ
+159 
+	gJsÚ
+::
+V®ue
+ 
+»moved_mem
+;
+
+160 
+boŞ
+ 
+	g¡©us
+ = 
 ù¾
 [
 IPOP
@@ -9993,39 +10135,53 @@ IPOP
 »moveMemb”
 (
 Re¥Ú£
+, &
+»moved_mem
 );
 
-158 
+161 if(
+	g¡©us
+ =ğ
+Œue
+)
+
+162 (*
+diù_»¥_
+èğ
+»moved_mem
+;
+
+166 
 	gTšÿnCÚŒŞ
 ::
 TšÿnCÚŒŞ
 (
 
-159 cÚ¡ 
+167 cÚ¡ 
 TšÿnCÚŒŞ
  & 
 ù¾_»q
 ) :
 
-160 
+168 
 ´Ùo_v”_
 (
 ù¾_»q
 .proto_ver_),
 
-161 
+169 
 g_
 (
 ù¾_»q
 .tag_),
 
-162 
+170 
 ty³_
 (
 ù¾_»q
 .type_),
 
-163 
+171 
 diù_»q_
 (
 Ãw
@@ -10037,7 +10193,7 @@ V®ue
 ù¾_»q
 .dict_req_)),
 
-164 
+172 
 diù_»¥_
 (
 Ãw
@@ -10049,47 +10205,47 @@ V®ue
 ù¾_»q
 .dict_resp_))
 
-167 
+175 
 TšÿnCÚŒŞ
 ::TincanControl(
 
-168 
+176 
 TšÿnCÚŒŞ
  && 
 ù¾_»q
 ) :
 
-169 
+177 
 ´Ùo_v”_
 (
 ù¾_»q
 .proto_ver_),
 
-170 
+178 
 g_
 (
 ù¾_»q
 .tag_),
 
-171 
+179 
 ty³_
 (
 ù¾_»q
 .type_),
 
-172 
+180 
 diù_»q_
 (
 ù¾_»q
 .dict_req_),
 
-173 
+181 
 diù_»¥_
 (
 ù¾_»q
 .dict_resp_)
 
-175 
+183 
 	gù¾_»q
 .
 	gdiù_»q_
@@ -10097,7 +10253,7 @@ diù_»¥_
 nuÎ±r
 ;
 
-176 
+184 
 	gù¾_»q
 .
 	gdiù_»¥_
@@ -10105,53 +10261,53 @@ nuÎ±r
 nuÎ±r
 ;
 
-179 
+187 
 	gTšÿnCÚŒŞ
 ::~
 TšÿnCÚŒŞ
 ()
 
-181 
+189 
 d–‘e
  
 diù_»q_
 ;
 
-182 
+190 
 d–‘e
  
 	gdiù_»¥_
 ;
 
-185 
+193 
 	gTšÿnCÚŒŞ
  &
 
-186 
+194 
 	gTšÿnCÚŒŞ
 ::
 İ”©Ü
 =(
 
-187 
+195 
 TšÿnCÚŒŞ
  & 
 rhs
 )
 
-189 if(
+197 if(
 this
  !ğ&
 rhs
 )
 
-191 
+199 
 ´Ùo_v”_
  = 
 rhs
 .proto_ver_;
 
-192 
+200 
 	gg_
  = 
 rhs
@@ -10159,7 +10315,7 @@ rhs
 g_
 ;
 
-193 
+201 
 	gty³_
  = 
 rhs
@@ -10167,13 +10323,13 @@ rhs
 ty³_
 ;
 
-195 
+203 
 d–‘e
  
 	gdiù_»q_
 ;
 
-196 
+204 
 	gdiù_»q_
  = 
 Ãw
@@ -10187,13 +10343,13 @@ rhs
 diù_»q_
 );
 
-197 
+205 
 d–‘e
  
 	gdiù_»¥_
 ;
 
-198 
+206 
 	gdiù_»¥_
  = 
 Ãw
@@ -10207,39 +10363,39 @@ rhs
 diù_»¥_
 );
 
-200  *
+208  *
 	gthis
 ;
 
-203 
+211 
 	gTšÿnCÚŒŞ
  &
 
-204 
+212 
 	gTšÿnCÚŒŞ
 ::
 İ”©Ü
 =(
 
-205 
+213 
 TšÿnCÚŒŞ
  && 
 rhs
 )
 
-207 if(
+215 if(
 this
  !ğ&
 rhs
 )
 
-209 
+217 
 ´Ùo_v”_
  = 
 rhs
 .proto_ver_;
 
-210 
+218 
 	gg_
  = 
 rhs
@@ -10247,7 +10403,7 @@ rhs
 g_
 ;
 
-211 
+219 
 	gty³_
  = 
 rhs
@@ -10255,13 +10411,13 @@ rhs
 ty³_
 ;
 
-213 
+221 
 d–‘e
  
 	gdiù_»q_
 ;
 
-214 
+222 
 	gdiù_»q_
  = 
 rhs
@@ -10269,7 +10425,7 @@ rhs
 diù_»q_
 ;
 
-215 
+223 
 	grhs
 .
 	gdiù_»q_
@@ -10277,13 +10433,13 @@ diù_»q_
 nuÎ±r
 ;
 
-216 
+224 
 d–‘e
  
 	gdiù_»¥_
 ;
 
-217 
+225 
 	gdiù_»¥_
  = 
 rhs
@@ -10291,7 +10447,7 @@ rhs
 diù_»¥_
 ;
 
-218 
+226 
 	grhs
 .
 	gdiù_»¥_
@@ -10299,21 +10455,21 @@ diù_»¥_
 nuÎ±r
 ;
 
-220  *
+228  *
 	gthis
 ;
 
-223 
+231 
 ¡ršg
 
 
-224 
+232 
 	gTšÿnCÚŒŞ
 ::
 StyËdSŒšg
 ()
 
-226 
+234 
 JsÚ
 ::
 V®ue
@@ -10323,7 +10479,7 @@ V®ue
 objeùV®ue
 );
 
-227 
+235 
 	gù¾
 [
 IPOP
@@ -10333,7 +10489,7 @@ PrÙocŞV”siÚ
 ´Ùo_v”_
 ;
 
-228 
+236 
 	gù¾
 [
 IPOP
@@ -10347,7 +10503,7 @@ UIÁ64
 g_
 ;
 
-229 
+237 
 	gù¾
 [
 IPOP
@@ -10359,11 +10515,11 @@ CÚŒŞTy³SŒšgs
 ty³_
 ];
 
-230 if(
+238 if(
 	gdiù_»q_
 )
 
-231 
+239 
 	gù¾
 [
 IPOP
@@ -10373,11 +10529,11 @@ Reque¡
 diù_»q_
 ;
 
-232 if(
+240 if(
 	gdiù_»¥_
 )
 
-233 
+241 
 	gù¾
 [
 IPOP
@@ -10387,13 +10543,13 @@ Re¥Ú£
 diù_»¥_
 ;
 
-234  
+242  
 	gù¾
 .
 toStyËdSŒšg
 ();
 
-237 
+245 
 	gTšÿnCÚŒŞ
 ::
 S‘Reque¡
@@ -10407,13 +10563,13 @@ V®ue
 »q
 )
 
-239 
+247 
 d–‘e
  
 diù_»q_
 ;
 
-240 
+248 
 	gdiù_»q_
  = 
 »q
@@ -10421,29 +10577,29 @@ diù_»q_
 »Ëa£
 ();
 
-241 
+249 
 	gty³_
  = 
 CTTšÿnReque¡
 ;
 
-244 
+252 
 	gJsÚ
 ::
 V®ue
  &
 
-245 
+253 
 TšÿnCÚŒŞ
 ::
 G‘Reque¡
 ()
 
-247 if(!
+255 if(!
 diù_»q_
 )
 
-248 
+256 
 diù_»q_
  = 
 Ãw
@@ -10455,17 +10611,17 @@ V®ue
 objeùV®ue
 );
 
-249  (*
+257  (*
 	gdiù_»q_
 );
 
-253 
+261 
 	gTšÿnCÚŒŞ
 ::
 S‘Re¥Ú£
 (
 
-254 
+262 
 unique_±r
 <
 JsÚ
@@ -10475,13 +10631,13 @@ V®ue
 »¥
 )
 
-256 
+264 
 d–‘e
  
 diù_»¥_
 ;
 
-257 
+265 
 	gdiù_»¥_
  = 
 »¥
@@ -10489,35 +10645,35 @@ diù_»¥_
 »Ëa£
 ();
 
-258 
+266 
 	gty³_
  = 
 CTTšÿnRe¥Ú£
 ;
 
-262 
+270 
 	gTšÿnCÚŒŞ
 ::
 S‘Re¥Ú£
 (
 
-263 cÚ¡ 
+271 cÚ¡ 
 ¡ršg
  & 
 »¥_msg
 ,
 
-264 
+272 
 boŞ
  
 sucûss
 )
 
-266 if(!
+274 if(!
 	gdiù_»¥_
 )
 
-267 
+275 
 	gdiù_»¥_
  = 
 Ãw
@@ -10529,7 +10685,7 @@ V®ue
 objeùV®ue
 );
 
-268 (*
+276 (*
 	gdiù_»¥_
 )[
 Mes§ge
@@ -10537,7 +10693,7 @@ Mes§ge
 »¥_msg
 ;
 
-269 (*
+277 (*
 	gdiù_»¥_
 )[
 Sucûss
@@ -10545,29 +10701,29 @@ Sucûss
 sucûss
 ;
 
-270 
+278 
 	gty³_
  = 
 CTTšÿnRe¥Ú£
 ;
 
-273 
+281 
 	gJsÚ
 ::
 V®ue
  &
 
-274 
+282 
 TšÿnCÚŒŞ
 ::
 G‘Re¥Ú£
 ()
 
-276 if(!
+284 if(!
 diù_»¥_
 )
 
-277 
+285 
 diù_»¥_
  = 
 Ãw
@@ -10579,27 +10735,27 @@ V®ue
 objeùV®ue
 );
 
-278  (*
+286  (*
 	gdiù_»¥_
 );
 
-281 
+289 
 ¡ršg
 
 
-282 
+290 
 	gTšÿnCÚŒŞ
 ::
 G‘Commªd
 () const
 
-284 if(
+292 if(
 ty³_
  =ğ
 CTTšÿnReque¡
 )
 
-285  (*
+293  (*
 diù_»q_
 )[
 Commªd
@@ -10607,13 +10763,13 @@ Commªd
 asSŒšg
 ();
 
-286 if(
+294 if(
 	gty³_
  =ğ
 CTTšÿnRe¥Ú£
 )
 
-287  (*
+295  (*
 diù_»¥_
 )[
 Commªd
@@ -10621,11 +10777,11 @@ Commªd
 asSŒšg
 ();
 
-288  
+296  
 ¡ršg
 ();
 
-291 
+299 
 	gTšÿnCÚŒŞ
 ::
 S‘Commªd
@@ -10635,13 +10791,13 @@ S‘Commªd
 cmd
 )
 
-293 if(
+301 if(
 ty³_
  =ğ
 CTTšÿnReque¡
 )
 
-294 (*
+302 (*
 diù_»q_
 )[
 Commªd
@@ -10649,13 +10805,13 @@ Commªd
 cmd
 ;
 
-295 if(
+303 if(
 	gty³_
  =ğ
 CTTšÿnRe¥Ú£
 )
 
-296 (*
+304 (*
 diù_»¥_
 )[
 Commªd
@@ -10663,7 +10819,7 @@ Commªd
 cmd
 ;
 
-299 
+307 
 	gTšÿnCÚŒŞ
 ::
 S‘T¿n§ùiÚId
@@ -10673,7 +10829,7 @@ ušt64_t
 g
 )
 
-301 (*
+309 (*
 diù_»q_
 )[
 T¿n§ùiÚId
@@ -10685,37 +10841,37 @@ UIÁ64
 g
 ;
 
-304 
+312 
 ušt64_t
 
 
-305 
+313 
 	gTšÿnCÚŒŞ
 ::
 G‘T¿n§ùiÚId
 () const
 
-307  
+315  
 g_
 ;
 
-310 
+318 
 	gTšÿnCÚŒŞ
 ::
 CÚŒŞTy³Enum
 
 
-311 
+319 
 TšÿnCÚŒŞ
 ::
 G‘CÚŒŞTy³
 () const
 
-313  
+321  
 ty³_
 ;
 
-316 
+324 
 	gTšÿnCÚŒŞ
 ::
 S‘CÚŒŞTy³
@@ -10725,7 +10881,7 @@ CÚŒŞTy³Enum
 ty³
 )
 
-318 
+326 
 ty³_
  = 
 ty³
@@ -11425,25 +11581,17 @@ push_back
 	giss
 );
 
-127 
-RTCE¼Ü
- 
-	g”rÜ
- = 
-Œª¥Üt_ùÌ_
+128 ià(!(
+	gŒª¥Üt_ùÌ_
 ->
 AddRemÙeCªdid©es
 (
 cÚ‹Á_Çme_
 , 
 ÿs_vec
-);
-
-128 ià(!
-	g”rÜ
-.
+).
 ok
-()) {
+())) {
 
 129 
 throw
@@ -11451,39 +11599,33 @@ throw
 TCEXCEPT
 (
 ¡ršg
-("FaedØadd„emÙÿndid©e - ").
-­³nd
-(
-”rÜ
-.
-mes§ge
-());
+("Failedo‡dd„emote candidates - "));
 
-134 
-Vœtu®Lšk
+135 
+	gVœtu®Lšk
 ::
 OnR—dPack‘
 (
 
-135 
+136 
 Pack‘T¿n¥ÜtIÁ”Çl
  *,
 
-136 cÚ¡ * 
+137 cÚ¡ * 
 d©a
 ,
 
-137 
+138 
 size_t
  
 Ën
 ,
 
-138 cÚ¡ 
+139 cÚ¡ 
 št64_t
  &,
 
-141 
+142 
 SigÇlMes§geReûived
 ((
 ušt8_t
@@ -11497,33 +11639,33 @@ ušt32_t
 this
 );
 
-145 
-Vœtu®Lšk
+146 
+	gVœtu®Lšk
 ::
 OnS’tPack‘
 (
 
-146 
+147 
 Pack‘T¿n¥ÜtIÁ”Çl
  *,
 
-147 cÚ¡ 
+148 cÚ¡ 
 ¹c
 ::
 S’tPack‘
  &)
 
-152 
+153 
 Vœtu®Lšk
 ::
 OnCªdid©esG©h”ed
 (
 
-153 cÚ¡ 
+154 cÚ¡ 
 ¡ršg
  &,
 
-154 cÚ¡ 
+155 cÚ¡ 
 üick‘
 ::
 Cªdid©es
@@ -11531,7 +11673,7 @@ Cªdid©es
 ÿndid©es
 )
 
-156 
+157 
 ¡d
 ::
 unique_lock
@@ -11543,11 +11685,13 @@ lk
 ÿs_mu‹x_
 );
 
-157 
-loÿl_ÿndid©es_
+158 
+	gloÿl_ÿndid©es_
 .
 š£¹
-Öoÿl_ÿndid©es_.
+(
+loÿl_ÿndid©es_
+.
 ’d
 (), 
 ÿndid©es
@@ -11555,19 +11699,19 @@ loÿl_ÿndid©es_
 begš
 (),
 
-158 
+159 
 ÿndid©es
 .
 ’d
 ());
 
-162 
-Vœtu®Lšk
+163 
+	gVœtu®Lšk
 ::
 OnG©h”šgS‹
 (
 
-163 
+164 
 üick‘
 ::
 IûG©h”šgS‹
@@ -11575,21 +11719,21 @@ IûG©h”šgS‹
 g©h”_¡©e
 )
 
-165 
+166 
 g©h”_¡©e_
  = 
 g©h”_¡©e
 ;
 
-166 if(
-g©h”_¡©e
+167 if(
+	gg©h”_¡©e
  =ğ
 üick‘
 ::
 kIûG©h”šgCom¶‘e
 )
 
-167 
+168 
 SigÇlLoÿlCasR—dy
 (
 vlšk_desc_
@@ -11599,25 +11743,25 @@ uid
 Cªdid©es
 ());
 
-171 
-Vœtu®Lšk
+172 
+	gVœtu®Lšk
 ::
 OnWr™—bËS‹
 (
 
-172 
+173 
 Pack‘T¿n¥ÜtIÁ”Çl
  * 
 Œª¥Üt
 )
 
-174 if(
+175 if(
 Œª¥Üt
 ->
 wr™abË
 ())
 
-176 
+177 
 RTC_LOG
 (
 LS_INFO
@@ -11627,7 +11771,7 @@ LS_INFO
 uid
 ;
 
-177 
+178 
 SigÇlLškUp
 (
 vlšk_desc_
@@ -11635,17 +11779,17 @@ vlšk_desc_
 uid
 );
 
-181 
+182 
 RTC_LOG
 (
 LS_INFO
 è<< "Lšk NOT wr™—bË: " << 
-³”_desc_
+	g³”_desc_
 ->
-uid
+	guid
 ;
 
-182 
+183 
 SigÇlLškDown
 (
 vlšk_desc_
@@ -11653,13 +11797,13 @@ vlšk_desc_
 uid
 );
 
-187 
-Vœtu®Lšk
+188 
+	gVœtu®Lšk
 ::
 Regi¡”LškEv’tHªdËrs
 ()
 
-189 
+190 
 chªÃl_
 ->
 SigÇlR—dPack‘
@@ -11673,10 +11817,10 @@ Vœtu®Lšk
 OnR—dPack‘
 );
 
-190 
-chªÃl_
+191 
+	gchªÃl_
 ->
-SigÇlS’tPack‘
+	gSigÇlS’tPack‘
 .
 cÚÃù
 (
@@ -11687,10 +11831,10 @@ Vœtu®Lšk
 OnS’tPack‘
 );
 
-191 
-chªÃl_
+192 
+	gchªÃl_
 ->
-SigÇlWr™abËS‹
+	gSigÇlWr™abËS‹
 .
 cÚÃù
 (
@@ -11701,15 +11845,15 @@ Vœtu®Lšk
 OnWr™—bËS‹
 );
 
-194 
-Œª¥Üt_ùÌ_
+195 
+	gŒª¥Üt_ùÌ_
 ->
-SigÇlCªdid©esG©h”ed
+	gSigÇlIûCªdid©esG©h”ed
 .
 cÚÃù
 (
 
-195 
+196 
 this
 , &
 Vœtu®Lšk
@@ -11717,15 +11861,15 @@ Vœtu®Lšk
 OnCªdid©esG©h”ed
 );
 
-196 
-Œª¥Üt_ùÌ_
+197 
+	gŒª¥Üt_ùÌ_
 ->
-SigÇlG©h”šgS‹
+	gSigÇlIûG©h”šgS‹
 .
 cÚÃù
 (
 
-197 
+198 
 this
 , &
 Vœtu®Lšk
@@ -11733,8 +11877,8 @@ Vœtu®Lšk
 OnG©h”šgS‹
 );
 
-200 
-Vœtu®Lšk
+201 
+	gVœtu®Lšk
 ::
 T¿nsm™
 (
@@ -11743,7 +11887,7 @@ T­F¿me
 äame
 )
 
-202 
+203 
 ¡©us
  = 
 chªÃl_
@@ -11755,7 +11899,7 @@ S’dPack‘
 BufãrToT¿nsãr
 (),
 
-203 
+204 
 äame
 .
 By‹sToT¿nsãr
@@ -11763,25 +11907,25 @@ By‹sToT¿nsãr
 ·ck‘_İtiÚs_
 , 0);
 
-204 if(
-¡©us
+205 if(
+	g¡©us
  < 0)
 
-205 
+206 
 RTC_LOG
 (
 LS_INFO
 ) << "Vlink send failed";
 
-208 
+209 
 ¡ršg
  
-Vœtu®Lšk
+	gVœtu®Lšk
 ::
 Cªdid©es
 ()
 
-210 
+211 
 ¡d
 ::
 o¡ršg¡»am
@@ -11789,13 +11933,13 @@ o¡ršg¡»am
 oss
 ;
 
-211 autØ& 
-úd
+212 autØ& 
+	gúd
  : 
 loÿl_ÿndid©es_
 )
 
-213 
+214 
 oss
  << 
 úd
@@ -11803,7 +11947,7 @@ oss
 compÚ’t
 ()
 
-214 << 
+215 << 
 
 .
 kCªdid©eD–im
@@ -11813,7 +11957,7 @@ kCªdid©eD–im
 ´ÙocŞ
 ()
 
-215 << 
+216 << 
 
 .
 kCªdid©eD–im
@@ -11825,7 +11969,7 @@ add»ss
 ToSŒšg
 ()
 
-216 << 
+217 << 
 
 .
 kCªdid©eD–im
@@ -11835,7 +11979,7 @@ kCªdid©eD–im
 ´iÜ™y
 ()
 
-217 << 
+218 << 
 
 .
 kCªdid©eD–im
@@ -11845,7 +11989,7 @@ kCªdid©eD–im
 u£ºame
 ()
 
-218 << 
+219 << 
 
 .
 kCªdid©eD–im
@@ -11855,7 +11999,7 @@ kCªdid©eD–im
 ·sswÜd
 ()
 
-219 << 
+220 << 
 
 .
 kCªdid©eD–im
@@ -11865,7 +12009,7 @@ kCªdid©eD–im
 ty³
 ()
 
-220 << 
+221 << 
 
 .
 kCªdid©eD–im
@@ -11875,7 +12019,7 @@ kCªdid©eD–im
 g’”©iÚ
 ()
 
-221 << 
+222 << 
 
 .
 kCªdid©eD–im
@@ -11885,39 +12029,39 @@ kCªdid©eD–im
 found©iÚ
 ()
 
-224  
-oss
+225  
+	goss
 .
 ¡r
 ();
 
-227 
+228 
 ¡ršg
  
-Vœtu®Lšk
+	gVœtu®Lšk
 ::
 P“rCªdid©es
 ()
 
-229  
+230  
 ³”_desc_
 ->
 ÿs
 ;
 
-233 
-Vœtu®Lšk
+234 
+	gVœtu®Lšk
 ::
 P“rCªdid©es
 (
 
-234 cÚ¡ 
+235 cÚ¡ 
 ¡ršg
  & 
 ³”_ÿs
 )
 
-236 
+237 
 ³”_desc_
 ->
 ÿs
@@ -11925,8 +12069,8 @@ P“rCªdid©es
 ³”_ÿs
 ;
 
-240 
-Vœtu®Lšk
+241 
+	gVœtu®Lšk
 ::
 G‘Sts
 (
@@ -11937,7 +12081,7 @@ V®ue
 ¡©s
 )
 
-242 
+243 
 üick‘
 ::
 IûT¿n¥ÜtSts
@@ -11945,21 +12089,27 @@ IûT¿n¥ÜtSts
 šfos
 ;
 
-243 
-chªÃl_
+244 
+	gchªÃl_
 ->
 G‘Sts
 (&
 šfos
 );
 
-244 autØ
+248 cÚ¡ 
+	güick‘
+::
+CÚÃùiÚInfo
+& 
 šfo
-: 
+ : 
 šfos
+.
+cÚÃùiÚ_šfos
 )
 
-246 
+250 
 JsÚ
 ::
 V®ue
@@ -11969,58 +12119,48 @@ V®ue
 objeùV®ue
 );
 
-247 
-¡©
+251 
+	g¡©
 ["be¡_cÚn"] = 
 šfo
-.
-cÚÃùiÚ_šfos
 .
 be¡_cÚÃùiÚ
 ;
 
-248 
-¡©
+252 
+	g¡©
 ["wr™abË"] = 
 šfo
-.
-cÚÃùiÚ_šfos
 .
 wr™abË
 ;
 
-249 
-¡©
+253 
+	g¡©
 ["»ûivšg"] = 
 šfo
-.
-cÚÃùiÚ_šfos
 .
 »ûivšg
 ;
 
-250 
-¡©
+254 
+	g¡©
 ["timeout"] = 
 šfo
-.
-cÚÃùiÚ_šfos
 .
 timeout
 ;
 
-251 
-¡©
+255 
+	g¡©
 ["Ãw_cÚn"] = 
 šfo
-.
-cÚÃùiÚ_šfos
 .
 Ãw_cÚÃùiÚ
 ;
 
-253 
-¡©
+257 
+	g¡©
 ["¹t"] = (
 JsÚ
 ::
@@ -12028,13 +12168,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 ¹t
 ;
 
-254 
-¡©
+258 
+	g¡©
 ["£Á_tÙ®_by‹s"] = (
 JsÚ
 ::
@@ -12042,13 +12180,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 £Á_tÙ®_by‹s
 ;
 
-255 
-¡©
+259 
+	g¡©
 ["£Á_by‹s_£cÚd"] = (
 JsÚ
 ::
@@ -12056,13 +12192,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 £Á_by‹s_£cÚd
 ;
 
-256 
-¡©
+260 
+	g¡©
 ["£Á_disÿrded_·ck‘s"] = (
 JsÚ
 ::
@@ -12070,13 +12204,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 £Á_disÿrded_·ck‘s
 ;
 
-257 
-¡©
+261 
+	g¡©
 ["£Á_tÙ®_·ck‘s"] = (
 JsÚ
 ::
@@ -12084,13 +12216,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 £Á_tÙ®_·ck‘s
 ;
 
-258 
-¡©
+262 
+	g¡©
 ["£Á_pšg_»que¡s_tÙ®"] = (
 JsÚ
 ::
@@ -12098,13 +12228,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 £Á_pšg_»que¡s_tÙ®
 ;
 
-259 
-¡©
+263 
+	g¡©
 ["£Á_pšg_»que¡s_befÜe_fœ¡_»¥Ú£"] = (
 JsÚ
 ::
@@ -12112,13 +12240,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 £Á_pšg_»que¡s_befÜe_fœ¡_»¥Ú£
 ;
 
-260 
-¡©
+264 
+	g¡©
 ["£Á_pšg_»¥Ú£s"] = (
 JsÚ
 ::
@@ -12126,13 +12252,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 £Á_pšg_»¥Ú£s
 ;
 
-262 
-¡©
+266 
+	g¡©
 ["»cv_tÙ®_by‹s"] = (
 JsÚ
 ::
@@ -12140,13 +12264,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 »cv_tÙ®_by‹s
 ;
 
-263 
-¡©
+267 
+	g¡©
 ["»cv_by‹s_£cÚd"] = (
 JsÚ
 ::
@@ -12154,13 +12276,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 »cv_by‹s_£cÚd
 ;
 
-264 
-¡©
+268 
+	g¡©
 ["»cv_pšg_»que¡s"] = (
 JsÚ
 ::
@@ -12168,13 +12288,11 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 »cv_pšg_»que¡s
 ;
 
-265 
-¡©
+269 
+	g¡©
 ["»cv_pšg_»¥Ú£s"] = (
 JsÚ
 ::
@@ -12182,37 +12300,31 @@ UIÁ64
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 »cv_pšg_»¥Ú£s
 ;
 
-267 
-¡©
+271 
+	g¡©
 ["loÿl_ÿndid©e"] = 
 šfo
-.
-cÚÃùiÚ_šfos
 .
 loÿl_ÿndid©e
 .
 ToSŒšg
 ();
 
-268 
-¡©
+272 
+	g¡©
 ["»mÙe_ÿndid©e"] = 
 šfo
-.
-cÚÃùiÚ_šfos
 .
 »mÙe_ÿndid©e
 .
 ToSŒšg
 ();
 
-269 
-¡©
+273 
+	g¡©
 ["¡©e"] = (
 JsÚ
 ::
@@ -12220,32 +12332,30 @@ UIÁ
 )
 šfo
 .
-cÚÃùiÚ_šfos
-.
 ¡©e
 ;
 
-271 
-¡©s
+275 
+	g¡©s
 .
 ­³nd
 (
 ¡©
 );
 
-276 
-Vœtu®Lšk
+280 
+	gVœtu®Lšk
 ::
 S‘upICE
 (
 
-277 
+281 
 SSLFšg”´št
  cÚ¡ & 
 loÿl_fšg”´št
 )
 
-279 
+283 
 size_t
  
 pos
@@ -12257,23 +12367,23 @@ fšg”´št
 fšd
 (' ');
 
-280 
+284 
 ¡ršg
  
-®g
+	g®g
 , 
-å
+	gå
 ;
 
-281 if(
-pos
+285 if(
+	gpos
  !ğ
 ¡ršg
 ::
 Åos
 )
 
-283 
+287 
 ®g
  = 
 ³”_desc_
@@ -12285,8 +12395,8 @@ sub¡r
 pos
 );
 
-284 
-å
+288 
+	gå
  = 
 ³”_desc_
 ->
@@ -12297,13 +12407,13 @@ sub¡r
 pos
 );
 
-285 
-»mÙe_fšg”´št_
+289 
+	g»mÙe_fšg”´št_
 .
 »£t
 (
 
-286 
+290 
 ¹c
 ::
 SSLFšg”´št
@@ -12315,41 +12425,43 @@ C»©eFromRfc4572
 å
 ));
 
-291 
-Œª¥Üt_ùÌ_
+296 
+	gchªÃl_
 ->
 S‘IûRŞe
 (
 iû_rŞe_
 );
 
-292 
-üick‘
+297 
+	güick‘
 ::
 CÚÃùiÚRŞe
  
 »mÙe_cÚn_rŞe
- = crick‘::
+ = 
+üick‘
+::
 CONNECTIONROLE_ACTIVE
 ;
 
-293 
-cÚn_rŞe_
+298 
+	gcÚn_rŞe_
  = 
 üick‘
 ::
 CONNECTIONROLE_ACTPASS
 ;
 
-294 if(
-üick‘
+299 if(
+	güick‘
 ::
 ICEROLE_CONTROLLING
  =ğ
 iû_rŞe_
 ) {
 
-295 
+300 
 cÚn_rŞe_
  = 
 üick‘
@@ -12357,113 +12469,133 @@ cÚn_rŞe_
 CONNECTIONROLE_ACTIVE
 ;
 
-296 
-»mÙe_cÚn_rŞe
+301 
+	g»mÙe_cÚn_rŞe
  = 
 üick‘
 ::
 CONNECTIONROLE_ACTPASS
 ;
 
-299 
-loÿl_desütiÚ_
-.
-»£t
-(
-Ãw
- 
-üick‘
+304 
+	güick‘
 ::
 T¿n¥ÜtDesütiÚ
-(
+ 
+loÿl_Œª¥Üt_desc
 
-300 
+
+305 (
 veùÜ
 <
 ¡ršg
 >(),
 
-301 
-
+306 
+	g
 .
-kIûUäag
+	gkIûUäag
 ,
-
-302 
-
-.
-kIûPwd
-,
-
-303 
-üick‘
-::
-ICEMODE_FULL
-,
-
-304 
-cÚn_rŞe_
-,
-
-305 & 
-loÿl_fšg”´št
-));
 
 307 
-»mÙe_desütiÚ_
+	g
 .
-»£t
-(
-Ãw
- 
-üick‘
-::
-T¿n¥ÜtDesütiÚ
-(
+	gkIûPwd
+,
 
 308 
+	güick‘
+::
+ICEMODE_FULL
+,
+
+309 
+	gcÚn_rŞe_
+,
+
+310 & 
+	gloÿl_fšg”´št
+);
+
+312 
+	güick‘
+::
+T¿n¥ÜtDesütiÚ
+ 
+»mÙe_Œª¥Üt_desc
+
+
+313 (
 veùÜ
 <
 ¡ršg
 >(),
 
-309 
-
+314 
+	g
 .
-kIûUäag
+	gkIûUäag
 ,
 
-310 
-
+315 
+	g
 .
-kIûPwd
+	gkIûPwd
 ,
 
-311 
-üick‘
+316 
+	güick‘
 ::
 ICEMODE_FULL
 ,
 
-312 
-»mÙe_cÚn_rŞe
+317 
+	g»mÙe_cÚn_rŞe
 ,
 
-313 
-»mÙe_fšg”´št_
+318 
+	g»mÙe_fšg”´št_
 .
 g‘
-()));
+());
 
-315 if(
+322 
+	gloÿl_desütiÚ_
+->
+AddT¿n¥ÜtInfo
+(
 üick‘
+::
+T¿n¥ÜtInfo
+(
+cÚ‹Á_Çme_
+, 
+loÿl_Œª¥Üt_desc
+));
+
+323 
+	g»mÙe_desütiÚ_
+->
+AddT¿n¥ÜtInfo
+(
+üick‘
+::
+T¿n¥ÜtInfo
+(
+cÚ‹Á_Çme_
+, 
+»mÙe_Œª¥Üt_desc
+));
+
+327 if(
+	güick‘
 ::
 ICEROLE_CONTROLLING
  =ğ
 iû_rŞe_
 )
 
-318 
+330 
 Œª¥Üt_ùÌ_
 ->
 S‘RemÙeDesütiÚ
@@ -12471,39 +12603,35 @@ S‘RemÙeDesütiÚ
 SdpTy³
 ::
 kOfãr
-,
-
-319 *
+, 
 »mÙe_desütiÚ_
 .
 g‘
 ());
 
-320 
-Œª¥Üt_ùÌ_
+331 
+	gŒª¥Üt_ùÌ_
 ->
 S‘LoÿlDesütiÚ
 (
 SdpTy³
 ::
 kAnsw”
-,
-
-321 *
+, 
 loÿl_desütiÚ_
 .
 g‘
 ());
 
-323 if(
-üick‘
+333 if(
+	güick‘
 ::
 ICEROLE_CONTROLLED
  =ğ
 iû_rŞe_
 )
 
-325 
+335 
 Œª¥Üt_ùÌ_
 ->
 S‘LoÿlDesütiÚ
@@ -12511,53 +12639,49 @@ S‘LoÿlDesütiÚ
 SdpTy³
 ::
 kOfãr
-,
-
-326 *
+, 
 loÿl_desütiÚ_
 .
 g‘
 ());
 
-327 
-Œª¥Üt_ùÌ_
+336 
+	gŒª¥Üt_ùÌ_
 ->
 S‘RemÙeDesütiÚ
 (
 SdpTy³
 ::
 kAnsw”
-,
-
-328 *
+, 
 »mÙe_desütiÚ_
 .
 g‘
 ());
 
-332 
+340 
 RTC_LOG
 (
 LS_WARNING
 è<< "Inv®id ICE„Ş¥ecif›d: " << (
-ušt32_t
+	gušt32_t
 )
-iû_rŞe_
+	giû_rŞe_
 ;
 
-333 
+341 
 throw
  
 TCEXCEPT
 ("Invalid ICE„ole specified");
 
-338 
-Vœtu®Lšk
+346 
+	gVœtu®Lšk
 ::
 S‘upTURN
 (
 
-339 cÚ¡ 
+347 cÚ¡ 
 veùÜ
 <
 TuºDesütÜ
@@ -12565,25 +12689,25 @@ TuºDesütÜ
 tuº_descs
 )
 
-341 if(
+349 if(
 tuº_descs
 .
 em±y
 ()) {
 
-342 
+350 
 RTC_LOG
 (
 LS_INFO
 ) << "No TURN Server‡ddress…rovided";
 
-346 autØ
-tuº_desc
+354 autØ
+	gtuº_desc
  : 
 tuº_descs
 )
 
-348 ià(
+356 ià(
 tuº_desc
 .
 u£ºame
@@ -12593,7 +12717,7 @@ em±y
 ·sswÜd
 .empty())
 
-350 
+358 
 RTC_LOG
 (
 LS_WARNING
@@ -12603,16 +12727,16 @@ tuº_desc
 £rv”_ho¡Çme
 ;
 
-354 
-veùÜ
+362 
+	gveùÜ
 <
-¡ršg
+	g¡ršg
 > 
-addr_pÜt
+	gaddr_pÜt
 ;
 
-355 
-¹c
+363 
+	g¹c
 ::
 ¥l™
 (
@@ -12623,20 +12747,20 @@ tuº_desc
 addr_pÜt
 );
 
-356 if(
-addr_pÜt
+364 if(
+	gaddr_pÜt
 .
 size
 () != 2)
 
-358 
+366 
 RTC_LOG
 (
 LS_INFO
 ) << "Invalid TURN Server‡ddress…rovided. Address must contain‡…ort‚umber separated by‡ \":\".";
 
-361 
-üick‘
+369 
+	güick‘
 ::
 R–ayS”v”CÚfig
  
@@ -12647,7 +12771,7 @@ addr_pÜt
 ¡oi
 (addr_port[1]),
 
-362 
+370 
 tuº_desc
 .
 u£ºame
@@ -12659,21 +12783,21 @@ u£ºame
 PROTO_UDP
 );
 
-363 
-pÜt_®loÿtÜ_
+371 
+	gpÜt_®loÿtÜ_
 ->
 AddTuºS”v”
 (
 »Ïy_cÚfig_udp
 );
 
-368 
-Vœtu®Lšk
+376 
+	gVœtu®Lšk
 ::
 S¹CÚÃùiÚs
 ()
 
-370 if(
+378 if(
 ³”_desc_
 ->
 ÿs
@@ -12681,13 +12805,13 @@ S¹CÚÃùiÚs
 Ëngth
 () == 0)
 
-371 
+379 
 throw
  
 TCEXCEPT
 ("The vlink connection cannot be started‡s‚o connection"
 
-373 
+381 
 AddRemÙeCªdid©es
 (
 ³”_desc_
@@ -12695,27 +12819,27 @@ AddRemÙeCªdid©es
 ÿs
 );
 
-375 
-Vœtu®Lšk
+383 
+	gVœtu®Lšk
 ::
 DiscÚÃù
 ()
 
-377 
+385 
 chªÃl_
-.
-»£t
+->~
+P2PT¿n¥ÜtChªÃl
 ();
 
-380 
+388 
 boŞ
  
-Vœtu®Lšk
+	gVœtu®Lšk
 ::
 IsR—dy
 ()
 
-382  
+390  
 chªÃl_
 ->
 wr™abË

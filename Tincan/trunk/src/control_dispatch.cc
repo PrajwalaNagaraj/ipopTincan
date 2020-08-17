@@ -56,6 +56,8 @@ ControlDispatch::~ControlDispatch()
 void
 ControlDispatch::operator () (TincanControl & control)
 {
+	
+//	RTC_LOG(LS_WARNING) << "at start of controldispatch op\n";
   try {
     switch(control.GetControlType()) {
     case TincanControl::CTTincanRequest:
@@ -113,9 +115,9 @@ ControlDispatch::ConfigureLogging(
       LogMessage::SetLogToStderr(false);
       string dir = req["Directory"].asString();
       //TODO: uncomment below three lines and solve the issue with file_util.h header from webrtc
-      //rtc::Pathname pn(dir);
-      //FilePath pn(dir.GetPath().AppendASCII(req["Directory"].asString()));
-      /*if(!DirectoryExists(pn))
+/*      rtc::Pathname pn(dir);
+      FilePath pn(dir.GetPath().AppendASCII(req["Directory"].asString()));
+      if(!DirectoryExists(pn))
       	CreateDirectory(pn);*/
       string fn = req["Filename"].asString();
       size_t max_sz = req["MaxFileSize"].asUInt64();
@@ -151,6 +153,7 @@ void
 ControlDispatch::CreateLink(
   TincanControl & control)
 {
+	//RTC_LOG(LS_WARNING) << "createLink beggining\n";
   Json::Value & req = control.GetRequest();
   string msg("Connection to peer node in progress.");
   bool status = false;
@@ -165,6 +168,7 @@ ControlDispatch::CreateLink(
     RTC_LOG(LS_WARNING) << e.what() << ". Control Data=\n" <<
       control.StyledString();
   }
+  //RTC_LOG(LS_WARNING) << "after tincan->createVlink, status:" << status << "\n";
   if(!status)
   {
     control.SetResponse(msg, status);
@@ -178,6 +182,7 @@ void ControlDispatch::CreateIpopControllerRespLink(
   Json::Value & req = control.GetRequest();
   string ip = req["IP"].asString();
   int port = req["Port"].asInt();
+  //RTC_LOG(LS_WARNING) << "ip adn port @ ControlDispatch::CreateIpopControllerRespLink" << ip << port << "\n";
   string msg("Controller endpoint successfully created.");
   lock_guard<mutex> lg(disp_mutex_);
   try
@@ -203,6 +208,7 @@ void
 ControlDispatch::CreateTunnel(
   TincanControl & control)
 {
+	//RTC_LOG(LS_WARNING) << "At begginning of CreateTunnel\n";
   Json::Value & req = control.GetRequest();
   unique_ptr<Json::Value> resp = make_unique<Json::Value>(Json::objectValue);
   lock_guard<mutex> lg(disp_mutex_);
@@ -259,6 +265,7 @@ void
 ControlDispatch::InjectFrame(
   TincanControl & control)
 {
+	//RTC_LOG(LS_WARNING) << "begginning of InjectFram\n";
   Json::Value & req = control.GetRequest();
   string msg = "InjectFrame failed.";
   bool status = false;
@@ -281,6 +288,7 @@ void
 ControlDispatch::QueryCandidateAddressSet(
   TincanControl & control)
 {
+	 //RTC_LOG(LS_WARNING) << "beggining of QueryCandidateAddressSet\n";
   Json::Value & req = control.GetRequest(), cas_info;
   string resp;
   bool status = false;
@@ -304,6 +312,7 @@ void
 ControlDispatch::QueryLinkStats(
   TincanControl & control)
 {
+	//RTC_LOG(LS_WARNING) << "beggining of QueryLinkStats\n";
   Json::Value & req = control.GetRequest();
   unique_ptr<Json::Value> resp = make_unique<Json::Value>(Json::objectValue);
   (*resp)["Success"] = false;
@@ -398,6 +407,7 @@ void
 ControlDispatch::SendIcc(
   TincanControl & control)
 {
+	//RTC_LOG(LS_WARNING) << "at beggining of SendIcc\n";
   Json::Value & req = control.GetRequest();
   string msg("The ICC operation succeeded");
   lock_guard<mutex> lg(disp_mutex_);

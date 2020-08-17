@@ -102,7 +102,7 @@ private:
   vector<unique_ptr<BasicTunnel>> tunnels_;
   IpopControllerLink * ctrl_link_;
   map<string, unique_ptr<TincanControl>> inprogess_controls_;
-  rtc::Thread *ctl_thread_ = new Thread(SocketServer::CreateDefault());
+  //rtc::Thread *ctl_thread_;// = new Thread(SocketServer::CreateDefault());
   shared_ptr<ControlListener> ctrl_listener_; //must be destroyed before ctl_thread
   static Tincan * self_;
   std::mutex tunnels_mutex_;

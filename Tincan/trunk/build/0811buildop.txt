@@ -1,0 +1,44 @@
+if [ ! -d ../out/release/x86_64/obj ]; then  mkdir -p ../out/release/x86_64/obj; fi
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/tincan_main.cc -o ../out/release/x86_64/obj/tincan_main.o
+In file included from ../src/tincan_main.cc:25:
+In file included from ../include/tincan.h:29:
+../include/single_link_tunnel.h:83:8: warning: 'TapReadComplete' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  void TapReadComplete(
+       ^
+../include/basic_tunnel.h:152:16: note: overridden virtual function is here
+  virtual void TapReadComplete(
+               ^
+In file included from ../src/tincan_main.cc:25:
+../include/tincan.h:82:8: warning: 'QueryLinkCas' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  void QueryLinkCas(
+       ^
+../include/controller_handle.h:73:18: note: overridden virtual function is here
+    virtual void QueryLinkCas(
+                 ^
+In file included from ../src/tincan_main.cc:25:
+In file included from ../include/tincan.h:27:
+In file included from ../include/control_listener.h:34:
+In file included from ../include/control_dispatch.h:33:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+3 warnings generated.
+clang++ -iquote ../include -isystem ../../external/include  -isystem ../../external/include/webrtc -DLINUX -D_IPOP_LINUX -DWEBRTC_POSIX -DWEBRTC_LINUX -D_GLIBCXX_USE_CXX11_ABI=0  -O3 -std=c++14 --stdlib=libc++ -pthread -g2 -gsplit-dwarf -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pipe -Wall -fno-rtti -c ../src/control_listener.cc -o ../out/release/x86_64/obj/control_listener.o
+../src/control_listener.cc:30:2: warning: field 'ctrl_thread_' will be initialized after field 'ctrl_dispatch_' [-Wreorder]
+ ctrl_thread_(move(thread)),
+ ^
+../src/control_listener.cc:29:18: error: constructor for 'tincan::ControlListener' must explicitly initialize the base class 'rtc::Thread' which does not have a default constructor
+ControlListener::ControlListener(Thread* thread,unique_ptr<ControlDispatch> control_dispatch):
+                 ^
+../../external/include/webrtc/rtc_base/thread.h:168:31: note: 'rtc::Thread' declared here
+class RTC_LOCKABLE RTC_EXPORT Thread : public webrtc::TaskQueueBase {
+                              ^
+In file included from ../src/control_listener.cc:24:
+In file included from ../include/control_listener.h:34:
+In file included from ../include/control_dispatch.h:33:
+../include/tap_frame.h:281:14: warning: private field 'tf_' is not used [-Wunused-private-field]
+  TapFrame & tf_;
+             ^
+2 warnings and 1 error generated.
+Makefile:24: recipe for target '../out/release/x86_64/obj/control_listener.o' failed
+make: *** [../out/release/x86_64/obj/control_listener.o] Error 1

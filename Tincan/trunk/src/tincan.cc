@@ -318,8 +318,9 @@ Tincan::Run()
   unique_ptr<ControlDispatch> ctrl_dispatch(new ControlDispatch);
   ctrl_dispatch->SetDispatchToTincanInf(this);
   ctrl_listener_ = make_shared<ControlListener>(move(ctrl_dispatch));
+  ctrl_listener_->Run();
+  //ctrl_listener_->ctrl_thread_->Start();
   //ctl_thread_->Start(ctrl_listener_.get());
-  ctl_thread_->Start();
   exit_event_.Wait(Event::kForever);
 }
 
@@ -360,7 +361,7 @@ void
 Tincan::Shutdown()
 {
   lock_guard<mutex> lg(tunnels_mutex_);
-  ctl_thread_->Quit();
+  ctrl_listener_->Quit();
   for(auto const & tnl : tunnels_) {
     tnl->Shutdown();
   }
