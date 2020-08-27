@@ -319,7 +319,6 @@ Tincan::Run()
   ctrl_dispatch->SetDispatchToTincanInf(this);
   ctrl_listener_ = make_shared<ControlListener>(move(ctrl_dispatch));
   ctrl_listener_->Run();
-  //ctrl_listener_->ctrl_thread_->Start();
   //ctl_thread_->Start(ctrl_listener_.get());
   exit_event_.Wait(Event::kForever);
 }

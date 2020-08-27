@@ -31,7 +31,7 @@ ControlListener::ControlListener(unique_ptr<ControlDispatch> control_dispatch):
  packet_options_(DSCP_DEFAULT)
 // Thread(SocketServer::CreateDefault())
 {
-//  ctrl_thread_ = Thread::CreateWithSocketServer();
+  ctrl_thread_ = Thread::CreateWithSocketServer();
   ctrl_dispatch_->SetDispatchToListenerInf(this);
 }
 
@@ -104,32 +104,37 @@ ControlListener::Run()
 void
 ControlListener::Run()
 {
-	cout << "At beginning of Run\n";
+	 cout << "Setting up UDP listener\n";
+ /*
   BasicPacketSocketFactory packet_factory;
   rcv_socket_.reset(packet_factory.CreateUdpSocket(
       SocketAddress(tp.kLocalHost, tp.kUdpPort), 0, 0));
-
-  /*const SocketAddress addr(tp.kLocalHost, tp.kUdpPort);
-  SocketServer* sf = Thread::Current()->socketserver();
-  if(!sf)
-	  cout << "Error creating server\n";
+*/
+ const SocketAddress addr(tp.kLocalHost, tp.kUdpPort);
+  SocketServer* sf = ctrl_thread_->socketserver();
+  if(!sf){
+          cout << "Error: No ctrl thread's socket server\n";
+    return;
+  }
   AsyncSocket* socket = sf->CreateAsyncSocket(addr.family(), SOCK_DGRAM);
-  if(!socket)
-  	cout << "error with async socket\n";
+  if(!socket){
+        cout << "Error: Failed to create async socket\n";
+    return;
+  }
   cout << "After creating asyncsocket\n";
 
-  AsyncUDPSocket* rs = (AsyncUDPSocket::Create(socket, addr));
-  //rcv_socket_.reset(AsyncUDPSocket::Create(socket, addr));
+  //AsyncUDPSocket* rs = (AsyncUDPSocket::Create(socket, addr));
+  rcv_socket_.reset(AsyncUDPSocket::Create(socket, addr));
 
-  if (!rs)
+  if (!rcv_socket_)
     throw TCEXCEPT("Failed to create control listener socket");
   RTC_LOG(LS_INFO) << "Tincan listening on " << tp.kLocalHost << " UDP port " << tp.kUdpPort;
-  //rcv_socket_ = new AsyncUDPSocket::Create(socket_, addr);*/
+  //rcv_socket_ = new AsyncUDPSocket::Create(socket_, addr);
   if(!rcv_socket_)
-	  cout << "error with createUDPsocket\n";
-  rcv_socket_->SignalReadPacket.connect(this,
-    &ControlListener::ReadPacketHandler);
-  //ctrl_thread_->Start();
+          cout << "error with createUDPsocket\n";
+  rcv_socket_->SignalReadPacket.connect(this, &ControlListener::ReadPacketHandler);
+  ctrl_thread_->Start();
+  cout << "control thread started\n";
   //Thread::Current()->ProcessMessages(-1); //run until stopped
 }
 
