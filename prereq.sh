@@ -111,7 +111,7 @@ git clone https://github.com/ipop-project/Tincan
 cd ../..
 mkdir -p ipop-project/Tincan/external/3rd-Party-Libs/release ipop-project/Tincan/external/3rd-Party-Libs/debug
 #getting the required .o files and .a files to 3rd party libs from webrtc-checkout
-ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/$build_type/libboringssl_asm.a webrtc-checkout/src/out/$build_type/obj/third_party/boringssl/boringssl_asm/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libboringssl_asm.a webrtc-checkout/src/out/$build_type/obj/third_party/boringssl/boringssl_asm/*.o
 
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libjsoncpp.a webrtc-checkout/src/out/$build_type/obj/third_party/jsoncpp/jsoncpp/json_reader.o webrtc-checkout/src/out/$build_type/obj/third_party/jsoncpp/jsoncpp/json_value.o webrtc-checkout/src/out/$build_type/obj/third_party/jsoncpp/jsoncpp/json_writer.o
 
@@ -162,7 +162,7 @@ ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/librtp_parameter
 
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libmedia_transport_interface.a webrtc-checkout/src/out/$build_type/obj/api/transport/media/media_transport_interface/*.o
 
-ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/$build_type/librtp_receiver.a webrtc-checkout/src/out/$build_type/obj/call/rtp_receiver/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/librtp_receiver.a webrtc-checkout/src/out/$build_type/obj/call/rtp_receiver/*.o
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/librtp_rtcp_format.a webrtc-checkout/src/out/$build_type/obj/modules/rtp_rtcp/rtp_rtcp_format/*.o
 
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libmedia_transport_interface.a webrtc-checkout/src/out/$build_type/obj/api/transport/media/media_transport_interface/*.o
@@ -171,15 +171,15 @@ ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/librtc_media_bas
 
 ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libsrtp.a webrtc-checkout/src/out/$build_type/obj/third_party/libsrtp/libsrtp/*.o
 
-ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/$build_type/libdata_size.a webrtc-checkout/src/out/$build_type/obj/api/units/data_size/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libdata_size.a webrtc-checkout/src/out/$build_type/obj/api/units/data_size/*.o
 
-ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/$build_type/libtime_delta.a webrtc-checkout/src/out/$build_type/obj/api/units/time_delta/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libtime_delta.a webrtc-checkout/src/out/$build_type/obj/api/units/time_delta/*.o
 
-ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/$build_type/libdata_rate.a webrtc-checkout/src/out/$build_type/obj/api/units/data_rate/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libdata_rate.a webrtc-checkout/src/out/$build_type/obj/api/units/data_rate/*.o
 
-ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/$build_type/libraw_logging_internal.a webrtc-checkout/src/out/$build_type/obj/third_party/abseil-cpp/absl/base/raw_logging_internal/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libraw_logging_internal.a webrtc-checkout/src/out/$build_type/obj/third_party/abseil-cpp/absl/base/raw_logging_internal/*.o
 
-ar -rcs /home/prajwala/praj_code/ipopTincan/Tincan/external/3rd-Party-Libs/$build_type/libvideo_rtp_headers.a webrtc-checkout/src/out/$build_type/obj/api/video/video_rtp_headers/*.o
+ar -rcs ipop-project/Tincan/external/3rd-Party-Libs/$build_type/libvideo_rtp_headers.a webrtc-checkout/src/out/$build_type/obj/api/video/video_rtp_headers/*.o
 cd ../../../../..
 #getting the required include files and folders from webrtc-checkout
 # folders required: absl,api,base,call,common_video,logging,media,modules,p2p,pc,system_wrappers,rtc_base,build,common_types.h, jni.h, logging_buildflags.h
