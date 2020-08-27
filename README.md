@@ -7,7 +7,7 @@ Steps to run the script :
 
 chmod +x prereq.sh
 
-sudo ./prereq.sh
+sudo ./prereq.sh -b [debug/release] -t [ubuntu/raspberry-pi]
 
 link to track the commit changes : https://docs.google.com/document/d/1dG2nnWlnqFii3wJWktiwfPsXPGTeIxheyq9Z1aoEIwo/edit?usp=sharing
 
