@@ -8,7 +8,7 @@ helpFunction()
 {
         echo ""
         echo "Usage: $0 -b build_type -t target_os"
-        echo -e "\t-b build_type can be $build_type or debug"
+        echo -e "\t-b build_type can be release or debug"
         echo -e "\t-t target_os can be ubuntu or raspberry-pi"
         exit 1 # Exit script after printing help
 }
@@ -51,7 +51,7 @@ then
         echo "Some or all of the parameters are empty";
         helpFunction
 fi
-if [ "$build_type" != "debug" ] && [ "$build_type" != "$build_type" ]; then
+if [ "$build_type" != "debug" ] && [ "$build_type" != "release" ]; then
         echo "Wrong build_type spelling"
         helpFunction
 elif [ "$target_os" != "ubuntu" ] && [ "$target_os" != "raspberry-pi" ]; then
