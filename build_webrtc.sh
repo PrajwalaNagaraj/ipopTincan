@@ -65,8 +65,8 @@ if [ "$build_type" == "debug" ]; then
 fi
 
 #clang installation
-sudo apt install clang
-sudo apt-get install libc++-dev
+sudo apt install -y clang
+sudo apt-get install -y libc++-dev
 echo "$target_os"
 mkdir -p ~/workspace/webrtc-checkout && cd ~/workspace/webrtc-checkout
 #install Toolchain according to OS
@@ -93,7 +93,7 @@ if [ "$?" != "0" ]; then
 fi
 echo "running couple of updates"
 if [[ "$target_os" == "ubuntu" ]]; then
-        sudo apt-get install gtk2.0
+        sudo apt-get install -y gtk2.0
 else
         ./build/install-build-deps.sh
         ./build/linux/sysroot_scripts/install-sysroot.py --arch=arm
